@@ -44,7 +44,7 @@
                                                           <button id="bfc" class="btn my_newBtn" type="submit">
                                                                <span>Book</span>
                                                                {{-- <span class="bfcForm_largeText__2hTo1">3D</span> --}}
-                                                               <span>Design Session</span>
+                                                               <span>Design Consultation</span>
                                                                <span class="bfcForm_label__NW7wY"></span>
                                                           </button>
                                                           <p class="someText">By submitting this form, you agree to
