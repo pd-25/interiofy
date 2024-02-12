@@ -91,6 +91,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::get('/serviceimageadd', [ServicesimageController::class, 'add'])->name('Serviceimageadd');
         Route::post('/serviceimageaddpost', [ServicesimageController::class, 'addpost'])->name('Serviceimageaddpost');
         Route::get('/serviceimageedit/{id}', [ServicesimageController::class, 'edit'])->name('Serviceimageedit');
+        //kkkk
 
 
         Route::get('/customer-list', [UserController::class, 'customerlist'])->name('customerlist');
