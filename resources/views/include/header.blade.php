@@ -38,9 +38,9 @@
 
                          @if (Auth::check())
                             @if(Auth::user()->type == 'user')
-                                <a id="login_btn" href="{{ route('user-dashboard') }}" >Dashboard</a>
+                                <a id="login_btn" href="{{ route('user-dashboard') }}" >Dashboard</a> | <a id="login_btn" href="{{ route('logout') }}" >Logout</a>
                             @else
-                                <a id="login_btn" href="{{ route('partner-dashboard') }}" >Dashboard</a>
+                                <a id="login_btn" href="{{ route('partner-dashboard') }}" >Dashboard</a> | <a id="login_btn" href="{{ route('logout') }}" >Logout</a>
                             @endif
                          @else
                                 <a id="login_btn" href="{{ route('login') }}" >Login</a> | <a id="login_btn" href="{{ route('register') }}">Register</a>
@@ -84,28 +84,28 @@
                                         <ul class="sub-menu">
 
                                              <li class="menu-item">
-                                                  <a href="interior-decoration.html">interior decoration</a>
+                                                  <a href="{{ route('interior-decoration') }}">interior decoration</a>
                                              </li>
                                              <li class="menu-item">
-                                                  <a href="design-plan & architecture.html">Design, Plan & Architecture</a>
+                                                  <a href="{{ route('design-plan-architecture') }}">Design, Plan & Architecture</a>
                                              </li>
                                              <li class="menu-item">
-                                                  <a href="electrical-lighting.html">Electrical and Lighting work</a>
+                                                  <a href="{{ route('electrical-lighting') }}">Electrical and Lighting work</a>
                                              </li>
                                              <li class="menu-item">
-                                                  <a href="plumbing.html">Plumbing Work</a>
+                                                  <a href="{{ route('plumbing') }}">Plumbing Work</a>
                                              </li>
                                              <li class="menu-item">
-                                                  <a href="structural.html">Structural</a>
+                                                  <a href="{{ route('structural') }}">Structural</a>
                                              </li>
                                              <li class="menu-item">
-                                                  <a href="flooring.html">Flooring Work</a>
+                                                  <a href="{{ route('flooring') }}">Flooring Work</a>
                                              </li>
                                               <li class="menu-item">
-                                                  <a href="Carpentry_Masonry.html">Carpentry & Masonry</a>
+                                                  <a href="{{ route('carpentry-masonry') }}">Carpentry & Masonry</a>
                                              </li>
                                              <li class="menu-item">
-                                                  <a href="painting.html">Painting Work</a>
+                                                  <a href="{{ route('painting') }}">Painting Work</a>
                                              </li>
                                         </ul>
                                    </li>
@@ -115,6 +115,9 @@
                                    <li class="menu-item">
                                         <a href="{{ route('about-us') }}">About Us</a>
                                    </li>
+                                   <li class="menu-item">
+                                        <a href="{{ route('blogs') }}">Blogs</a>
+                                    </li>
                                    <li class="menu-item">
                                         <a href="{{ route('contact-us') }}">Contact Us</a>
                                    </li>

@@ -40,6 +40,18 @@ Route::get('/home-services', [HomeController::class, 'home_services'])->name('ho
 Route::get('/office-services', [HomeController::class, 'office_services'])->name('office-services');
 Route::get('/retail-services', [HomeController::class, 'retail_services'])->name('retail-services');
 
+Route::get('/interior-decoration', [HomeController::class, 'interior_decoration'])->name('interior-decoration');
+Route::get('/design-plan-architecture', [HomeController::class, 'design_plan_architecture'])->name('design-plan-architecture');
+Route::get('/electrical-lighting', [HomeController::class, 'electrical_lighting'])->name('electrical-lighting');
+Route::get('/plumbing', [HomeController::class, 'plumbing'])->name('plumbing');
+Route::get('/structural', [HomeController::class, 'structural'])->name('structural');
+Route::get('/flooring', [HomeController::class, 'flooring'])->name('flooring');
+Route::get('/carpentry-masonry', [HomeController::class, 'carpentry_masonry'])->name('carpentry-masonry');
+Route::get('/painting', [HomeController::class, 'painting'])->name('painting');
+
+Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
+Route::get('/blog-details/{id}', [HomeController::class, 'blog_details'])->name('blog-details');
+
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
 Route::get('register', [CustomAuthController::class, 'registration'])->name('register');
@@ -47,7 +59,12 @@ Route::post('custom-registration', [CustomAuthController::class, 'customRegistra
 
 Route::get('/user-dashboard', [DashboardController::class, 'index'])->name('user-dashboard');
 Route::get('/partner-dashboard', [DashboardController::class, 'partner_dashboard'])->name('partner-dashboard');
-Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
+
+
+
+
+
+//Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
 Route::controller(AuthOtpController::class)->group(function(){
     Route::get('/otp/login', 'login')->name('otp.login');

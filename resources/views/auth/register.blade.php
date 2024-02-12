@@ -23,10 +23,10 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Country" name="country"  id="country"/>
+                                                <input type="text" class="form-control" placeholder="Country" name="country"  id="country" value="India" readonly/>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="City" name="city"  id="city"/>
+                                                <input type="text" class="form-control" placeholder="City/Pin" name="city"  id="city"/>
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Occupation" name="occupation"  id="occupation"/>

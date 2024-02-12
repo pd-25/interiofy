@@ -43,7 +43,7 @@
                                                           </div>
                                                           <button id="bfc" class="btn my_newBtn" type="submit">
                                                                <span>Book</span>
-                                                               <span class="bfcForm_largeText__2hTo1">3D</span>
+                                                               {{-- <span class="bfcForm_largeText__2hTo1">3D</span> --}}
                                                                <span>Design Session</span>
                                                                <span class="bfcForm_label__NW7wY"></span>
                                                           </button>
@@ -512,7 +512,7 @@
              <div class="row justify-content-center">
                   <div class="col-sm-12 text-center">
                        <div class="heading">
-                            <h2><img src="{{ asset('images/logo.png') }}" alt="" class="logo_img"> IN NUMBERS</h2>
+                            <h2><img src="{{ asset('images/logo.png') }}" alt="" class="logo_img"> </h2>
                        </div>
                   </div>
              </div>

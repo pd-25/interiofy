@@ -13,4 +13,10 @@ class UserController extends Controller
         $user = Partner::get();
         return view('admin.user.partnerlist',compact('user'));
     }
+
+    function customerlist(){
+        $user = User::where('type','user')->get();
+        return view('admin.user.customerlist',compact('user'));
+    }
+
 }

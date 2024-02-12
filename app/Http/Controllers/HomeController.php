@@ -7,15 +7,53 @@ use App\Models\User;
 use App\Models\Contactus;
 use App\Models\Aboutus;
 use App\Models\Partner;
+use App\Models\Blog;
 class HomeController extends Controller
 {
     public function index(){
         return view('home.index');
     }
-
     public function partner_with_us(){
         return view('partnerwithus.index');
     }
+
+    public function interior_decoration(){
+        return view('servicesmenu.interior-decoration');
+    }
+
+    public function design_plan_architecture(){
+        return view('servicesmenu.design-plan-architecture');
+    }
+    public function electrical_lighting(){
+        return view('servicesmenu.electrical-lighting');
+    }
+    public function plumbing(){
+        return view('servicesmenu.plumbing');
+    }
+    public function structural(){
+        return view('servicesmenu.structural');
+    }
+    public function flooring(){
+        return view('servicesmenu.flooring');
+    }
+    public function carpentry_masonry(){
+        return view('servicesmenu.carpentry-masonry');
+    }
+    public function painting(){
+        return view('servicesmenu.painting');
+    }
+
+    public function blogs(){
+        $blogs = Blog::where('status','1')->get();
+        //dd($blogs);
+        return view('blogs.blog',compact('blogs'));
+    }
+
+    public function blog_details(Request $request, $id){
+        $blogs = Blog::where('id',$id)->first();
+        return view('blogs.blog-details',compact('blogs'));
+    }
+
 
     public function partner_with_us_form_data(Request $request){
         if (User::where('mobile_no', $request->input('mobile_no'))->exists()) {

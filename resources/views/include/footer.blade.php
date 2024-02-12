@@ -214,15 +214,15 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.all.min.js"></script>
 
     <script>
-        document.getElementById('registerLink').addEventListener('click', function() {
-        var modal = document.getElementById('loginModal');
-        modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
-        });
+        // document.getElementById('registerLink').addEventListener('click', function() {
+        // var modal = document.getElementById('loginModal');
+        // modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+        // });
 
-        document.getElementById('proceed').addEventListener('click', function() {
-        var modal = document.getElementById('registerModal');
-        modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
-        });
+        // document.getElementById('proceed').addEventListener('click', function() {
+        // var modal = document.getElementById('registerModal');
+        // modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+        // });
 
         function New_user_registration(){
            var email_or_mobileno = $("#register_email_mobile_no").val();
