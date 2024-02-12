@@ -6,7 +6,7 @@
              <div class="row align-items-center">
                   <div class="col-lg-6 col-md-7">
                        <div class="banner_title">
-                            <h1>INTERIOFY Everything and Anything</h1>
+                            <h1>INTERIOFY Anything And Everything</h1>
                        </div>
                   </div>
                   <div class="col-lg-6 col-md-5">
