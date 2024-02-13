@@ -54,7 +54,7 @@
                     <div class="header-main">
                          <div class="logo">
                               <a href="{{ url('/') }}" class="logomain">
-                                   <img src="{{ asset('images/logo.png') }}" alt="" class="logo_img">
+                                   <img src="{{ asset('images/interify.jpeg') }}" alt="" class="logo_img">
                               </a>
                          </div>
                          <div class="open-nav-menu">
