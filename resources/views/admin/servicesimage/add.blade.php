@@ -9,7 +9,11 @@
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="{{ route('adminDashboard') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('Serviceimagelist') }}">Services Image List</a></li>
+                    <?php if(!empty($serviceImgFilterId)){ ?>
+                        <li class="breadcrumb-item"><a href="{{ route('searchServiceImageList',[$serviceImgFilterId]) }}">Services Filtered Image List</a></li>
+                    <?php }else{ ?>    
+                        <li class="breadcrumb-item"><a href="{{ route('Serviceimagelist') }}">Services Image List</a></li>
+                    <?php } ?>
                     <li class="breadcrumb-item active">Add Services Image</li>
                 </ol>
             </div>
@@ -49,6 +53,7 @@
                         <label for="description" class="col-3 col-form-label">Services</label>
                         <div class="col-6">
                             <select name="categorie_id" class="form-select">
+                                <option value="0" selected disabled>Select a Service</option>
                                 @forelse ($categorys as $categori)
                                 <option value="{{ $categori->id }}">{{ $categori->name }}</option>
                                 @empty
@@ -60,7 +65,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label for="services_name" class="col-3 col-form-label">Service Name </label>
+                        <label for="services_name" class="col-3 col-form-label">Service Image Name </label>
                         <div class="col-6">
                             <input type="text" name="services_name" class="form-control" id="services_name" placeholder="Service Name" value="" />
                             @error('name')

@@ -8,6 +8,8 @@ use App\Models\Contactus;
 use App\Models\Aboutus;
 use App\Models\Partner;
 use App\Models\Blog;
+use App\Models\Categorie;
+
 class HomeController extends Controller
 {
     public function index(){
@@ -17,31 +19,29 @@ class HomeController extends Controller
         return view('partnerwithus.index');
     }
 
-    public function interior_decoration(){
-        return view('servicesmenu.interior-decoration');
+    public function architecture(){
+        return view('servicesmenu.architecture');
     }
 
-    public function design_plan_architecture(){
-        return view('servicesmenu.design-plan-architecture');
+    public function serviceDetails($slug){
+        $serviceDetails = Categorie::where('slug','=',$slug)->with('servicebanner','serviceimage','servicecategory')->first();
+        $serviceBanners = $serviceDetails->servicebanner()->get();
+        
+        if($serviceDetails->show_child_images == "0"){
+            $serviceSliders = $serviceDetails->serviceimage()->get();
+        }else{
+            $serviceSliders = [];
+        }
+        
+        $serviceSliders = $serviceDetails->serviceimage()->get();
+        $serviceCatSliders = $serviceDetails->servicecategory()->with('servicecategoryimage')->get();
+        //dd($serviceCatSliders);
+        return view('servicesmenu.service-details',compact('serviceDetails','serviceBanners','serviceCatSliders','serviceSliders'));
     }
-    public function electrical_lighting(){
-        return view('servicesmenu.electrical-lighting');
-    }
-    public function plumbing(){
-        return view('servicesmenu.plumbing');
-    }
-    public function structural(){
-        return view('servicesmenu.structural');
-    }
-    public function flooring(){
-        return view('servicesmenu.flooring');
-    }
-    public function carpentry_masonry(){
-        return view('servicesmenu.carpentry-masonry');
-    }
-    public function painting(){
-        return view('servicesmenu.painting');
-    }
+
+    // public function hvac_consultation(){
+    //     return view('servicesmenu.hvac-consultation');
+    // }
 
     public function blogs(){
         $blogs = Blog::where('status','1')->get();
@@ -54,6 +54,17 @@ class HomeController extends Controller
         return view('blogs.blog-details',compact('blogs'));
     }
 
+    public function generateRandomUuid() {
+        $dataToHash = uniqid(); // You can replace this with your actual data
+
+        // Generate an MD5 hash
+        $hash = md5($dataToHash);
+        
+        // Extract the first 8 characters to get a shorter representation
+        $shortUuid = substr($hash, 0, 8);
+    
+        return $shortUuid;
+    }
 
     public function partner_with_us_form_data(Request $request){
         if (User::where('mobile_no', $request->input('mobile_no'))->exists()) {
@@ -68,24 +79,36 @@ class HomeController extends Controller
             }
 
             $user = new User();
+                $user->name = $request->input('firm_name');
+                $user->email = $request->input('email');
                 $user->mobile_no = $request->input('mobile_no');
                 $user->type = 'partner';
             $user->save();
             $userid =  $user->id;
 
+            $partner_id = "Prtnr-".$this->generateRandomUuid();
+
             $partner = new Partner();
-                $partner->users_id        = $userid;
-                $partner->partner_id      = "P".rand(100000,1000);
-                $partner->firm_name       = $request->input('firm_name');
-                $partner->firm_pan        = $request->input('firm_pan');
-                $partner->firm_gst        = $request->input('firm_gst');
-                $partner->firm_start_date = $request->input('firm_start_date');
-                $partner->city            = $request->input('city');
-                $partner->firm_type       = $request->input('firm_type');
-                $partner->major_category  = $request->input('major_category');
-                $partner->project_image   = $image_path;
+            $partner->users_id        = $userid;
+            $partner->partner_id      = $partner_id;
+            $partner->firm_name       = $request->input('firm_name');
+            $partner->firm_pan        = $request->input('firm_pan');
+            $partner->firm_gst        = $request->input('firm_gst');
+            $partner->firm_start_date = $request->input('firm_start_date');
+            $partner->city            = $request->input('city');
+            $partner->firm_type       = $request->input('firm_type');
+            $partner->major_category  = $request->input('major_category');
+            $partner->project_image   = $image_path;
             $partner->save();
-            echo "Success";
+            
+            // Your response data to be sent as JSON
+            $response = [
+                'status' => 'success',
+                'partner_id' => $partner_id,
+            ];
+
+            // Sending a JSON response
+            return response()->json($response);
         }
     }
 
@@ -100,8 +123,13 @@ class HomeController extends Controller
     }
 
     public function home_services(){
-
-        return view('services.home');
+        if (auth()->check()) {
+            $user_logged_in = true;
+        }else{
+            $user_logged_in = false;
+        }
+        $partners = User::where('type','=','partner')->with('partner')->get();
+        return view('services.home',compact('partners','user_logged_in'));
     }
 
     public function office_services(){

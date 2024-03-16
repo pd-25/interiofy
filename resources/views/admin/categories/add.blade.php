@@ -55,6 +55,16 @@
                     </div>
 
                     <div class="row mb-3">
+                        <label for="description" class="col-3 col-form-label">Show Child Category's Image</label>
+                        <div class="col-6">
+                            <select name="show_child_images" class="form-select">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
                         <label for="description" class="col-3 col-form-label">Description</label>
                         <div class="col-6">
                             <textarea name="description" id="editor1" required></textarea>
@@ -67,7 +77,7 @@
                     <div class="row mb-3">
                         <label for="description" class="col-3 col-form-label">Icon</label>
                         <div class="col-6">
-                            <input type="file" name="icon" accept="image/png">
+                            <input type="file" name="icon" accept="image/*">
                         </div>
                     </div>
 

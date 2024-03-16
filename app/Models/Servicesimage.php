@@ -9,5 +9,8 @@ class Servicesimage extends Model
 {
     use HasFactory;
 
-
+    public function serviceTeel()
+    {
+        return $this->belongsTo(Categorie::class, 'categorie_id', 'id');
+    }
 }

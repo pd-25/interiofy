@@ -22,11 +22,15 @@
                                                         <input type="text" class="form-control mobile_no" placeholder="Phone Number" value="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onkeyup="return New_user_registration_otp_generate()"/>
                                                     </div>
 
-                                                    <div class="form-group">
+                                                    <div class="form-group mt-3">
                                                         <input type="text" class="form-control" placeholder="OTP" name="otp" required id="otpnumber"/>
                                                     </div>
 
-                                                    <button id="bfc" class="btn my_newBtn" onclick="return User_otp_verification()">Submit</button>
+                                                    <div class="form-group mt-3">
+                                                        <h5><b>Don't have an account? <u><a href="{{ route('register') }}" style="color: #5074ce; underline">Register</a></u> Here</b></h5>
+                                                    </div>
+
+                                                    <button id="bfc" class="btn my_newBtn mt-3" onclick="return User_otp_verification()">Submit</button>
 
                                                 </div>
                                            </div>
@@ -61,7 +65,7 @@ function New_user_registration_otp_generate(){
                 let timerInterval;
                 Swal.fire({
                 //title: "Auto close alert!",
-                html: "Otp sent to your mobile number.",
+                html: `Otp sent to your mobile number`,
                 timer: 3000,
                 timerProgressBar: true,
                 didOpen: () => {
@@ -85,7 +89,13 @@ function New_user_registration_otp_generate(){
                 // $("#loading-image").hide();
             },
             success: (response) => {
-
+                setTimeout(function(){
+                    Swal.fire({
+                        title: "Success!",
+                        html: `<b>Your OTP is: ${response}</b>`,
+                        icon: "success"
+                    });
+                },4000);    
             },
             error: (response) => {
                 console.log(response);

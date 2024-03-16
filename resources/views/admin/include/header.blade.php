@@ -11,17 +11,19 @@
         <link rel="shortcut icon" href="{{ asset('admin/assets/images/favicon.ico') }}">
 
         <!-- Plugins css -->
-        <link href="{{ asset('admin/assets/libs/dropzone/min/dropzone.min.css') }}" rel="stylesheet" type="text/css">
+        {{-- <link href="{{ asset('admin/assets/libs/dropzone/min/dropzone.min.css') }}" rel="stylesheet" type="text/css">
 
         <!-- plugins -->
-        <link href="{{ asset('admin/assets/libs/flatpickr/flatpickr.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('admin/assets/libs/flatpickr/flatpickr.min.css') }}" rel="stylesheet" type="text/css"> --}}
 
 		<!-- App css -->
 		<link href="{{ asset('admin/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bs-default-stylesheet">
 		<link href="{{ asset('admin/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-default-stylesheet">
 
-		<link href="{{ asset('admin/assets/css/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" disabled="">
-		<link href="{{ asset('admin/assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="app-dark-stylesheet" disabled="">
+		{{-- <link href="{{ asset('admin/assets/css/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" disabled="">
+		<link href="{{ asset('admin/assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="app-dark-stylesheet" disabled=""> --}}
+
+        <link href="{{ asset('admin/assets/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 
 		<!-- icons -->
 		<link href="{{ asset('admin/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
@@ -29,6 +31,8 @@
 
 
         @stack('styles')
+
+        @yield('custom_style')
 
     </head>
 
@@ -44,7 +48,7 @@
 
                         <li class="dropdown notification-list topbar-dropdown">
                             <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                <img src="{{ asset('admin/assets/images/users/avatar-1.jpg') }}" alt="user-image" class="rounded-circle">
                                 <span class="pro-user-name ms-1">
                                     Admin <i class="uil uil-angle-down"></i>
                                 </span>
@@ -65,7 +69,7 @@
 
                                 <div class="dropdown-divider"></div>
 
-                                <a href="pages-logout.html" class="dropdown-item notify-item">
+                                <a href="{{ route('admin.logout') }}" class="dropdown-item notify-item">
                                     <i data-feather="log-out" class="icon-dual icon-xs me-1"></i><span>Logout</span>
                                 </a>
 
@@ -77,12 +81,12 @@
                     <div class="logo-box">
                         <a href="index.html" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="assets/images/logo-dark.png" alt="" height="24">
+                                {{-- <img src="{{ asset('admin/assets/images/logo-dark.png') }}" alt="" height="24"> --}}
                                 <!-- <span class="logo-lg-text-light">Shreyu</span> -->
                             </span>
                             <span class="logo-lg">
-                                <img src="assets/images/logo-dark.png" alt="" height="60">
-                                <!-- <span class="logo-lg-text-light">S</span> -->
+                                {{-- <img src="{{ asset('admin/assets/images/logo-dark.png') }}" alt="" height="60"> --}}
+                                <span class="logo-lg-text-light">Admin Panel</span>
                             </span>
                         </a>
 
@@ -109,7 +113,7 @@
 
                     <!-- User box -->
                     <div class="user-box text-center">
-                        <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle avatar-md">
+                        <img src="{{ asset('admin/assets/images/users/avatar-1.jpg') }}" alt="user-img" title="Mat Helme" class="rounded-circle avatar-md">
                         <div class="dropdown">
                             <a href="javascript: void(0);" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block" data-bs-toggle="dropdown">Nik Patel</a>
                             <div class="dropdown-menu user-pro-dropdown">

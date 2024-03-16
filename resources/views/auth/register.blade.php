@@ -18,27 +18,31 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Name *" name="name" id="name" />
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group mt-3">
                                                 <input type="email" class="form-control" placeholder="Email" name="email" id="email" />
                                             </div>
 
-                                            <div class="form-group">
+                                            <div class="form-group mt-3">
                                                 <input type="text" class="form-control" placeholder="Country" name="country"  id="country" value="India" readonly/>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group mt-3">
                                                 <input type="text" class="form-control" placeholder="City/Pin" name="city"  id="city"/>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group mt-3">
                                                 <input type="text" class="form-control" placeholder="Occupation" name="occupation"  id="occupation"/>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group mt-3">
                                                 <input type="text" id="mobile_code" class="form-control mobile_no" placeholder="Phone Number *" name="mobile_no" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required onkeyup="return New_user_registration_otp_generate()"/>
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group mt-3">
                                                 <input type="text" class="form-control" placeholder="OTP *" name="otp" required id="otp"/>
                                             </div>
 
-                                            <button id="bfc" class="btn my_newBtn" onclick="return UpdateNewUserData()">
+                                            <div class="form-group mt-3">
+                                                <h5><b>Already an User? <u><a href="{{ route('login') }}" style="color: #5074ce;">Login</a></u> Here</b></h5>
+                                            </div>
+
+                                            <button id="bfc" class="btn my_newBtn mt-3" onclick="return UpdateNewUserData()">
                                                 Submit
                                             </button>
 

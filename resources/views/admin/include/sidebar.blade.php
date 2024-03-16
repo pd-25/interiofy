@@ -33,6 +33,8 @@
                                     <ul class="nav-second-level">
                                         <li><a href="{{ route('Categorielist') }}">Services List</a></li>
                                         <li><a href="{{ route('Serviceimagelist') }}">Services Image</a></li>
+                                        <li><a href="{{ route('Servicecategorylist') }}">Services Category</a></li>
+                                        <li><a href="{{ route('Servicebannerlist') }}">Services Banner</a></li>
                                     </ul>
                                 </div>
                             </li>

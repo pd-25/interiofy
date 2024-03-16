@@ -26,7 +26,12 @@
 </head>
 
 <body>
-     <a href="#" class="scroll"><i class="fa-solid fa-angle-up"></i></a>
+     
+     <div class="go_to_form_div_1">
+          <button class="go_to_form_btn_1">Contact us</button>
+      </div>
+  
+       <a href="#" class="scroll"><i class="fa-solid fa-angle-up"></i></a>
      <!-- header start -->
 
      <div class="headerWarp">
@@ -43,7 +48,7 @@
                                 <a id="login_btn" href="{{ route('partner-dashboard') }}" >Dashboard</a> | <a id="login_btn" href="{{ route('logout') }}" >Logout</a>
                             @endif
                          @else
-                                <a id="login_btn" href="{{ route('login') }}" >Login</a> | <a id="login_btn" href="{{ route('register') }}">Register</a>
+                               <a id="login_btn" href="{{ route('login') }}">Login/Register</a>
                          @endif
 
                         </div>
@@ -54,7 +59,7 @@
                     <div class="header-main">
                          <div class="logo">
                               <a href="{{ url('/') }}" class="logomain">
-                                   <img src="{{ asset('images/interify.jpeg') }}" alt="" class="logo_img">
+                                   <img src="{{ asset('images/new-logo.jpeg') }}" alt="" class="logo_img">
                               </a>
                          </div>
                          <div class="open-nav-menu">
@@ -83,30 +88,13 @@
                                         <a href="#" data-toggle="sub-menu">Our Services <i class="plus"></i></a>
                                         <ul class="sub-menu">
 
-                                             <li class="menu-item">
-                                                  <a href="{{ route('interior-decoration') }}">interior decoration</a>
-                                             </li>
-                                             <li class="menu-item">
-                                                  <a href="{{ route('design-plan-architecture') }}">Design, Plan & Architecture</a>
-                                             </li>
-                                             <li class="menu-item">
-                                                  <a href="{{ route('electrical-lighting') }}">Electrical and Lighting work</a>
-                                             </li>
-                                             <li class="menu-item">
-                                                  <a href="{{ route('plumbing') }}">Plumbing Work</a>
-                                             </li>
-                                             <li class="menu-item">
-                                                  <a href="{{ route('structural') }}">Structural</a>
-                                             </li>
-                                             <li class="menu-item">
-                                                  <a href="{{ route('flooring') }}">Flooring Work</a>
-                                             </li>
-                                              <li class="menu-item">
-                                                  <a href="{{ route('carpentry-masonry') }}">Carpentry & Masonry</a>
-                                             </li>
-                                             <li class="menu-item">
-                                                  <a href="{{ route('painting') }}">Painting Work</a>
-                                             </li>
+                                             @foreach($categories as $category)
+
+                                                  <li class="menu-item">
+                                                       <a href="{{ route('serviceDetails',[$category->slug]) }}">{{$category->name}}</a>
+                                                  </li>
+
+                                             @endforeach
                                         </ul>
                                    </li>
                                    <li class="menu-item">

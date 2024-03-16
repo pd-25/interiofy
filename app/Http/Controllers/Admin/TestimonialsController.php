@@ -24,22 +24,33 @@ class TestimonialsController extends Controller
             'rating'            => ['required']
         ]);
 
+        $old_image_path = $request->input('old_image_path');
+
         if($request->file('user_image')){
             $file       = $request->file('user_image');
             $name       = $file->getClientOriginalName();
             $image_path = $file->store('testimonial','public',$name);
         }else{
-            $image_path = '';
+            $image_path = $request->input('old_image_path');
         }
 
+        $olImagePathtoStorage = public_path().'/storage/'.$old_image_path;
+
         $testimonial = new Testimonial();
-            $testimonial->name                      = $request->input('name');
-            $testimonial->designation               = $request->input('designation');
-            $testimonial->description               = $request->input('description');
-            $testimonial->user_image                = $image_path;
-            $testimonial->rating                    = $request->input('rating');
-            $testimonial->status                    = $request->input('status');
+        $testimonial->name                      = $request->input('name');
+        $testimonial->designation               = $request->input('designation');
+        $testimonial->description               = $request->input('description');
+        $testimonial->user_image                = $image_path;
+        $testimonial->rating                    = $request->input('rating');
+        $testimonial->status                    = $request->input('status');
         $testimonial->save();
+
+        if ($testimonial->wasChanged()) {
+            if($request->file('image_path') && !empty($old_image_path) && file_exists($olImagePathtoStorage)):
+                //dd($olImagePathtoStorage);
+                unlink($olImagePathtoStorage);
+            endif;    
+        }
 
         // Additional logic or redirection after successful data storage
         return redirect()->back()->with('success', 'Testimonial stored successfully!');

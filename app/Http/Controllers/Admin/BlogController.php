@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 class BlogController extends Controller
 {
-    function list(){
+    public function list(){
         $blog = Blog::get();
         return view('admin.blog.list',compact('blog'));
     }
 
-    function add(){
+    public function add(){
         return view('admin.blog.add');
     }
 
-    function addpost(Request $request){
+    public function addpost(Request $request){
         $validatedData = $request->validate([
             'title'       => ['required'],
             'description' => ['required'],
@@ -44,16 +44,18 @@ class BlogController extends Controller
         return redirect()->back()->with('success', 'Blogs stored successfully!');
     }
 
-    function edit(Request $request,$id){
+    public function edit(Request $request,$id){
         $blogs = Blog::where('id',$id)->first();
         return view('admin.blog.edit',compact('blogs'));
     }
 
-    function editpost(Request $request,$id){
+    public function editpost(Request $request,$id){
         $validatedData = $request->validate([
             'title'       => ['required'],
             'description' => ['required'],
         ]);
+
+        $old_image_path = $request->input('old_image_path');
 
         if($request->file('blogimage')){
             $file       = $request->file('blogimage');
@@ -62,21 +64,31 @@ class BlogController extends Controller
         }else{
             $image_path = $request->input('old_image_path');
         }
+
+        $olImagePathtoStorage = public_path().'/storage/'.$old_image_path;
+
         //DB::enableQueryLog();
         $blog = Blog::find($id);
-            $blog->title          = $request['title'];
-            $blog->description    = $request['description'];
-            $blog->image          = $image_path;
-            $blog->status         = $request['status'];
-            $blog->blog_post_date = date('Y-m-d');
+        $blog->title          = $request['title'];
+        $blog->description    = $request['description'];
+        $blog->image          = $image_path;
+        $blog->status         = $request['status'];
+        $blog->blog_post_date = date('Y-m-d');
         $blog->save();
         //dd(DB::getQueryLog());
+
+        if ($blog->wasChanged()) {
+            if($request->file('image_path') && !empty($old_image_path) && file_exists($olImagePathtoStorage)):
+                //dd($olImagePathtoStorage);
+                unlink($olImagePathtoStorage);
+            endif;    
+        }
 
         // Additional logic or redirection after successful data storage
         return redirect()->back()->with('success', 'Blogs updated successfully!');
     }
 
-    function destroy($id){
+    public function destroy($id){
         $blog = Blog::find($id);
         $blog->delete();
         return redirect()->back()->with('success', 'Blogs Record Deleted successfully!');

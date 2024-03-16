@@ -47,13 +47,21 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+                
+                @if(session()->has('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session()->get('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                <table id="dataTable" class="table dt-responsive nowrap w-100">
                     <thead>
                         <tr>
                             <th>Sno</th>
                             <th>Icon</th>
                             <th>Services Name</th>
-                            <th>Description</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -68,7 +76,7 @@
                                         <td><?php echo $count; ?></td>
                                         <td><img src="{{ asset('storage/'.$row->icon) }}" width="50" height="50"></td>
                                         <td><?php echo $row->name; ?></td>
-                                        <td><?php echo $row->description; ?></td>
+                                        <td><?php echo ($row->status == "1" ? "Active": "Inactive"); ?></td>
                                         <td>
                                             <div class="btn-group mt-2 me-1">
                                                 <button type="button" class="btn btn-secondary">Action</button>
@@ -80,8 +88,8 @@
                                                     </i>
                                                 </button>
                                                 <div class="dropdown-menu" style="">
-                                                    <a class="dropdown-item" href="{{ route('Categorieaddpost',[$row->id]) }}"><i class="uil uil-edit me-1"></i>Update</a>
-                                                    <a class="dropdown-item" href="javascript:void(0)" onclick="delete_contest_category('<?php echo $row->id; ?>')"><i class="uil uil-trash-alt me-1"></i>Delete</a>
+                                                    <a class="dropdown-item" href="{{ route('Categorieedit',[$row->id]) }}"><i class="uil uil-edit me-1"></i>Update</a>
+                                                    <a class="dropdown-item" href="{{ route('category.destroy',$row->id) }}" onclick="return confirm('Are you sure want to delete this record?')"><i class="uil uil-trash-alt me-1"></i>Delete</a>
                                                 </div>
                                             </div>
                                         </td>

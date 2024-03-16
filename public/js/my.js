@@ -134,7 +134,7 @@ const swiperQuiz = new Swiper(".animeslide", {
               autoplay: true,
          },
          1000: {
-              items: 3
+              items: 2
          }
     }
 });
@@ -160,7 +160,7 @@ $('.testi_slider').owlCarousel({
                autoplay: true,
           },
           1000: {
-               items: 3
+               items: 2
           }
      }
 });
@@ -189,7 +189,7 @@ $('.blog_slider').owlCarousel({
                autoplay: true,
           },
           1000: {
-               items: 3
+               items: 2
           }
      }
  });
@@ -218,13 +218,96 @@ $('.blog_slider').owlCarousel({
                autoplay: true,
           },
           1000: {
-               items: 3
+               items: 2
+          }
+     }
+ });
+ 
+//  =======================================================
+
+$('.six_slider').owlCarousel({
+     loop: true,
+     margin: 0,
+     dots: false,
+     nav: true,
+     mouseDrag: true,
+     autoplay: true,
+     // animateOut: 'slideOutUp',
+     navText: ['<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>'],
+     autoplayTimeout: 4000,
+     autoplaySpeed: 3000,
+     responsive: {
+          0: {
+               items: 2,
+               nav: false,
+               autoplay: true,
+             
+          },
+          600: {
+               items: 4,
+               nav: false,
+               autoplay: true,
+          },
+          1000: {
+               items: 5
           }
      }
  });
 
+// ========================================================
+
+ $('.interior-banner-slider').owlCarousel({
+     loop:true,
+     dots: false,
+     autoplay: true,
+     autoplayTimeout: 8000,
+     autoplaySpeed: 3000,
+     responsive: {
+          0: {
+               items: 1,
+               nav: false,
+               autoplay: true,
+             
+          },
+          600: {
+               items: 1
+          },
+          1000: {
+               items: 1
+          }
+     }
+ })
+
+ $('.main-banner-slider').owlCarousel({
+     loop:true,
+     dots: false,
+     autoplay: true,
+     autoplayTimeout: 8000,
+     autoplaySpeed: 3000,
+     responsive: {
+          0: {
+               items: 1,
+               nav: false,
+               autoplay: true,
+             
+          },
+          600: {
+               items: 1
+          },
+          1000: {
+               items: 1
+          }
+     }
+ })
+
 // -----Country Code Selection
 $("#mobile_code").intlTelInput({
+	initialCountry: "in",
+	separateDialCode: true,
+	// utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
+});
+
+$("#phone_code").intlTelInput({
 	initialCountry: "in",
 	separateDialCode: true,
 	// utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
