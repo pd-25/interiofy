@@ -347,6 +347,7 @@
                                     <form class="form-box">
 
                                         <div class="row">
+                                            <input type="hidden" id="formType" value="">
                                           
                                             <div class="col-md-6 form-group mb-4">
 
@@ -708,6 +709,7 @@
             var firm_gst = $("#firm_gst").val();
             var firm_start_date = $("#firm_start_date").val();
             var city = $("#city").val();
+
             var firm_type = $('input[name="firm_type"]:checked').val();
             var major_category = $('input[name="major_category"]:checked').val();
             var minor_category = $('input[name="minor_category"]:checked').val();
@@ -726,122 +728,6 @@
             form_data.append('minor_category', minor_category);
             form_data.append('photo', photo);
             form_data.append('_token', '{{ csrf_token() }}');
-
-            if (firm_gst == '') {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please enter your Firm GST!",
-                    footer: ''
-                });
-                return false;
-            }
-
-            if (firm_pan == '') {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please enter your Firm Pan!",
-                    footer: ''
-                });
-                return false;
-            }
-            if (firm_name == '') {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please enter your Firm Name!",
-                    footer: ''
-                });
-                return false;
-            }
-            if (firm_start_date == '') {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please enter your Start Date!",
-                    footer: ''
-                });
-                return false;
-            }
-            if (city == '') {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please select your city!",
-                    footer: ''
-                });
-                return false;
-            }
-            if (email == '') {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please enter your email!",
-                    footer: ''
-                });
-                return false;
-            }
-            if (mobile_no == '') {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please enter your mobile no!",
-                    footer: ''
-                });
-                return false;
-            }
-
-            if(firm_type == undefined){
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please choose your Firm Type!",
-                    footer: ''
-                });
-                return false;
-            }
-
-            if(major_category == undefined){
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please choose your Major Category!",
-                    footer: ''
-                });
-                return false;
-            }
-
-            if(minor_category == undefined){
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please choose your Minor Category!",
-                    footer: ''
-                });
-                return false;
-            }
-
-            if(photo == undefined){
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please choose your Project Image!",
-                    footer: ''
-                });
-                return false;
-            }
-
-            if(firm_type == undefined){
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please choose your Firm Type!",
-                    footer: ''
-                });
-                return false;
-            }
-
 
             $.ajax({
                 url: "{{ route('partnerwithusformdata') }}",
