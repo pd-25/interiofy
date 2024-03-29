@@ -515,6 +515,176 @@
     
 </section>
 
-<section class="stepform_Sec
+{{-- <section class="stepform_Sec --}}
+@php
+    $category = 'retail';
+@endphp
+@component('components.booking-component',compact('partners','category'))
+@endcomponent
+
 
 @include('include.footer')
+
+@push('scripts')
+    <script>
+        function SubmitHomeForm() {
+
+
+            var idsArr = [];
+
+            $('.home_requirements').find('input[type=checkbox]:checked').each(function() {
+                idsArr.push(this.value);
+            });
+
+            alert(idsArr);
+            return false;
+
+        }
+
+        function generateRandom8DigitNumber() {
+            // Generate a random number between 10000000 and 99999999
+            var random8DigitNumber = Math.floor(10000000 + Math.random() * 90000000);
+
+            return random8DigitNumber;
+        }
+
+        function saveBookingData() {
+            var formData = $('#contactForm').serialize();
+            // console.log('formData===', formData);
+            $.ajax({
+                url: "{{ route('booking') }}",
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                success: function(response) {
+                    console.log("Success:", response);
+
+                    var bookingID = "ServiceID" + response.service_id;
+
+                    setTimeout(function() {
+                        Swal.fire({
+                            title: "Success!",
+                            html: `<b>Your Booking ID is: ${bookingID}</b><br>Please copy the booking ID or take a screenshots of it.`,
+                            icon: "success"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // Redirect the user to the desired URL
+                                // location.reload();
+                            }
+                        });
+                    }, 4000);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // Handle errors (e.g., display error message)
+                    console.error("Error:", textStatus, errorThrown);
+                    // ... (show error message, log details, etc.)
+                }
+            });
+
+        }
+
+        $(document).on("click", ".selectPartner", function() {
+
+            var index = $(this).data('index');
+            
+            $('.box').each(function() {
+                $(this).removeClass('selectedBox');
+            });
+            var id = $(this).data('id');
+            $('#expert-id').val(id);
+            $(`#partnerBox${index}`).addClass("selectedBox");
+        });
+
+
+        function New_user_registration_otp_generate() {
+            if ($(".mobile_no").val().length == 10) {
+                var mobile = $(".mobile_no").val();
+                var form_data = new FormData();
+                form_data.append("email_or_mobileno", mobile);
+                form_data.append("_token", "{{ csrf_token() }}");
+                $.ajax({
+                    url: "{{ route('otp.generate') }}",
+                    type: "POST",
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    data: form_data,
+                    beforeSend: function() {
+                        let timerInterval;
+                        Swal.fire({
+                            //title: "Auto close alert!",
+                            html: "Otp sent to your mobile number.",
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading();
+                                const timer = Swal.getPopup().querySelector("b");
+                                timerInterval = setInterval(() => {
+                                    timer.textContent = `${Swal.getTimerLeft()}`;
+                                }, 100);
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval);
+                            },
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                console.log("I was closed by the timer");
+                            }
+                        });
+                    },
+                    complete: function() {
+                        // $("#loading-image").hide();
+                    },
+                    success: (response) => {},
+                    error: (response) => {
+                        console.log(response);
+                    },
+                });
+            }
+        }
+
+        // function User_otp_verification(){
+        // var otpnumber = $("#otpnumber").val();
+        // if(otpnumber == ''){
+        //     Swal.fire({
+        //         icon: "error",
+        //         title: "Oops...",
+        //         text: "Please enter OTP",
+        //         footer: ''
+        //     });
+        // }else{
+        //     var mobileoremail = $(".mobile_no").val();
+        //     var form_data  = new FormData();
+        //         form_data.append('otpnumber', otpnumber);
+        //         form_data.append('mobileoremail', mobileoremail);
+        //         form_data.append('_token', '{{ csrf_token() }}');
+        //         $.ajax({
+        //             url: "{{ route('otp.verification') }}",
+        //             type: 'POST',
+        //             cache : false,
+        //             processData: false,
+        //             contentType: false,
+        //             data: form_data,
+        //             success: (response) => {
+
+        //                     if(response == "Invalid OTP"){
+        //                         Swal.fire({
+        //                             icon: "error",
+        //                             title: "Oops...",
+        //                             text: "OTP is incorrect.",
+        //                             footer: ''
+        //                         });
+        //                     }else{
+
+        //                     }
+        //             },
+        //             error: (response) => {
+        //                     console.log(response);
+        //             }
+        //         });
+        //     }
+        // }
+    </script>
+
+

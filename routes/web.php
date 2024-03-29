@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BookingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdmindashboardController;
@@ -46,7 +47,7 @@ Route::get('/services/{slug}', [HomeController::class, 'serviceDetails'])->name(
 Route::get('/home-services', [HomeController::class, 'home_services'])->name('home-services');
 Route::get('/office-services', [HomeController::class, 'office_services'])->name('office-services');
 Route::get('/retail-services', [HomeController::class, 'retail_services'])->name('retail-services');
-
+Route::post('/booking',[HomeController::class,'booking'])->name('booking');
 
 // Route::get('/architecture', [HomeController::class, 'architecture'])->name('architecture');
 // Route::get('/hvac-consultation', [HomeController::class, 'hvac_consultation'])->name('hvac-consultation');
@@ -167,6 +168,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::get('/contactus', [ContactusController::class, 'index'])->name('contactus');
         Route::post('/contactuseditpost/{id}', [ContactusController::class, 'editpost'])->name('contactuseditpost');
 
+        Route::get('/bookings',[BookingController::class,'bookings'])->name('bookings');
 
     });
 });

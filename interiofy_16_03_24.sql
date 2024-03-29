@@ -316,7 +316,7 @@ CREATE TABLE `pincodes` (
   `City` varchar(100) DEFAULT NULL,
   `District` varchar(100) DEFAULT NULL,
   `State` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `pincodes`

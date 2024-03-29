@@ -1,7 +1,5 @@
 @include('admin.include.header')
 
-
-
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">
@@ -59,7 +57,6 @@
                             {{-- <th>Action</th> --}}
                         </tr>
                     </thead>
-
                     <tbody>
                         <?php
                             if(count($user)){
