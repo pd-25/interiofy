@@ -45,16 +45,41 @@ class CustomAuthController extends Controller
         if (User::where('mobile_no', $request->input('mobile_no'))->where('otp',$request->input('otp'))->exists()) {
             $userid = User::where('mobile_no', $request->input('mobile_no'))->first();
             $user = User::find($userid->id);
-                $user->name              = $request['name'];
-                $user->email             = $request['email'];
-                $user->mobile_no         = $request['mobile_no'];
-                $user->country           = $request['country'];
-                $user->city              = $request['city'];
-                $user->occupation        = $request['occupation'];
+
+            if(!empty($user->email)){
+                // Send success response data
+                $data = [
+                    'check' => 'success',
+                    'message' => "We have found that you are already registered and your data was updated successfully.",
+                ];
+            }else{
+                 // Send success response data
+                 $data = [
+                    'check' => 'success',
+                    'message' => "You have been successfully registered with us.",
+                ]; 
+            }
+            
+            $user->name              = $request['name'];
+            $user->email             = $request['email'];
+            $user->mobile_no         = $request['mobile_no'];
+            $user->country           = $request['country'];
+            $user->city              = $request['city'];
+            $user->pin              = $request['pin'];
+            $user->occupation        = $request['occupation'];
             $user->save();
-            echo "Success";
+
+            // Return JSON response
+            return response()->json($data);
         }else{
-            echo "usernotexist";
+             // Send user exists error response data
+             $data = [
+                'check' => 'error',
+                'message' => "You have already been registered with us, please login into your account.",
+            ];
+
+            // Return JSON response
+            return response()->json($data);
         }
     }
     public function create(array $data)

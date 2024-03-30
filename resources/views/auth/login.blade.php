@@ -20,6 +20,9 @@
 
                                                     <div class="form-group">
                                                         <input type="text" class="form-control mobile_no" placeholder="Phone Number" value="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onkeyup="return New_user_registration_otp_generate()"/>
+                                                        <div class="mt-3 d-none" id="sendOtp">
+                                                            <h5><b>Didn't receive any otp? <a href="javascript:void(0);" onclick="return New_user_registration_otp_generate()" style="color: #5074ce;">Send again</b></a></h5>
+                                                        </div>    
                                                     </div>
 
                                                     <div class="form-group mt-3">
@@ -92,10 +95,12 @@ function New_user_registration_otp_generate(){
                 setTimeout(function(){
                     Swal.fire({
                         title: "Success!",
-                        html: `<b>Your OTP is: ${response}</b>`,
+                        html: `<b>Your OTP is: ${response.otp}</b>`,
                         icon: "success"
-                    });
-                },4000);    
+                    }).then((result) => {
+                        $("#sendOtp").removeClass("d-none");
+                    });    
+                },3500);    
             },
             error: (response) => {
                 console.log(response);

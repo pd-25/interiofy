@@ -394,7 +394,7 @@
 
                                             <div class="col-md-6 form-group mb-4">
                                                 <label for="" class="form-label">Mobile No</label>
-                                                <input type="text" name="mobile_no" id="mobile_no"
+                                                <input type="number" minlength="10" maxlength="10" name="mobile_no" id="mobile_no"
                                                     class="form-control" />
                                             </div>
 
@@ -664,7 +664,7 @@
                                 <label for="" class="form-label">Upload Picture of your completed
                                     project</label>
 
-                                    <input type="file" class="form-control" name="projectimage" id="projectimage"/>
+                                    <input type="file" class="form-control" name="partnerportfolio[]" id="partnerportfolio" accept="image/*" multiple/>
 
                             </div>
 
@@ -713,7 +713,8 @@
             var firm_type = $('input[name="firm_type"]:checked').val();
             var major_category = $('input[name="major_category"]:checked').val();
             var minor_category = $('input[name="minor_category"]:checked').val();
-            var photo = $("#projectimage")[0].files[0];
+            var portfolioFiles = document.getElementById('partnerportfolio');
+            var partnerportfolio = portfolioFiles.files;
 
             var form_data = new FormData();
             form_data.append('email', email);
@@ -726,8 +727,14 @@
             form_data.append('firm_type', firm_type);
             form_data.append('major_category', major_category);
             form_data.append('minor_category', minor_category);
-            form_data.append('photo', photo);
+
+            for (var i = 0; i < partnerportfolio.length; i++) {
+                form_data.append('partnerportfolio[]', partnerportfolio[i]);
+            }
+
             form_data.append('_token', '{{ csrf_token() }}');
+
+            console.log(form_data);
 
             $.ajax({
                 url: "{{ route('partnerwithusformdata') }}",

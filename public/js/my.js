@@ -303,6 +303,7 @@ $('.main-banner-slider').owlCarousel({
 // -----Country Code Selection
 $("#mobile_code").intlTelInput({
      initialCountry: "in",
+     onlyCountries: ["in"],
      separateDialCode: true,
      // utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
 });
@@ -468,7 +469,7 @@ function validatePartnerForm(currentStep) {
 
      if(currentStep == 3){
           var minor_category = $('input[name="minor_category"]:checked').val();
-          var photo = $("#projectimage")[0].files[0];
+          var partnerportfolio = $("#partnerportfolio")[0].files[0];
 
           if(minor_category == undefined){
                Swal.fire({
@@ -480,7 +481,7 @@ function validatePartnerForm(currentStep) {
                return false;
            }
 
-           if(photo == undefined){
+           if(partnerportfolio == undefined){
                Swal.fire({
                    icon: "error",
                    title: "Oops...",
