@@ -49,12 +49,10 @@ class AuthOtpController extends Controller
                 ]);
             }else{
                 $user = new User();
-                    $user->email    = $request->email_or_mobileno;
-                    $user->password = Hash::make($otp);
-                    $user->otp      = $otp;
+                $user->email    = $request->email_or_mobileno;
+                $user->password = Hash::make($otp);
+                $user->otp      = $otp;
                 $user->save();
-
-
             }
         } else if(preg_match($mobilePattern, $email)){
             if (User::Where('mobile_no','=',$request->email_or_mobileno)->count() > 0) {
@@ -65,14 +63,29 @@ class AuthOtpController extends Controller
                 ]);
             }else{
                 $user = new User();
-                    $user->mobile_no = $request->email_or_mobileno;
-                    $user->password = Hash::make($otp);
-                    $user->otp = $otp;
+                $user->mobile_no = $request->email_or_mobileno;
+                $user->password = Hash::make($otp);
+                $user->otp = $otp;
                 $user->save();
             }
-            echo $otp;
+
+             // Send user exists error response data
+             $data = [
+                'check' => 'success',
+                'otp' => $otp
+            ];
+
+            // Return JSON response
+            return response()->json($data);
         } else {
-            echo "Invalid entry";
+             // Send user exists error response data
+             $data = [
+                'check' => 'error',
+                'message' => "Invalid entry.",
+            ];
+
+            // Return JSON response
+            return response()->json($data);
         }
     }
 

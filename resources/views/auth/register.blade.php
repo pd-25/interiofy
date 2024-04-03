@@ -26,13 +26,31 @@
                                                 <input type="text" class="form-control" placeholder="Country" name="country"  id="country" value="India" readonly/>
                                             </div>
                                             <div class="form-group mt-3">
-                                                <input type="text" class="form-control" placeholder="City/Pin" name="city"  id="city"/>
+                                                <select name="city" id="city" class="form-control">
+                                                    <option value="" selected>Select City *</option>
+                                                    <option value="Delhi">Delhi</option>
+                                                    <option value="Hyderabad">Hyderabad</option>
+                                                    <option value="Bangalore">Bangalore</option>
+                                                    <option value="Pune">Pune</option>
+                                                    <option value="Thane">Thane</option>
+                                                    <option value="Gurgaon">Gurgaon</option>
+                                                    <option value="Gaziabad">Gaziabad</option>
+                                                    <option value="Lucknow">Lucknow</option>
+                                                    <option value="Faridabad">Faridabad</option>
+                                                    <option value="Mumbai">Mumbai</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <input type="text" class="form-control" placeholder="Enter Pin" name="pin"  id="pin"/>
                                             </div>
                                             <div class="form-group mt-3">
                                                 <input type="text" class="form-control" placeholder="Occupation" name="occupation"  id="occupation"/>
                                             </div>
                                             <div class="form-group mt-3">
                                                 <input type="text" id="mobile_code" class="form-control mobile_no" placeholder="Phone Number *" name="mobile_no" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required onkeyup="return New_user_registration_otp_generate()"/>
+                                                <div class="mt-3 d-none" id="sendOtp">
+                                                    <h5><b>Didn't receive any otp? <a href="javascript:void(0);" onclick="return New_user_registration_otp_generate()" style="color: #5074ce;">Send again</b></a></h5>
+                                                </div> 
                                             </div>
                                             <div class="form-group mt-3">
                                                 <input type="text" class="form-control" placeholder="OTP *" name="otp" required id="otp"/>
@@ -42,7 +60,7 @@
                                                 <h5><b>Already an User? <u><a href="{{ route('login') }}" style="color: #5074ce;">Login</a></u> Here</b></h5>
                                             </div>
 
-                                            <button id="bfc" class="btn my_newBtn mt-3" onclick="return UpdateNewUserData()">
+                                            <button id="submitUserRegister" class="btn my_newBtn mt-3" onclick="return UpdateNewUserData()">
                                                 Submit
                                             </button>
 
@@ -102,7 +120,24 @@
                    // $("#loading-image").hide();
                 },
                 success: (response) => {
-
+                    if(response.check == "success"){
+                        Swal.fire({
+                            title: "Success!",
+                            html: `<b>Your OTP is: ${response.otp}</b>`,
+                            icon: "success"
+                        }).then(function() {
+                            $("#submitUserRegister").prop('disabled',false);
+                            $("#sendOtp").removeClass("d-none");
+                        });
+                    }else{
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: response.message,
+                        }).then(function() {
+                            $("#submitUserRegister").prop('disabled',true);
+                        });
+                    }
                 },
                 error: (response) => {
                     console.log(response);
@@ -119,6 +154,7 @@
         var otp             = $("#otp").val();
         var country         = $("#country").val();
         var city            = $("#city").val();
+        var pin            = $("#pin").val();
         var occupation      = $("#occupation").val();
 
         var form_data  = new FormData();
@@ -128,9 +164,29 @@
         form_data.append('otp', otp);
         form_data.append('country', country);
         form_data.append('city', city);
+        form_data.append('pin', pin);
         form_data.append('occupation', occupation);
         form_data.append('_token', '{{ csrf_token() }}');
 
+        if($("#name").val().length==0){
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please enter your full name!",
+                footer: ''
+            });
+            return false;
+        }
+
+        if($("#city").val().length==0){
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please select your city!",
+                footer: ''
+            });
+            return false;
+        }
 
         if($(".mobile_no").val().length==0){
             Swal.fire({
@@ -139,7 +195,9 @@
                 text: "Please enter your phone no!",
                 footer: ''
             });
+            return false;
         }
+
         if(otp == ''){
             Swal.fire({
                 icon: "error",
@@ -147,7 +205,9 @@
                 text: "Please enter your otp!",
                 footer: ''
             });
+            return false;
         }
+
         if(mobile != '' && otp != ''){
             $.ajax({
                 url: "{{route('register.custom')}}",
@@ -157,21 +217,21 @@
                 contentType: false,
                 data: form_data,
                 success: (response) => {
-                    if(response == "Success"){
+                    if(response.check == "success"){
                         Swal.fire({
-                            title: "Your form!",
-                            text: "is submitted successfully!",
+                            title: "Success!",
+                            text: response.message,
                             icon: "success"
                         }).then(function() {
                             window.location = "{{ route('login') }}";
                         });
-                    }
-                    if(response == "usernotexist"){
+                    }else{
                         Swal.fire({
                             icon: "error",
                             title: "Oops...",
-                            text: "OTP is invalid",
-                            footer: ''
+                            text: response.message,
+                        }).then(function() {
+                            window.location = "{{ route('login') }}";
                         });
                     }
                 },

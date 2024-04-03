@@ -145,6 +145,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
         Route::get('/customer-list', [UserController::class, 'customerlist'])->name('customerlist');
         Route::get('/partner-list', [UserController::class, 'partnerlist'])->name('partnerlist');
+        Route::get('/view-user',[UserController::class,'viewCustomer'])->name('viewcustomer');
+        Route::post('/update-status/',[UserController::class,'updateStatus'])->name('updatestatus');
 
 
         Route::get('/bloglist', [BlogController::class, 'list'])->name('bloglist');

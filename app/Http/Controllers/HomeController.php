@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Contactus;
 use App\Models\Aboutus;
 use App\Models\Partner;
+use App\Models\PartnerPortfolio;
 use App\Models\Blog;
 use App\Models\Categorie;
 
@@ -80,13 +81,6 @@ class HomeController extends Controller
             echo "userexist";
         } else {
 
-            $image_path = '';
-            if ($files = $request->file('photo')) {
-                //insert new file
-                $destinationPath = 'public/partner/'; // upload path
-                $image_path = $request->file('photo')->store($destinationPath);
-            }
-
             $user = new User();
             $user->name = $request->input('firm_name');
             $user->email = $request->input('email');
@@ -104,12 +98,30 @@ class HomeController extends Controller
             $partner->firm_pan = $request->input('firm_pan');
             $partner->firm_gst = $request->input('firm_gst');
             $partner->firm_start_date = $request->input('firm_start_date');
-            $partner->city = $request->input('city');
-            $partner->firm_type = $request->input('firm_type');
-            $partner->major_category = $request->input('major_category');
-            $partner->project_image = $image_path;
+            $partner->city            = $request->input('city');
+            $partner->firm_type       = $request->input('firm_type');
+            $partner->major_category  = $request->input('major_category');
+            $partner->minor_category  = $request->input('minor_category');
+            //$partner->project_image   = $image_path;
             $partner->save();
 
+            // Retrieve the ID of the newly created partner
+            $partnerId = $partner->id;
+
+            // Store uploaded images
+            if($request->file('partnerportfolio')){
+                foreach($request->file('partnerportfolio') as $file)
+                {
+                    $name       = $file->getClientOriginalName();
+                    $image_path = $file->store('partnerportfolio','public',$name);
+    
+                    $partnerportfolio = new PartnerPortfolio();
+                    $partnerportfolio->partner_id  = $partnerId;
+                    $partnerportfolio->image_path    = $image_path;
+                    $partnerportfolio->save();
+                }
+            }
+            
             // Your response data to be sent as JSON
             $response = [
                 'status' => 'success',
