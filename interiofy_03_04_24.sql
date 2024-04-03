@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2024 at 12:11 PM
+-- Generation Time: Apr 03, 2024 at 05:30 PM
 -- Server version: 8.0.33
 -- PHP Version: 8.2.16
 
@@ -100,6 +100,43 @@ CREATE TABLE `blogs` (
 
 INSERT INTO `blogs` (`id`, `title`, `description`, `image`, `blog_post_date`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Blog 1 update', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.sss</p>', 'blog/9LZjpczIAjQl4iycpyvPPfgkdQ0sbHZjqV4qyNdW.webp', '2024-03-02', '1', '2024-02-27 00:05:25', '2024-03-02 15:04:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE `bookings` (
+  `id` int NOT NULL,
+  `user_id` int DEFAULT NULL,
+  `service_id` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `category` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `home_requirements` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  `renovation` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  `service` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `budget` decimal(10,0) DEFAULT NULL,
+  `pincode` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `city` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `time` time DEFAULT NULL,
+  `expert_id` int DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`id`, `user_id`, `service_id`, `category`, `home_requirements`, `renovation`, `service`, `budget`, `pincode`, `city`, `date`, `time`, `expert_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, NULL, '46435292', NULL, NULL, '[\"bedroom\"]', NULL, NULL, NULL, 'Ghaziabad', '1970-01-01', NULL, NULL, NULL, '2024-03-25 11:07:23', '2024-03-25 11:07:23'),
+(2, NULL, '66307845', NULL, NULL, '[\"living_room\",\"kids_room\"]', NULL, 123456, '712401', NULL, '2024-03-29', '07:13:00', 16, NULL, '2024-03-28 20:13:51', '2024-03-28 20:13:51'),
+(3, NULL, '67876931', NULL, NULL, '[\"design_and_plan\",\"kids_room\",\"dining_room\"]', NULL, 123456, '712401', 'Thane', '2024-03-29', '07:16:00', 17, NULL, '2024-03-28 20:16:27', '2024-03-28 20:16:27'),
+(4, NULL, '71063044', NULL, '[\"living_room\",\"terrace\",\"dining_room\"]', 'null', '\"hvac_consultation\"', 123456, '712401', 'Bangalore', '2024-03-29', '07:20:00', 17, NULL, '2024-03-28 20:21:46', '2024-03-28 20:21:46'),
+(5, NULL, '76187683', NULL, '[\"living_room\",\"terrace\",\"dining_room\",\"kids_room\"]', 'null', '\"hvac_consultation\"', 123456, '712401', NULL, '2024-03-29', '07:30:00', 17, NULL, '2024-03-28 20:30:18', '2024-03-28 20:30:18'),
+(6, NULL, '93797540', 'retail', '[\"complete_home_solution\",\"living_room\"]', 'null', '\"architecture\"', 123456, '712401', 'Bangalore', '2024-03-29', '07:59:00', NULL, NULL, '2024-03-28 20:59:39', '2024-03-28 20:59:39');
 
 -- --------------------------------------------------------
 
@@ -247,6 +284,7 @@ CREATE TABLE `partners` (
   `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `firm_type` enum('Public','Private','Individual') COLLATE utf8mb4_unicode_ci NOT NULL,
   `major_category` enum('Interior','Painting','Electrical Lighting','Architectural','Plumbing','Carpentry & Masonry','Flooring','Structural') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `minor_category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `project_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -256,10 +294,35 @@ CREATE TABLE `partners` (
 -- Dumping data for table `partners`
 --
 
-INSERT INTO `partners` (`id`, `users_id`, `firm_name`, `partner_id`, `firm_pan`, `firm_gst`, `firm_start_date`, `city`, `firm_type`, `major_category`, `project_image`, `created_at`, `updated_at`) VALUES
-(9, 16, 'Quinlan Landry', 'Prtnr-293ce613', 'Dicta accusamus sint', 'Quod quisquam minim', '2006-03-09', 'Faridabad', 'Individual', 'Structural', 'public/partner//pgSu19fadIflN5dxQnnIpYj9HzWkc4LZ2zHvqRug.jpg', '2024-03-07 19:10:32', '2024-03-07 19:10:32'),
-(10, 17, 'Madaline Huffman', 'Prtnr-64cba19e', 'Qui in adipisci eaqu', 'Eiusmod fuga Volupt', '2005-01-10', 'Mumbai', 'Individual', 'Electrical Lighting', 'public/partner//FrhSE8z2ZuE2YM08HWuKprEIKvM17iZGGPeUrJvF.jpg', '2024-03-07 19:11:38', '2024-03-07 19:11:38'),
-(11, 18, 'Armando Hodge', 'Prtnr-0e912eb3', 'Dolor cillum ducimus', 'Sed dolorum hic non', '2004-06-30', 'Gaziabad', 'Private', 'Structural', 'public/partner//s6Ryjrjaqh6qxwWyMSOCi1kqLXnD9DJnp4BZBLZX.jpg', '2024-03-07 19:11:55', '2024-03-07 19:11:55');
+INSERT INTO `partners` (`id`, `users_id`, `firm_name`, `partner_id`, `firm_pan`, `firm_gst`, `firm_start_date`, `city`, `firm_type`, `major_category`, `minor_category`, `project_image`, `created_at`, `updated_at`) VALUES
+(9, 16, 'Quinlan Landry', 'Prtnr-293ce613', 'Dicta accusamus sint', 'Quod quisquam minim', '2006-03-09', 'Faridabad', 'Individual', 'Structural', '', 'public/partner//pgSu19fadIflN5dxQnnIpYj9HzWkc4LZ2zHvqRug.jpg', '2024-03-07 19:10:32', '2024-03-07 19:10:32'),
+(10, 17, 'Madaline Huffman', 'Prtnr-64cba19e', 'Qui in adipisci eaqu', 'Eiusmod fuga Volupt', '2005-01-10', 'Mumbai', 'Individual', 'Electrical Lighting', '', 'public/partner//FrhSE8z2ZuE2YM08HWuKprEIKvM17iZGGPeUrJvF.jpg', '2024-03-07 19:11:38', '2024-03-07 19:11:38'),
+(11, 18, 'Armando Hodge', 'Prtnr-0e912eb3', 'Dolor cillum ducimus', 'Sed dolorum hic non', '2004-06-30', 'Gaziabad', 'Private', 'Structural', '', 'public/partner//s6Ryjrjaqh6qxwWyMSOCi1kqLXnD9DJnp4BZBLZX.jpg', '2024-03-07 19:11:55', '2024-03-07 19:11:55'),
+(14, 25, 'Demetria Forbes', 'Prtnr-657e9caa', 'Minima laboriosam d', 'Beatae consectetur', '1985-04-10', 'Thane', 'Individual', 'Flooring', 'Plumbing', NULL, '2024-03-25 10:57:28', '2024-03-25 10:57:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `partner_portfolios`
+--
+
+CREATE TABLE `partner_portfolios` (
+  `id` int NOT NULL,
+  `partner_id` bigint NOT NULL,
+  `image_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `partner_portfolios`
+--
+
+INSERT INTO `partner_portfolios` (`id`, `partner_id`, `image_path`, `created_at`, `updated_at`) VALUES
+(1, 14, 'partnerportfolio/3WpiqmcSb09Y4ss5LDBkvaKHpMN7yJdDS6gzmFQL.png', '2024-03-25 10:57:28', '2024-03-25 10:57:28'),
+(2, 14, 'partnerportfolio/UHwfMQsr5mRaPBYIWLviXXeZsIXTIUpWTGfTjQtI.png', '2024-03-25 10:57:28', '2024-03-25 10:57:28'),
+(3, 14, 'partnerportfolio/gsEmD2HjQUgMI1WlOCmTITGoEAsly5FGyXEvdoYM.png', '2024-03-25 10:57:28', '2024-03-25 10:57:28'),
+(4, 14, 'partnerportfolio/D1HWtj8RrAgqmY8RSK25wrvP5LJ7AlLoJeBv25bA.png', '2024-03-25 10:57:28', '2024-03-25 10:57:28');
 
 -- --------------------------------------------------------
 
@@ -316,7 +379,7 @@ CREATE TABLE `pincodes` (
   `City` varchar(100) DEFAULT NULL,
   `District` varchar(100) DEFAULT NULL,
   `State` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `pincodes`
@@ -40346,6 +40409,7 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `otp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type` enum('user','partner') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int NOT NULL DEFAULT '1',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -40355,12 +40419,13 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `mobile_no`, `country`, `state`, `city`, `pin`, `dob`, `occupation`, `partner_id`, `email_verified_at`, `password`, `otp`, `type`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'test test', 'neel.bandyopadhyay@codeclouds.co.in', '8617304367', 'India', NULL, 'Beaumont', NULL, NULL, NULL, NULL, NULL, '$2y$12$RQWzeRqSOmVm89o53zv17O4Qt04sOumwkg9d6mYk..Qtcp6ugZ52O', '838592', 'user', NULL, '2024-02-12 11:57:44', '2024-03-15 13:22:52'),
-(16, 'Quinlan Landry', 'haquhewi@mailinator.com', 'Eaque non enim lorem', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'partner', NULL, '2024-03-07 19:10:32', '2024-03-07 19:10:32'),
-(17, 'Madaline Huffman', 'cuhibyboc@mailinator.com', 'Cillum earum in nemo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'partner', NULL, '2024-03-07 19:11:38', '2024-03-07 19:11:38'),
-(18, 'Armando Hodge', 'hidevytifo@mailinator.com', 'Neque perferendis re', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$12$XQWnpkqyttN9fJz9jAMS4evP.v7Sl4QTturk/7n6xqUXOuWqn/pkO', NULL, 'partner', NULL, '2024-03-07 19:11:55', '2024-03-07 19:11:55'),
-(19, NULL, NULL, '8617304366', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$12$XQWnpkqyttN9fJz9jAMS4evP.v7Sl4QTturk/7n6xqUXOuWqn/pkO', '736803', 'user', NULL, '2024-03-08 01:09:13', '2024-03-08 01:09:13');
+INSERT INTO `users` (`id`, `name`, `email`, `mobile_no`, `country`, `state`, `city`, `pin`, `dob`, `occupation`, `partner_id`, `email_verified_at`, `password`, `otp`, `type`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'test test', 'neel.bandyopadhyay@codeclouds.co.in', '8617304367', 'India', NULL, 'Beaumont', NULL, NULL, NULL, NULL, NULL, '$2y$12$ZwYBoBYd/.rBGTO9Uqbx9eV7azXv11DFDzFbK4GrgvbFpEi9V0LqO', '453516', 'user', 0, NULL, '2024-02-12 11:57:44', '2024-03-31 09:37:45'),
+(16, 'Quinlan Landry', 'haquhewi@mailinator.com', 'Eaque non enim lorem', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'partner', 1, NULL, '2024-03-07 19:10:32', '2024-03-07 19:10:32'),
+(17, 'Madaline Huffman', 'cuhibyboc@mailinator.com', 'Cillum earum in nemo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'partner', 1, NULL, '2024-03-07 19:11:38', '2024-03-07 19:11:38'),
+(18, 'Armando Hodge', 'hidevytifo@mailinator.com', 'Neque perferendis re', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$12$XQWnpkqyttN9fJz9jAMS4evP.v7Sl4QTturk/7n6xqUXOuWqn/pkO', NULL, 'partner', 1, NULL, '2024-03-07 19:11:55', '2024-03-07 19:11:55'),
+(25, 'test test', 'neel.bandyopadhyay@domain.co.in', '8617304379', 'India', NULL, 'Beaumont', NULL, NULL, 'Web Developer', NULL, NULL, '$2y$12$NmxVUYtDsK2pST6KQ3UW2uWzo24rLpbxq/vPxBteNitq/KD/4RXI.', '868973', 'partner', 1, NULL, '2024-03-25 10:57:28', '2024-03-26 08:00:24'),
+(33, 'test test', 'neel.bandyopadhyay@test.co.in', '8617304377', 'India', NULL, 'Delhi', '123456', NULL, 'Web Developer', NULL, NULL, '$2y$12$.ftUtBdhAe8.dom6H59qzOUTOn0OAbjMNVSOtGsCgBxRLK0.hLHn2', '371824', 'user', 1, NULL, '2024-03-26 21:14:49', '2024-03-27 00:31:34');
 
 -- --------------------------------------------------------
 
@@ -40398,6 +40463,12 @@ ALTER TABLE `admins`
 -- Indexes for table `blogs`
 --
 ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bookings`
+--
+ALTER TABLE `bookings`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -40439,6 +40510,12 @@ ALTER TABLE `migrations`
 ALTER TABLE `partners`
   ADD PRIMARY KEY (`id`),
   ADD KEY `partners_users_id_foreign` (`users_id`);
+
+--
+-- Indexes for table `partner_portfolios`
+--
+ALTER TABLE `partner_portfolios`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `password_resets`
@@ -40528,6 +40605,12 @@ ALTER TABLE `blogs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -40561,7 +40644,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `partners`
 --
 ALTER TABLE `partners`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `partner_portfolios`
+--
+ALTER TABLE `partner_portfolios`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -40603,7 +40692,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `verification_codes`
