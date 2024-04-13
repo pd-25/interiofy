@@ -16,49 +16,37 @@
                                     <div class="col-sm-12 text-center">
                                         <div class="heading">
                                             <h2>help us to know your better</h2>
+                                            <input type="hidden" id="formTypeII" value="HomeRegister">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-area step-login-form">
                                     <div class="form-inner">
-                                        <form>
+                                        <form id="RegisterForm" class="contactForm" method="post">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="First Name"
-                                                    value="" />
+                                                <input type="text" class="form-control" required placeholder="First Name"
+                                                    value="{{old('name')}}" id="firm_name" name="name" />
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Email"
-                                                    name="name">
+                                                <input type="email" class="form-control" placeholder="Enter Email" id="email" name="email" required value="{{old('email')}}" >
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" id="mobile_code" class="mobile_no form-control"
-                                                    placeholder="Phone Number" name="name"
-                                                    onkeypress="New_user_registration_otp_generate()">
+                                                <input type="number" id="mobile_code" class="mobile_no form-control" placeholder="Phone Number" name="mobile_no" onkeypress="New_user_registration_otp_generate()">
                                             </div>
                                             <div class="form-group tuggle toggle-switch">
-
                                                 <div class="tuggle_text">
-
                                                     <p>You can reach me on WhatsApp</p>
-
                                                     <p>
-
                                                         <small>Uncheck to opt-out of upcoming meetings and offer
                                                             alerts</small>
-
                                                     </p>
-
                                                 </div>
-
-                                                <input type="checkbox" id="switch"><label
+                                                <input type="checkbox"  id="switch" ><label
                                                     for="switch">Toggle</label>
-
                                             </div>
                                             <div class="form-group">
-
-                                                <input type="text" class="form-control"
-                                                    placeholder="Enter your current residence pincode" value="">
-
+                                                <input type="number" id="pincode" required class="form-control"
+                                                    placeholder="Enter your current residence pincode" name="pin" value="{{old('pin')}}">
                                             </div>
                                         </form>
                                     </div>
@@ -66,7 +54,7 @@
                             </fieldset>
                         </div>
                     @endguest
-                    <form id="contactForm" method="post" action="#">
+                    <form id="contactForm" class="contactForm" method="post" action="#">
                         @csrf
                         <input type="hidden" name="category" value="{{$category}}">
                         <div class="step well">
@@ -74,28 +62,23 @@
                                 <div class="row justify-content-center">
                                     <div class="col-sm-12 text-center">
                                         <div class="heading">
-                                            <h2>give us your Home requirements</h2>
+                                            <h2>Give us your home requirements</h2>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
-
                                         <div class="wrapper1">
                                             <div class="main_tab">
                                                 <div class="tab-wrapper">
                                                     <ul class="tabs">
                                                         <li class="tab-link active new_tab" data-tab="1">Home</li>
                                                         <li class="tab-link" data-tab="2">Renovation</li>
-
                                                     </ul>
                                                 </div>
-
                                                 <div class="content-wrapper">
-
                                                     <div id="tab-1" class="tab-content active">
                                                         <ul class="select_buttons">
-
                                                             <div class="select">
                                                                 <input type="checkbox" id="item_1"
                                                                     name="home_requirements[]"
@@ -109,7 +92,6 @@
                                                                     <h3>Complete home solution</h3>
                                                                 </label>
                                                             </div>
-
 
                                                             <div class="select">
                                                                 <input type="checkbox" id="item_2"
@@ -217,7 +199,7 @@
                                                                             src="images/living-room.png"
                                                                             alt="">
                                                                     </div>
-                                                                    <h3>Living Room</h3>
+                                                                    <h3>Living Room dasdasd</h3>
                                                                 </label>
                                                             </div>
                                                             <div class="select">
@@ -282,6 +264,7 @@
                                 </div>
                             </fieldset>
                         </div>
+{{-------- PART 2-------}}
                         <div class="step well">
 
                             <fieldset>
@@ -304,7 +287,6 @@
                                                         <img class="img-fluid" src="images/plan.png" alt="">
                                                     </div>
                                                     <h3>architecture</h3>
-
                                                 </label>
                                             </div>
 
@@ -373,7 +355,7 @@
                             </fieldset>
                         </div>
                         <div class="step well">
-
+{{-------- PART 3-------}}
                             <fieldset>
                                 <div class="row justify-content-center">
                                     <div class="col-sm-12 text-center">
@@ -385,24 +367,23 @@
                                 <div class="row justify-content-center">
                                     <div class="">
                                         {{-- <form class="gaping" action="#" method="post"> --}}
-                                        <div class="row">
+                                        <div class="row mb-2">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control"
+                                                    <input type="number" id="budget" class="form-control"
                                                         placeholder="Budget (in lakh)" required name="budget">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Pin Code"
-                                                        required name="pincode">
+                                                    <input type="text" id="clintpincode" maxlength="6" pattern="\d{6}"  class="form-control pincode" placeholder="Pin Code" required name="pincode" onkeypress="getPincodeloaction(value)" onblur="getPincodeloaction(value)">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group redio_checkbox">
-                                            <h3>Major Cities</h3>
-                                            <div class="redioItemRow">
-                                                <div class="redio_item">
+                                            <h3 class="showhide">Major Cities</h3>
+                                            <div class="redioItemRow" id="popularcity">
+                                                {{-- <div class="redio_item">
                                                     <input type='radio' id='Delhi' name='city'
                                                         value='Delhi' />
                                                     <label for='Delhi'><img src="images/delhi.jpg"
@@ -461,7 +442,7 @@
                                                         value="Mumbai">
                                                     <label for='Mumbai'><img src="images/mumbai.jpg"
                                                             alt="">Mumbai</label>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                         {{-- </form> --}}
@@ -472,7 +453,7 @@
                         </div>
 
                         <div class="step well">
-                            <!-- fieldsets -->
+{{-------- PART 4-------}}
                             <fieldset>
                                 <div class="row justify-content-center">
                                     <div class="col-sm-12 text-center">
@@ -485,14 +466,12 @@
                                     <div class="col-sm-9">
                                         <h3 class="heading_b">Book your slot</h3>
                                         {{-- <form class="gaping" action="#" method="post"> --}}
-
-
-                                        <div class="form-group">
-                                            <input type="Date" class="form-control" placeholder=" Select Date"
+                                        <div class="form-group mb-4">
+                                            <input type="Date" id="date" class="form-control" placeholder=" Select Date"
                                                 required name="date">
                                         </div>
                                         <div class="form-group">
-                                            <input type="Time" class="form-control" placeholder=" Select Time"
+                                            <input type="Time" id="time" class="form-control" placeholder=" Select Time"
                                                 required name="time">
                                         </div>
                                         {{-- </form> --}}
@@ -502,7 +481,7 @@
                             </fieldset>
                         </div>
                         <div class="step well">
-
+{{-------- PART 5-------}}
                             <fieldset>
                                 <div class="row justify-content-center">
                                     <div class="col-sm-12 text-center">
@@ -560,7 +539,6 @@
                                                                 data-index="{{ $index + 1 }}" data-id="{{$partner->id}}"> <button
                                                                     class="sert" type="button">Select Now</button>
                                                             </div>
-
                                                         </div>
                                                     </div>
                                                 @endforeach
@@ -578,8 +556,8 @@
                             <button class="action back btn btn-outline-info" type="button">Back</button>
                             <button class="action next btn btn-outline-success" type="button">Next</button>
                             <button class="action submit btn btn-success" onClick="saveBookingData()"
-                                type="button">Book Your
-                                Service</button>
+                                type="button">Book Your Service</button>
+                                <img src="" alt="">
                         </div>
                     </form>
                 </div>
@@ -591,3 +569,75 @@
         <!-- /.MultiStep Form -->
     </div>
 </section>
+@push('scripts')
+    <script>
+        $(document).ready(function(){
+            $('.showhide').hide();
+            $('.pincode').attr('autocomplete','off');
+            $('.pincode').on("cut copy paste",function(e) {
+                e.preventDefault();
+            });
+
+            $(".redio_item").click(function(){
+                $('.redio_item').find(".activeloaction").removeClass("activeloaction");
+                $(this).parent().addClass("activeloaction");
+            });
+        });
+        function getPincodeloaction(pincode){
+            if(pincode.length == 6){
+                $.ajax({
+                    type: 'GET',
+                    url: 'https://api.postalpincode.in/pincode/'+pincode,
+                    dataType: 'json',
+                    success: function (response) {
+                        $('.showhide').show();
+                        var response = response[0].PostOffice;
+                        $('#popularcity').find('.redio_item').remove();
+                        var selOpts = "";
+                        for (i=0;i<response.length;i++)
+                        {
+                            var block = response[i]['Name'];
+                            var city = response[i]['Region'];
+                            var image = "<img src='images/city-building.png' alt='No imges'>"
+                            
+                            if(city=='Calcutta'){
+                                city = 'Kolkata';
+                                image  = "<img src='images/Kolkata_City.jpg' alt='No imges'>"
+                            }else if(city=='Hyderabad City'){
+                                city = 'Hyderabad';
+                                image  = "<img src='images/hyderabad.jpg' alt='No imges'>"
+                            }else if(city=='Delhi'){
+                                image  = "<img src='images/delhi.jpg' alt='No imges'>"
+                            }else if(city=='Bangalore HQ'){
+                                city='Bangalore'
+                                image  = "<img src='images/banglore.jpg' alt='No imges'>"
+                            }else if(city=='Pune'){
+                                image  = "<img src='images/pune.jpg' alt='No imges'>"
+                            }else if(city=='Ambala  HQ'){
+                                city='Ambala'
+                                image  = "<img src='images/gurgaon.jpg' alt='No imges'>"
+                            }else if(city=='Lucknow  HQ'){
+                                city='Lucknow'
+                                image  = "<img src='images/gaziabad.jpg' alt='No imges'>"
+                            }
+                            else if(city=='Mumbai'){
+                                image  = "<img src='images/mumbai.jpg' alt='No imges'>"
+                            }
+                            
+                            selOpts += "<div class='redio_item'><input type='radio' id='"+block+"'name='city'value='"+block+'/'+city+"'/><label class='addcolor' for='"+block+"'>"+image+""+block+'<br/>'+city+"</label></div>" ;
+                        }
+                        $('#popularcity').append(selOpts);
+
+                        $(".addcolor").click(function(){
+                            $('.addcolor').removeClass("activeloaction");
+                            $(this).addClass("activeloaction");
+                        });
+                    },error:function(){ 
+                        console.log(response);
+                    }
+                });
+            }
+            return false
+        }
+    </script>
+@endpush

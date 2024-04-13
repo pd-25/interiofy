@@ -70,29 +70,18 @@
 <!--===================== Home Interior Banner  ===================== -->
 
 <div class="interior-banner">
-
     <div class="interior-banner-slider owl-carousel owl-theme">
-
         <div class="item banner-item">
-
             <a href=""><img src="images/about-us.jpg" alt=""></a>
-
             <div class="banner-item-info">
-
                 <h1 style="color:white">Home</h1>
-
                 <p style="color:white">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used
                     to demonstrate the visual form of a document or a typeface without relying on meaningful content.
                     Lorem ipsum may be used as a placeholder before the final copy is available.</p>
-
             </div>
-
         </div>
-
         <div class="item banner-item">
-
             <a href=""><img src="images/architectural-01.jpg" alt=""></a>
-
             <div class="banner-item-info">
 
                 <h1 style="color:white">Home</h1>
@@ -104,25 +93,16 @@
             </div>
 
         </div>
-
         <div class="item banner-item">
-
             <a href=""><img src="images/architectural-02.jpg" alt=""></a>
-
             <div class="banner-item-info">
-
                 <h1 style="color:white">Home</h1>
-
                 <p style="color:white">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used
                     to demonstrate the visual form of a document or a typeface without relying on meaningful content.
                     Lorem ipsum may be used as a placeholder before the final copy is available.</p>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 <!--===================== End Home Interior Banner  ===================== -->
@@ -148,25 +128,18 @@
 <!-- /content area ends -->
 
 <!-- step form sec start  -->
-
 <section class="step_form_sec ">
-
     <div class="container">
-
         <div class="row">
             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
                 <div class="circle_div_1 step_icon_row row_1">
                     <a href="architecture.html" class="step_icon_box_1 color_1 circle_1">
-
                         <div class="step_icon">
-
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" x="0" y="0"
                                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"
                                 class="">
-
                                 <g>
-
                                     <path
                                         d="M471.982 417.008Q472 416.5 472 416a32.036 32.036 0 0 0-32-32V236l28.8-21.6a8 8 0 0 0-.08-12.859L400 151.322V64a8 8 0 0 0 8-8V24a8 8 0 0 0-8-8h-80a8 8 0 0 0-8 8v32a8 8 0 0 0 8 8v28.861l-59.28-43.32a8 8 0 0 0-9.44 0l-208 152a8 8 0 0 0-.08 12.859L72 236v148a32.036 32.036 0 0 0-32 32q0 .5.018 1.008A32 32 0 0 0 48 480h416a32 32 0 0 0 7.982-62.992ZM328 32h64v16h-64Zm8 72V64h48v75.63L335.243 104Zm-80-38.092 194.555 142.176-18.628 13.971L260.706 97.53a8 8 0 0 0-9.412 0L80.073 222.055l-18.628-13.971ZM32 448a16.019 16.019 0 0 1 15.76-16h.019c.409.057.818.106 1.235.133a8 8 0 0 0 8.023-10.716A15.727 15.727 0 0 1 56 416a16.019 16.019 0 0 1 16-16v64H48a16.019 16.019 0 0 1-16-16Zm344 16h-96V288h96Zm16 0V280a8 8 0 0 0-8-8H272a8 8 0 0 0-8 8v184H88V236.074l168-122.182 168 122.182V464Zm72 0h-24v-64a16.019 16.019 0 0 1 16 16 15.727 15.727 0 0 1-1.037 5.421 8 8 0 0 0 8.023 10.716c.417-.027.826-.076 1.235-.133h.019a16 16 0 0 1-.24 32Z"
                                         fill="#000000" opacity="1" data-original="#000000" class=""></path>
@@ -177,15 +150,10 @@
 
                                     <circle cx="304" cy="368" r="8" transform="rotate(-67.5 304 368)"
                                         fill="#000000" opacity="1" data-original="#000000" class=""></circle>
-
                                 </g>
-
                             </svg>
-
                         </div>
-
                         <h3 class="step_name">Architecture</h3>
-
                     </a>
                 </div>
             </div>
@@ -193,16 +161,12 @@
             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
                 <div class="circle_div_1 step_icon_row row_1">
                     <a href="hvac-consultation.html" class="step_icon_box_1 color_2 circle_2">
-
                         <div class="step_icon">
-
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0"
                                 viewBox="0 0 16.933 16.933" style="enable-background:new 0 0 512 512"
                                 xml:space="preserve" class="">
-
                                 <g>
-
                                     <path
                                         d="M5.821.53c-1.168 0-2.117.948-2.117 2.117v.993a.806.806 0 0 0-.264.593c0 .483.388.803.811.793.058.397.243.755.512 1.03v1.087c-.934 0-1.739.54-2.129 1.323h-.517a.798.798 0 0 0-.794.794v1.058c-.005.358.534.358.53 0V9.26c0-.151.113-.265.264-.265h7.937c.151 0 .265.114.265.265v4.497H1.852V12.7a.265.265 0 1 0-.53 0v1.587c0 .193.057.373.149.53H.794a.265.265 0 0 0-.266.263v1.059c0 .147.119.266.266.265H16.14c.146 0 .264-.12.263-.265v-1.06a.265.265 0 0 0-.263-.263h-1.86a1.31 1.31 0 0 0 .245-.529h.293a.797.797 0 0 0 .792-.793v-.53a.265.265 0 0 0-.263-.265h-.795v-.263a.265.265 0 0 0-.264-.266h-2.646a.265.265 0 0 0-.264.266v1.588c0 .298.104.57.272.792h-.95c.092-.156.148-.336.148-.529V9.26a.798.798 0 0 0-.794-.794h-.518a2.374 2.374 0 0 0-2.128-1.323V6.056c.24-.226.452-.61.51-1.028.51 0 .813-.398.813-.795a.78.78 0 0 0-.264-.592l-.001-.994A2.118 2.118 0 0 0 6.35.529zm0 .528h.53c.884 0 1.585.704 1.585 1.589v.792h-.154l-.716-.717a.265.265 0 0 0-.373 0s-.74.717-1.666.717h-.794v-.792a1.58 1.58 0 0 1 1.588-1.589zM6.865 3.27l.543.543v.95c0 .737-.585 1.322-1.323 1.322a1.314 1.314 0 0 1-1.322-1.323V3.97h.264c.906 0 1.56-.488 1.838-.699zM4.233 4.498a.264.264 0 0 1-.001-.53zm3.97-.265a.262.262 0 0 1-.265.265v-.53c.152.002.264.121.264.265zm-2.911 2.2a1.838 1.838 0 0 0 1.587 0v.71s-.002.53-.794.53-.793-.53-.793-.53zm-.36 1.24s.256.529 1.153.529c.898 0 1.154-.53 1.154-.53h.17a1.84 1.84 0 0 1 1.516.794h-5.68a1.84 1.84 0 0 1 1.518-.793zm7.499 2.378a.265.265 0 0 0-.26.267v1.059c-.008.36.537.36.529 0v-1.059a.264.264 0 0 0-.27-.267zm1.058 0a.265.265 0 0 0-.26.267v1.059c-.007.36.538.36.53 0v-1.059a.264.264 0 0 0-.27-.267zm-7.404.533c-.435 0-.793.36-.793.795s.358.793.793.793c.435 0 .795-.358.795-.793s-.36-.795-.795-.795zm-4.502.525a.264.264 0 0 0-.26.268v.264c-.005.358.534.358.53 0v-.264a.265.265 0 0 0-.27-.268zm4.502.005c.15 0 .266.116.266.265s-.117.264-.266.264-.264-.115-.264-.264.115-.265.264-.265zm5.82 1.585h2.117v1.325a.785.785 0 0 1-.792.793h-.53a.786.786 0 0 1-.795-.793zm2.647.53h.53v.265a.257.257 0 0 1-.264.264h-.266zm-12.7 1.058h8.467c0 .298-.232.53-.53.53H2.382a.522.522 0 0 1-.529-.53zm-.794 1.059h14.816v.53H1.058z"
                                         fill="#000000" opacity="1" data-original="#000000"></path>
@@ -249,7 +213,6 @@
             </div>
             <div class="col-lg-2 col-md-3 col-sm-12 p-0"></div>
         </div>
-
         <div class="row">
             <div class="col-lg-2 col-md-3 col-sm-12 p-0"></div>
             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
@@ -347,10 +310,7 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-
 </section>
 
 <section class="services_section">
@@ -515,17 +475,12 @@
 @push('scripts')
     <script>
         function SubmitHomeForm() {
-
-
             var idsArr = [];
-
             $('.home_requirements').find('input[type=checkbox]:checked').each(function() {
                 idsArr.push(this.value);
             });
-
             alert(idsArr);
             return false;
-
         }
 
         function generateRandom8DigitNumber() {
@@ -536,18 +491,15 @@
         }
 
         function saveBookingData() {
-            var formData = $('#contactForm').serialize();
-            // console.log('formData===', formData);
+            var formData = $('.contactForm').serialize();
             $.ajax({
                 url: "{{ route('booking') }}",
                 type: "POST",
                 data: formData,
                 dataType: "json",
                 success: function(response) {
-                    console.log("Success:", response);
-
+                    // console.log("Success:", response);
                     var bookingID = "ServiceID" + response.service_id;
-
                     setTimeout(function() {
                         Swal.fire({
                             title: "Success!",
@@ -559,7 +511,7 @@
                                 // location.reload();
                             }
                         });
-                    }, 4000);
+                    }, 2000);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     // Handle errors (e.g., display error message)

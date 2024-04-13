@@ -69,7 +69,7 @@ function New_user_registration_otp_generate(){
                 Swal.fire({
                 //title: "Auto close alert!",
                 html: `Otp sent to your mobile number`,
-                timer: 3000,
+                timer: 2000,
                 timerProgressBar: true,
                 didOpen: () => {
                     Swal.showLoading();
@@ -100,7 +100,7 @@ function New_user_registration_otp_generate(){
                     }).then((result) => {
                         $("#sendOtp").removeClass("d-none");
                     });    
-                },3500);    
+                },2000);    
             },
             error: (response) => {
                 console.log(response);

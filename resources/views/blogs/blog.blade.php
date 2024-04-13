@@ -74,7 +74,26 @@
                      </div>
                      <div class="blog_div_3 mt-5 mb-5">
                          <div class="row">
-                             <div class="col-lg-4 col-md-4 col-12 mb-5">
+                            @if (!@empty($blog))
+                                @foreach ($blog as $item)
+                                    <div class="col-lg-4 col-md-4 col-12 mb-5">
+                                        <div class="blog_div_3">
+                                            <div class="holiday_pack_slide">
+                                                <a href="#">
+                                                    <div class="holiday_pack_area">
+                                                            <div class="pack_image">
+                                                                <img class="img-fluid" src="{{ asset('storage/'.$item->image) }}" alt="No Images">
+                                                            </div>
+                                                            <h3 class="title_blog">{{@$item->title}}</h3>
+                                                            <p>{!! @$item->description !!}</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+                             {{-- <div class="col-lg-4 col-md-4 col-12 mb-5">
                                  <div class="blog_div_3">
                                      <div class="holiday_pack_slide">
 
@@ -208,34 +227,7 @@
         
                                       </div>
                                  </div>
-                             </div>
-                             <div class="col-lg-4 col-md-4 col-12 mb-5">
-                                 <div class="blog_div_3">
-                                     <div class="holiday_pack_slide">
-
-                                           <a href="#">
-        
-                                                <div class="holiday_pack_area">
-        
-                                                     <div class="pack_image">
-        
-                                                          <img class="img-fluid" src="images/Bedroom.jpg" alt="">
-        
-                                                     </div>
-        
-                                                     <h3 class="title_blog">Lorem ipsum dolor sit amet.</h3>
-        
-                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque
-        
-                                                          neque quis quia et minus!</p>
-        
-                                                </div>
-        
-                                           </a>
-        
-                                      </div>
-                                 </div>
-                             </div>
+                             </div> --}}
                          </div>
                      </div>
                  </div>

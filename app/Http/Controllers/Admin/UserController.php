@@ -49,4 +49,11 @@ class UserController extends Controller
 
         return response()->json(['message' => 'User updated successfully']);
     }
+
+    public function partnerdetails ($id)
+    {
+        $user = User::with('partner')->find($id);
+        return view('admin.user.partner_edit', compact('user'));
+
+    }
 }

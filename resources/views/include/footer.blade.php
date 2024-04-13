@@ -142,7 +142,7 @@
                                       <div class="ftr_heading">
                                            <h3>Be a Partner</h3>
                                       </div>
-                                      <h3 class="ftr_text">Don’t miss our future updates! Get Subscribed Today!</h3>
+                                      <h3 class="ftr_text">Navigate your space design from start to finish effortlessly with our tech-centric platform. Seamlessly connect instantly with India's foremost designers, skilled contractors, and trusted vendors for a space that reflects your vision and style.</h3>
 
                                  </div>
                             </div>

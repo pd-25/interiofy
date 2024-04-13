@@ -99,7 +99,7 @@
                                                     </i>
                                                 </button>
                                                 <div class="dropdown-menu" style="">
-                                                    <a class="dropdown-item" href="{{ route('Categorieaddpost',[$row->id]) }}"><i class="uil uil-edit me-1"></i>View</a>
+                                                    <a class="dropdown-item" href="{{ route('partnerdetails',[$row->user->id]) }}"><i class="uil uil-edit me-1"></i>View</a>
                                                     {{-- <a class="dropdown-item" href="javascript:void(0)" onclick="delete_contest_category('<?php echo $row->id; ?>')"><i class="uil uil-trash-alt me-1"></i>Delete</a> --}}
                                                 </div>
                                             </div>

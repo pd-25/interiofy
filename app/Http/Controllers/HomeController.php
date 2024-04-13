@@ -11,6 +11,9 @@ use App\Models\Partner;
 use App\Models\PartnerPortfolio;
 use App\Models\Blog;
 use App\Models\Categorie;
+use App\Models\Enquries;
+use Stevebauman\Location\Facades\Location;
+
 
 class HomeController extends Controller
 {
@@ -51,9 +54,7 @@ class HomeController extends Controller
 
     public function blogs()
     {
-        $blogs = Blog::where('status', '1')->get();
-        //dd($blogs);
-        return view('blogs.blog', compact('blogs'));
+        return view('blogs.blog');
     }
 
     public function blog_details(Request $request, $id)
@@ -77,38 +78,35 @@ class HomeController extends Controller
 
     public function partner_with_us_form_data(Request $request)
     {
-        if (User::where('mobile_no', $request->input('mobile_no'))->exists()) {
-            echo "userexist";
+        $request->validate([
+            'firm_name' => 'required',
+            'mobile_no' => 'required|min:11|numeric',
+            'email' => 'required|email|unique:users',
+        ]);
+        if (User::where('mobile_no', $request->mobile_no)->exists()) {
+            return response()->json("userexist");
         } else {
-
             $user = new User();
-            $user->name = $request->input('firm_name');
-            $user->email = $request->input('email');
-            $user->mobile_no = $request->input('mobile_no');
+            $user->name = $request->firm_name;
+            $user->email = $request->email;
+            $user->mobile_no = $request->mobile_no;
             $user->type = 'partner';
             $user->save();
             $userid = $user->id;
-
             $partner_id = "Prtnr-" . $this->generateRandomUuid();
-
             $partner = new Partner();
             $partner->users_id = $userid;
             $partner->partner_id = $partner_id;
-            $partner->firm_name = $request->input('firm_name');
-            $partner->firm_pan = $request->input('firm_pan');
-            $partner->firm_gst = $request->input('firm_gst');
-            $partner->firm_start_date = $request->input('firm_start_date');
-            $partner->city            = $request->input('city');
-            $partner->firm_type       = $request->input('firm_type');
-            $partner->major_category  = $request->input('major_category');
-            $partner->minor_category  = $request->input('minor_category');
-            //$partner->project_image   = $image_path;
+            $partner->firm_name = $request->firm_name;
+            $partner->firm_pan = $request->firm_pan;
+            $partner->firm_gst = $request->firm_gst;
+            $partner->firm_start_date = $request->firm_start_date;
+            $partner->city = $request->city;
+            $partner->firm_type = $request->firm_type;
+            $partner->major_category = $request->major_category;
+            $partner->minor_category = $request->minor_category;
             $partner->save();
-
-            // Retrieve the ID of the newly created partner
             $partnerId = $partner->id;
-
-            // Store uploaded images
             if($request->file('partnerportfolio')){
                 foreach($request->file('partnerportfolio') as $file)
                 {
@@ -121,14 +119,10 @@ class HomeController extends Controller
                     $partnerportfolio->save();
                 }
             }
-            
-            // Your response data to be sent as JSON
             $response = [
                 'status' => 'success',
                 'partner_id' => $partner_id,
             ];
-
-            // Sending a JSON response
             return response()->json($response);
         }
     }
@@ -143,6 +137,37 @@ class HomeController extends Controller
     {
         $contact = Contactus::first();
         return view('contactus.index', compact('contact'));
+    }
+
+    public function storeEnquries(Request $request)
+    {
+        $request->validate([
+            'fullName' => 'required',
+            'phoneNo' => 'required|min:11|numeric',
+            'email' => 'required|email:rfc,dns',
+            'address' => 'required',
+        ]);
+        $enquiry = new Enquries;
+        $ip = request()->ip();
+        $enquiry->ip = $ip;
+        $currentUser = Location::get($ip);
+        if($currentUser){
+            $enquiry->city = $currentUser->cityName;
+            $enquiry->state = $ $currentUser->regionName;
+            $enquiry->latitude = $currentUser->latitude;
+            $enquiry->longitude = $currentUser->longitude;
+        }
+        $enquiry->fullName = $request->fullName;
+        $enquiry->phoneNo = $request->phoneNo;
+        $enquiry->email = $request->email;
+        $enquiry->status = 0;
+        $enquiry->address = $request->address;
+        if($enquiry->save())
+        {
+            return redirect()->back()->with('success', 'Thank you we have received your enquiry. We will contact you asap.');
+        }else{
+            return redirect()->back()->with('error', 'We encountered an error! Please try again later. Thanks.');
+        }
     }
 
     public function home_services()
@@ -170,31 +195,49 @@ class HomeController extends Controller
 
     public function booking(Request $request)
     {
-        // dd($request->home_requirements);
         $timestampPart = substr(time(), -4);
-
         $randomPart = mt_rand(1000, 9999);
 
-        $input = array();
-
-        $input['budget'] = $request->budget;
-        $input['category'] = $request->category;
-        $input['date'] = date('Y-m-d', strtotime($request->date));
-        $input['time'] = $request->time;
-        $input['home_requirements'] = json_encode($request->home_requirements);
-        $input['renovation'] = json_encode($request->renovation);
-        $input['service'] = json_encode($request->services);
-        $input['pincode'] = $request->pincode;
-        $input['expert_id'] = $request->expert_id;
-        $input['city'] = $request->city;
-        $input['user_id'] = auth()->users->id ?? null;
-        $input['service_id'] = $timestampPart . $randomPart;
-        $booking = Booking::create($input);
-
-        $service_id = $input['service_id'];
-
+        $userId = null;
+        if($request->mobile_no && $request->name && $request->email && $request->pin)
+        {
+            $userDetails = User::where('mobile_no', $request->mobile_no)->first();
+            if($userDetails){
+                return response()->json([
+                    'service_id' => " We have found that you are already registered. Please login for booking services"
+                ]);
+            }else{
+                $user = new User;
+                $user->name = $request->name;
+                $user->mobile_no = $request->mobile_no;
+                $user->email = $request->email;
+                $user->pin = $request->pin;
+                $user->save();
+                $userId = $user->id;
+            }
+        }
+        $booking = new Booking;
+        $booking->budget = $request->budget;
+        $booking->category = $request->category;
+        $booking->date = date('Y-m-d', strtotime($request->date));
+        $booking->time = $request->time;
+        if($request->home_requirements){
+            $booking->home_requirements = json_encode($request->home_requirements);
+        }
+        if($request->renovation){
+            $booking->renovation = json_encode($request->renovation);
+        }
+        $booking->service = $request->services;
+        $booking->pincode = $request->pincode;
+        $booking->expert_id = $request->expert_id;
+        $city = explode("/",$request->city);
+        $booking->block = $city[0];
+        $booking->city = $city[1];
+        $booking->service_id = $timestampPart . $randomPart;
+        $booking->user_id = $userId == null ? auth()->user()->id : $userId;
+        $booking->save();
         return response()->json([
-            'service_id' => $service_id
+            'service_id' => $booking->service_id
         ]);
     }
 

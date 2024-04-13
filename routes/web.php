@@ -19,6 +19,8 @@ use App\Http\Controllers\Admin\ContactusController;
 use App\Http\Controllers\Admin\AboutusController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\HomeBannerController;
+use App\Http\Controllers\EnquriesController;
 use App\Http\Middleware\AdminAuthenticated;
 use App\Http\Middleware\RedirectIfAdminAuthenticated;
 use App\Models\Blog;
@@ -42,6 +44,9 @@ Route::get('/partner-with-us', [HomeController::class, 'partner_with_us'])->name
 Route::post('/partner-with-us-form-data', [HomeController::class, 'partner_with_us_form_data'])->name('partnerwithusformdata');
 Route::get('/about-us', [HomeController::class, 'about_us'])->name('about-us');
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
+
+Route::post('/contact-us', [HomeController::class, 'storeEnquries'])->name('storeEnquries');
+
 Route::get('/services/{slug}', [HomeController::class, 'serviceDetails'])->name('serviceDetails');
 
 Route::get('/home-services', [HomeController::class, 'home_services'])->name('home-services');
@@ -68,6 +73,10 @@ Route::post('custom-registration', [CustomAuthController::class, 'customRegistra
 
 Route::get('/user-dashboard', [DashboardController::class, 'index'])->name('user-dashboard');
 Route::get('/partner-dashboard', [DashboardController::class, 'partner_dashboard'])->name('partner-dashboard');
+Route::get('/partner-renovation-pending', [DashboardController::class, 'partner_renovation_pending'])->name('partner_renovation_pending');
+Route::get('/partner-renovation-edit/{id}', [DashboardController::class, 'partner_renovation_edit'])->name('partner_renovation_edit');
+Route::post('/partner-renovation-update', [DashboardController::class, 'updateRequestdetails'])->name('updateRequestdetails');
+Route::get('/partner-renovation-completed', [DashboardController::class, 'partner_renovation_completed'])->name('partner_renovation_completed');
 
 
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
@@ -146,7 +155,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::get('/customer-list', [UserController::class, 'customerlist'])->name('customerlist');
         Route::get('/partner-list', [UserController::class, 'partnerlist'])->name('partnerlist');
         Route::get('/view-user',[UserController::class,'viewCustomer'])->name('viewcustomer');
-        Route::post('/update-status/',[UserController::class,'updateStatus'])->name('updatestatus');
+
+        Route::get('/partner-details/{id}',[UserController::class,'partnerdetails'])->name('partnerdetails');
+
+        Route::post('/update-status',[UserController::class,'updateStatus'])->name('updatestatus');
 
 
         Route::get('/bloglist', [BlogController::class, 'list'])->name('bloglist');
@@ -170,8 +182,28 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::get('/contactus', [ContactusController::class, 'index'])->name('contactus');
         Route::post('/contactuseditpost/{id}', [ContactusController::class, 'editpost'])->name('contactuseditpost');
 
-        Route::get('/bookings',[BookingController::class,'bookings'])->name('bookings');
+        Route::get('/home-bookings',[BookingController::class,'homebookings'])->name('homebookings');
+        Route::get('/office-bookings',[BookingController::class,'officebookings'])->name('officebookings');
+        Route::get('/retail-bookings',[BookingController::class,'retailbookings'])->name('retailbookings');
+        Route::get('/bookings-details/{id}',[BookingController::class,'bookingsUpdate'])->name('bookingsUpdate');
+        Route::post('/booking-update', [BookingController::class, 'updatebookingdetails'])->name('updatebookingdetails');
+        Route::get('/bookings-delete/{id}',[BookingController::class,'bookingsDelete'])->name('bookingsDelete');
 
+        Route::get('/home-banner',[HomeBannerController::class,'index'])->name('homebanner.index');
+        Route::get('/home-banner-create',[HomeBannerController::class,'create'])->name('homebanner.create');
+        Route::post('/home-banner-store',[HomeBannerController::class,'store'])->name('homebanner.store');
+        Route::get('/home-banner-destroy/{id}',[HomeBannerController::class,'destroy'])->name('homebanner.destroy');
+
+        
+        Route::get('/sub-banner',[HomeBannerController::class,'Subindex'])->name('subbanner.index');
+        Route::get('/sub-banner-create',[HomeBannerController::class,'Subcreate'])->name('subbanner.create');
+        Route::post('/sub-banner-store',[HomeBannerController::class,'substore'])->name('subbanner.store');
+        Route::get('/sub-banner-destroy/{id}',[HomeBannerController::class,'subdestroy'])->name('subbanner.destroy');
+
+        Route::get('/enquries-list',[EnquriesController::class,'index'])->name('enquries.index');
+        Route::get('/enquries-edit/{id}',[EnquriesController::class,'edit'])->name('enquries.edit');
+        Route::delete('/enquries-delete/{id}', [EnquriesController::class, 'delete'])->name('enquriesdelete');
+        Route::get('/enquries-status/{id}', [EnquriesController::class, 'statuschnage'])->name('enquriesstatus');
     });
 });
 

@@ -13,16 +13,35 @@
                                     <!-- <span class="menu-arrow"></span> -->
                                 </a>
                             </li>
-
                             <li class="menu-title mt-2"></li>
 
-                            {{-- <li>
-                                <a href="#">
-                                    <i data-feather="shopping-bag"></i>
-                                    <span> Products Manager</span>
+                            <li>
+                                <a href="#Booking" data-bs-toggle="collapse">
+                                    <i data-feather="video"></i>
+                                    <span> Banner Settings</span>
+                                    <span class="menu-arrow"></span>
                                 </a>
-                            </li> --}}
-
+                                <div class="collapse" id="Booking">
+                                    <ul class="nav-second-level">
+                                        <li><a href="{{ route('homebanner.index') }}">Home Banner</a></li>
+                                        <li><a href="{{ route('subbanner.index') }}">Sub Banner</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#Booking" data-bs-toggle="collapse">
+                                    <i data-feather="calendar"></i>
+                                    <span>Booking </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="Booking">
+                                    <ul class="nav-second-level">
+                                        <li><a href="{{ route('homebookings') }}">Home</a></li>
+                                        <li><a href="{{ route('officebookings') }}">Office</a></li>
+                                        <li><a href="{{ route('retailbookings') }}"> Retail</a></li>
+                                    </ul>
+                                </div>
+                            </li>
                             <li>
                                 <a href="#Services" data-bs-toggle="collapse">
                                     <i data-feather="shopping-bag"></i>
@@ -82,6 +101,12 @@
                                 </a>
                             </li>
 
+                            <li>
+                                <a href="{{ route('enquries.index') }}">
+                                    <i data-feather="hash"></i>
+                                    <span>Enquries</span>
+                                </a>
+                            </li>
 
                         </ul>
 

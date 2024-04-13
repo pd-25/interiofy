@@ -25,4 +25,9 @@ class Booking extends Model
         'time',
         'expert_id'
     ];
+
+    public function user_details()
+    {
+        return $this->belongsTo('App\Models\User','user_id','id');
+    }
 }

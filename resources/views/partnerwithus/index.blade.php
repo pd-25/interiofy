@@ -6,23 +6,19 @@
 
     <div class="interior-banner-slider owl-carousel owl-theme">
 
-        <div class="item banner-item">
-
-            <a href=""><img src="images/about-us.jpg" alt=""></a>
-
-            <div class="banner-item-info">
-
-                <h1 style="color:white">Partner With Us</h1>
-
-                <p style="color:white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                    a galley of type and scrambled it to make a type specimen book.</p>
-
+        @if (!@empty($homeBanner))
+            @foreach ($homeBanner as $item)
+            <div class="item banner-item">
+                <a href="#"><img src="/storage/{{@$item->media}}" alt="No images"></a>
+                <div class="banner-item-info">
+                    <h1 style="color:white">Partner With Us</h1>
+                    <p style="color:white">{{@$item->short_description}}</p>
+                </div>
             </div>
+            @endforeach
+        @endif
 
-        </div>
-
-        <div class="item banner-item">
+        {{-- <div class="item banner-item">
 
             <a href=""><img src="images/architectural-01.jpg" alt=""></a>
 
@@ -52,7 +48,7 @@
 
             </div>
 
-        </div>
+        </div> --}}
 
     </div>
 
@@ -67,13 +63,12 @@
         <div class="container">
             <div class="text_div_2 text-center">
                 <p class="text_p_1">
-                    Lorem Ipsum is simply dummy text of the printing.
+                    Partner with I InterioFY: Craft New Heights For Your Business
                 </p>
                 <p class="text_p_2">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged.
+                    Expand your reach, showcase your expertise, and connect with a network of passionate design seekers - all on I InterioFY! 
+                    <br>
+                    We're a revolutionary tech platform that bridges the gap between talented designers, contractors, vendors, and clients looking to transform their residential, retail, or commercial spaces. Here, you have the opportunity to:
                 </p>
             </div>
         </div>
@@ -82,61 +77,38 @@
 <!-- /content area ends -->
 
 <section>
-
     <div class="container mb-5">
-
         <div class="partner-heading">
-
             <h2>Get unlimited <strong>perks <br> with I Interiofy</strong></h2>
-
         </div>
 
         <div class="row">
-
             <div class="col-lg-4 mb-5">
-
                 <div class="partner-box">
-
                     <i class="fa fa-object-group"></i>
-
                     <h4>Regular flow of high quality projects to work with</h4>
-
                 </div>
 
             </div>
 
             <div class="col-lg-4 mb-5">
-
                 <div class="partner-box">
-
                     <i class="fa fa-dot-circle-o"></i>
-
                     <h4>360 Degree Support in with design, materials and technology</h4>
-
                 </div>
-
             </div>
 
             <div class="col-lg-4 mb-5">
-
                 <div class="partner-box">
-
                     <i class="fa fa-credit-card"></i>
-
                     <h4>Regular flow of high quality projects to work with</h4>
-
                 </div>
-
             </div>
 
             <div class="col-lg-4 mb-5">
-
                 <div class="partner-box">
-
                     <i class="fa fa-object-group"></i>
-
                     <h4>Regular flow of high quality projects to work with</h4>
-
                 </div>
 
             </div>
@@ -437,45 +409,29 @@
                         <fieldset>
 
                             <div class="form-box">
-
                                 <div class="row justify-content-center mt-5">
-
                                     <div class="col-sm-12 text-center">
-
                                         <div class="heading">
-
                                             <h2>Partner Register Form</h2>
-
                                         </div>
-
                                     </div>
-
                                 </div>
 
 
                                 <div class="mb-4 form-border">
-
                                     <label for="" class="form-label">Firm Type</label>
-
                                     <div class="radio-label-btn">
-
                                         <input type="radio" name="firm_type" value="Public" />
                                         <label for="Public">Public</label>
                                         <input type="radio" name="firm_type" value="Private" />
                                         <label for="Private">Private</label>
                                         <input type="radio" name="firm_type" value="Individual" />
                                         <label for="Individual">Individual</label>
-
                                     </div>
-
                                 </div>
-
                                 <div class="mb-4 form-border">
-
                                     <label for="" class="form-label">Major Category</label>
-
                                     <div class="row">
-
                                         <div class="col-md-4 col-lg-4">
                                             <div class="radio-label-btn">
                                                 <input type="radio" name="major_category" value="Architectural" />
@@ -520,13 +476,9 @@
                                                 <label for="" class="major_category">Carpentry & Masonry</label>
                                             </div>
                                         </div>
-
                                     </div>
-
                                 </div>
-                                
                             </div>    
-
                          </fieldset>
 
                 </div>
@@ -539,133 +491,79 @@
                         <fieldset>
 
                             <div class="row justify-content-center mt-5">
-
                                 <div class="col-sm-12 text-center">
-
                                     <div class="heading">
-
                                         <h2>Partner Register Form</h2>
-
                                     </div>
-
                                 </div>
-
                             </div>
 
 
                             <div class="mb-4 form-border">
-
                                 <label for="" class="form-label">Minor Category</label>
-
                                 <div class="row">
-
                                     <div class="col-md-4 col-lg-4">
-
                                         <div class="radio-label-btn">
-
                                             <input type="radio" name="minor_category" value="Interior">
-
                                             <label for="" class="minor_category">Interior</label>
-
                                         </div>
-
                                     </div>
 
                                     <div class="col-md-4 col-lg-4">
-
                                         <div class="radio-label-btn">
-
                                             <input type="radio" name="minor_category" value="Architectural">
-
                                             <label for="" class="minor_category">Architectural</label>
-
                                         </div>
-
                                     </div>
 
                                     <div class="col-md-4 col-lg-4">
-
                                         <div class="radio-label-btn">
-
                                             <input type="radio" name="minor_category" value="Flooring">
-
                                             <label for="" class="minor_category">Flooring</label>
-
                                         </div>
-
                                     </div>
 
                                     <div class="col-md-4 col-lg-4 pt-3">
-
                                         <div class="radio-label-btn">
-
                                             <input type="radio" name="minor_category" value="Painting">
-
                                             <label for="" class="minor_category">Painting</label>
-
                                         </div>
-
                                     </div>
 
                                     <div class="col-md-4 col-lg-4 pt-3">
-
                                         <div class="radio-label-btn">
-
                                             <input type="radio" name="minor_category" value="Plumbing">
-
                                             <label for="" class="minor_category">Plumbing</label>
-
                                         </div>
-
                                     </div>
 
                                     <div class="col-md-4 col-lg-4 pt-3">
-
                                         <div class="radio-label-btn">
-
                                             <input type="radio" name="minor_category" value="Structural">
-
                                             <label for="" class="minor_category">Structural</label>
-
                                         </div>
-
                                     </div>
 
                                     <div class="col-md-4 col-lg-4 pt-3">
-
                                         <div class="radio-label-btn">
-
                                             <input type="radio" name="minor_category" value="Electrical Lighting">
-
                                             <label for="" class="minor_category">Electrical Lighting</label>
-
                                         </div>
-
                                     </div>
 
                                     <div class="col-md-4 col-lg-4 pt-3">
-
                                         <div class="radio-label-btn">
-
                                             <input type="radio" name="minor_category" value="Carpentry & Masonry">
-
                                             <label for="" class="minor_category">Carpentry & Masonry</label>
-
                                         </div>
-
                                     </div>
-
                                 </div>
-
                             </div>
 
                             <div class="mb-4">
-
                                 <label for="" class="form-label">Upload Picture of your completed
                                     project</label>
-
                                     <input type="file" class="form-control" name="partnerportfolio[]" id="partnerportfolio" accept="image/*" multiple/>
-
                             </div>
 
                         </fieldset>
@@ -675,25 +573,14 @@
             </div>
 
             <div class="buttonsGroups button-bg">
-
                 <button class="action back btn btn-outline-info">Back</button>
-
                 <button class="action next btn btn-outline-success">Next</button>
-
                 <button class="action submit btn btn-success" onclick="return SavePartner()">Generate Your Partner ID</button>
-
             </div>
-
         </div>
 
-        <!-- /.MultiStep Form -->
-
-    </div>
-
-    </div>
-
-
-
+        </div>
+        </div>
     </div>
 
 </section>
@@ -744,7 +631,7 @@
                 contentType: false,
                 data: form_data,
                 success: (response) => {
-                    console.log(response);
+                    console.log(response.data);
                     if (response.status == "success") {
                         Swal.fire({
                             title: "Success!",
