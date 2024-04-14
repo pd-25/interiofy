@@ -60,34 +60,67 @@
       <div class="contact_div_1 text-center mt-5 mb-5">
           <p class="contact_p_1">Get in Touch</p>
           <p class="contact_p_2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            Send us a note and we will get back to you as quickly as possible
           </p>
+            @if(Session::has('success'))
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                    {{ Session::get('success') }}
+                    
+                </div>
+            @endif
+            @if(Session::has('error'))
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                    {{ Session::get('error') }}
+                </div>
+            @endif
       </div>
       <div class="row mt-4">
           <div class="col-md-12">
               <div class="shadow-md bg-white p-5">
-                  <form action="">
+                <form action="{{route('storeEnquries')}}" method="post">
+                    @csrf
+                    @method('POST')
                       <!--<h4 class="fs-7 fw-bolder mb-4">Contact Form</h4>-->
                       <div class="mb-4">
-                              <label class="pt-2 llf" for="">Full Name :</label>
-                              <input type="text" placeholder="Enter Full Name" class="form-control mb-0">
+                            <label class="pt-2 llf" for="">Full Name :</label>
+                            <input type="text" placeholder="Enter Full Name" class="form-control mb-0" name="fullName" >
+                            <span class="text-danger">
+                                @error('fullName')
+                                <strong>{{ $message }}</strong>
+                                @enderror
+                            </span>
                       </div>
                       <div class="mb-4">
-                              <label class="pt-2 llf" for="">Mobile Number :</label>
-                              <input type="text" placeholder="Enter Mobile Number" class="form-control mb-0">
+                            <label class="pt-2 llf" for="">Mobile Number :</label>
+                            <input type="text" name="phoneNo" placeholder="Enter Mobile Number" class="form-control mb-0">
+                            <span class="text-danger">
+                                @error('phoneNo')
+                                <strong>{{ $message }}</strong>
+                                @enderror
+                            </span>
                       </div>
                       <div class="mb-4">
-                              <label class="pt-2 llf" for="">Email Address :</label>
-                              <input type="text" placeholder="Enter Email Address" class="form-control mb-0">
+                            <label class="pt-2 llf" for="">Email Address :</label>
+                            <input type="text" name="email" placeholder="Enter Email Address" class="form-control mb-0">
+                            <span class="text-danger">
+                                @error('email')
+                                <strong>{{ $message }}</strong>
+                                @enderror
+                            </span>
                       </div>
                        <div class="mb-4">
                               <label class="pt-2 llf" for="">Address :</label>
-                              <textarea name="" id="" cols="30" placeholder="Enter Your Text" rows="4" class="form-control"></textarea>
+                              <textarea name="address" placeholder="Enter Your Text" rows="4" class="form-control"></textarea>
+                              <span class="text-danger">
+                                @error('address')
+                                <strong>{{ $message }}</strong>
+                                @enderror
+                            </span>
                       </div>
                      <div class="submit-btn">
-                          <button class="btn csbf">Submit</button>
+                          <button type="submit" class="btn csbf">Submit</button>
                      </div>
-                  </form>
+                </form>
               </div>
           </div>
           <div class="col-md-6 d-none">

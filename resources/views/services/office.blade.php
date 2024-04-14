@@ -1129,7 +1129,8 @@
         }
 
         function saveBookingData() {
-            var formData = $('#contactForm').serialize();
+            // var formData = $('#contactForm').serialize();
+            var formData = $('.contactForm').serialize();
             // console.log('formData===', formData);
             $.ajax({
                 url: "{{ route('booking') }}",
@@ -1152,7 +1153,7 @@
                                 // location.reload();
                             }
                         });
-                    }, 4000);
+                    }, 2000);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     // Handle errors (e.g., display error message)

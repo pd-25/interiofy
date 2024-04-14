@@ -315,38 +315,37 @@ $("#phone_code").intlTelInput({
 });
 // counter up 
 
-var counted = 0;
-$(window).scroll(function () {
+// var counted = 0;
+// $(window).scroll(function () {
+//      var oTop = $('#counter').offset().top - window.innerHeight;
+//      if (counted == 0 && $(window).scrollTop() > oTop) {
+//           $('.count').each(function () {
+//                var $this = $(this),
+//                     countTo = $this.attr('data-count');
+//                $({
+//                     countNum: $this.text()
+//                }).animate({
+//                     countNum: countTo
+//                },
 
-     var oTop = $('#counter').offset().top - window.innerHeight;
-     if (counted == 0 && $(window).scrollTop() > oTop) {
-          $('.count').each(function () {
-               var $this = $(this),
-                    countTo = $this.attr('data-count');
-               $({
-                    countNum: $this.text()
-               }).animate({
-                    countNum: countTo
-               },
+//                     {
 
-                    {
+//                          duration: 2000,
+//                          easing: 'swing',
+//                          step: function () {
+//                               $this.text(Math.floor(this.countNum));
+//                          },
+//                          complete: function () {
+//                               $this.text(this.countNum);
+//                               //alert('finished');
+//                          }
 
-                         duration: 2000,
-                         easing: 'swing',
-                         step: function () {
-                              $this.text(Math.floor(this.countNum));
-                         },
-                         complete: function () {
-                              $this.text(this.countNum);
-                              //alert('finished');
-                         }
+//                     });
+//           });
+//           counted = 1;
+//      }
 
-                    });
-          });
-          counted = 1;
-     }
-
-});
+// });
 
 // stepform js 
 
@@ -441,6 +440,8 @@ function validatePartnerForm(currentStep) {
 
      if (currentStep == 2) {
 
+          console.log(currentStep )
+
           var firm_type = $('input[name="firm_type"]:checked').val();
           var major_category = $('input[name="major_category"]:checked').val();
 
@@ -452,19 +453,17 @@ function validatePartnerForm(currentStep) {
                    footer: ''
                });
                return false;
-           }
-
-           if(major_category == undefined){
-               Swal.fire({
-                   icon: "error",
-                   title: "Oops...",
-                   text: "Please choose your Major Category!",
-                   footer: ''
-               });
-               return false;
-           }
-
-           return true;
+          }
+          if(major_category == undefined){
+          Swal.fire({
+               icon: "error",
+               title: "Oops...",
+               text: "Please choose your Major Category!",
+               footer: ''
+          });
+          return false;
+          }
+          return true;
      }
 
      if(currentStep == 3){
@@ -503,6 +502,178 @@ function validateForm(formType, currentStep) {
      }
 }
 
+function validateFormII(formTypeII, currentStep) {
+     if (formTypeII == "HomeRegister") {
+          return validatePartnerFormII(currentStep);
+     }
+}
+
+
+//Validate partner form
+function validatePartnerFormII(currentStep) {
+    
+     if (currentStep == 1) {
+          var firm_name = $("#firm_name").val();
+          var mobile_no = $("#mobile_no").val();
+          var mobile_code = $("#mobile_code").val();
+          var pincode = $("#pincode").val();
+          var email = $("#email").val();
+          if (firm_name == '') {
+               Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please enter your Firm Name!",
+                    footer: ''
+               });
+               return false;
+          }
+          if (pincode == '') {
+               Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please enter your Pin Code!",
+                    footer: ''
+               });
+               return false;
+          }
+          if (firm_name == '') {
+               Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please enter your Firm Name!",
+                    footer: ''
+               });
+               return false;
+          }
+          if (email == '') {
+               Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please enter your email!",
+                    footer: ''
+               });
+               return false;
+          }
+          if (mobile_no == '' || mobile_code=='') {
+               Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please enter your mobile no!",
+                    footer: ''
+               });
+               return false;
+          }
+          return true;
+     }
+
+     if (currentStep == 2) {
+          var home_requirements = $('input[name="home_requirements[]"]:checked').val();
+          var renovation = $('input[name="renovation[]"]:checked').val();
+
+          if(home_requirements == undefined){
+               Swal.fire({
+                   icon: "error",
+                   title: "Oops...",
+                   text: "Please choose your Home Requirements!",
+                   footer: ''
+               });
+               return false;
+          }
+          // else if(renovation == undefined){
+          //      Swal.fire({
+          //                icon: "error",
+          //                title: "Oops...",
+          //                text: "Please choose your Renovation!",
+          //                footer: ''
+          //           });
+          //           return false;
+          // }
+          return true;
+     }
+
+     if(currentStep == 3){
+          var services = $('input[name="services"]:checked').val();
+          if(services == undefined){
+               Swal.fire({
+                   icon: "error",
+                   title: "Oops...",
+                   text: "Please choose your services!",
+                   footer: ''
+               });
+               return false;
+          }
+          return true;
+     }
+
+     if(currentStep == 4){
+          var budget = $("#budget").val();
+          var clintpincode = $("#clintpincode").val();
+
+          if(budget == ''){
+               Swal.fire({
+                   icon: "error",
+                   title: "Oops...",
+                   text: "Please choose your budget!",
+                   footer: ''
+               });
+               return false;
+          }
+
+          if(clintpincode == ''){
+               Swal.fire({
+                   icon: "error",
+                   title: "Oops...",
+                   text: "Please choose your pin code!",
+                   footer: ''
+               });
+               return false;
+          }
+          return true;
+     }
+
+     if(currentStep == 5){
+          var date = $("#date").val();
+          var time = $("#time").val();
+
+          if(date == ''){
+               Swal.fire({
+                   icon: "error",
+                   title: "Oops...",
+                   text: "Please choose your date!",
+                   footer: ''
+               });
+               return false;
+          }
+
+          if(time == ''){
+               Swal.fire({
+                   icon: "error",
+                   title: "Oops...",
+                   text: "Please choose your time!",
+                   footer: ''
+               });
+               return false;
+          }
+          return true;
+     }
+
+     if(currentStep == 5){
+          var expert_id = $("#expert_id").val();
+          if(expert_id == ''){
+               Swal.fire({
+                   icon: "error",
+                   title: "Oops...",
+                   text: "Please choose your partner!",
+                   footer: ''
+               });
+               return false;
+          }
+          return true;
+     }
+}
+
+
+
 //jQuery time
 $(document).ready(function () {
      var current = 1;
@@ -522,7 +693,14 @@ $(document).ready(function () {
           var formType = $("#formType").val();
           var validate = validateForm(formType, current);
 
+          var formTypeII = $("#formTypeII").val();
+          var validateII = validateFormII(formTypeII, current);
+
           if(validate == false){
+               return false;
+          }
+
+          if(validateII == false){
                return false;
           }
 

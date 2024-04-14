@@ -6,19 +6,19 @@
 
           <div class="main-banner-slider owl-carousel owl-theme">
 
-               <div class="item main-item">
-
-                    <a href=""><img src="{{ asset('images/9.jpg') }}" alt=""></a>
-
-                    <div class="banner_title">
-
-                         <h1>INTERIOFY  Anything  and Everything </h1>
-
+               @if (!@empty($homeBanner))
+                   @foreach ($homeBanner as $item)
+                   <div class="item main-item">
+                         <a href="#"><img src="/storage/{{@$item->media}}" alt="No images"></a>
+                         <div class="banner_title">
+                         <h1>{{@$item->short_description}}</h1>
                     </div>
+               </div>
+                   @endforeach
+               @endif
+               
 
-                </div>
-
-                <div class="item main-item">
+               {{-- <div class="item main-item">
 
                     <a href=""><img src="{{ asset('images/architectural-01.jpg') }}" alt=""></a>
 
@@ -28,9 +28,9 @@
 
                     </div>
 
-                </div>
+               </div>
 
-                <div class="item main-item">
+               <div class="item main-item">
 
                     <a href=""><img src="{{ asset('images/architectural-02.jpg') }}" alt=""></a>
 
@@ -40,7 +40,7 @@
 
                     </div>
 
-                </div>
+               </div> --}}
 
           </div>
 
@@ -56,10 +56,10 @@
              <div class="container">
                  <div class="text_div_2 text-center">
                      <p class="text_p_1">
-                         Lorem Ipsum is simply dummy text of the printing.
+                         INTERIOFY Anything  and Everything
                      </p>
                      <p class="text_p_2">
-                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                         Say goodbye to the stress of finding the perfect team for your dream space. Introducing I InterioFy, India's groundbreaking tech platform that connects you with the elite squad of interior designers, contractors, and vendors you need – all under one roof. We're more than just a marketplace. I InterioFy is a collaborative hub where creativity meets convenience. Here, designers and industry partners seamlessly connect to bring your vision to life, whether it's a residential haven, a thriving commercial space, or a stunning retail environment.
                      </p>
                  </div>
              </div>
@@ -196,28 +196,20 @@
                          <div class="col-sm-12">
 
                               <div class="our_tour_slider owl-carousel owl_navigation">
-
-                                   <div class="holiday_pack_slide">
-
-                                        <a href="#">
-
-                                             <div class="holiday_pack_area">
-
-
-
-                                                  <div class="pack_image">
-
-                                                       <img class="img-fluid" src="{{ asset('images/Design1.jpg') }}" alt="" />
-
-                                                  </div>
-
+                                   @if (!@empty($subBanner))
+                                        @foreach ($subBanner as $item)
+                                             <div class="holiday_pack_slide">
+                                                  <a href="#">
+                                                       <div class="holiday_pack_area">
+                                                            <div class="pack_image">
+                                                                 <img class="img-fluid" src="/storage/{{@$item->media}}" alt="No images" />
+                                                            </div>
+                                                       </div>
+                                                  </a>
                                              </div>
-
-                                        </a>
-
-                                   </div>
-
-                                   <div class="holiday_pack_slide">
+                                        @endforeach
+                                   @endif
+                                   {{-- <div class="holiday_pack_slide">
 
                                         <a href="#">
 
@@ -236,9 +228,6 @@
                                         </a>
 
                                    </div>
-
-
-
                                    <div class="holiday_pack_slide">
 
                                         <a href="#">
@@ -258,7 +247,6 @@
                                         </a>
 
                                    </div>
-
                                    <div class="holiday_pack_slide">
 
                                         <a href="#">
@@ -278,7 +266,6 @@
                                         </a>
 
                                    </div>
-
                                    <div class="holiday_pack_slide">
 
                                         <a href="#">
@@ -297,7 +284,7 @@
 
                                         </a>
 
-                                   </div>
+                                   </div> --}}
 
                               </div>
 
@@ -1373,12 +1360,52 @@
                </div>
 
                <div class="row justify-content-center">
-
                     <div class="col-sm-12 text-center">
-
                          <div class="testi_slider owl-carousel owl_navigation">
-
-                              <div class="testi_slider_item">
+                              @if (!@empty($testimonial))
+                                  @foreach ($testimonial as $item)
+                                        <div class="testi_slider_item">
+                                             <div class="testi_img">
+                                                  <img class="img-fluid" src="{{ asset('storage/'.$item->user_image) }}" alt="No">
+                                             </div>
+                                             <h3>{{$item->name}}</h3>
+                                             <p>{{$item->designation}}</p>
+                                             <div class="rating">
+                                                  @for ($i=0; $i < (int)$item->rating; $i++)
+                                                       <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
+                                                  @endfor
+                                                  {{-- <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
+                                                  <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
+                                                  <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
+                                                  <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
+                                                  <span><i class="fa fa-star orange" aria-hidden="true"></i></span> --}}
+                                             </div>
+                                             <p class="tes_para">
+                                                  {!! $item->description !!}
+                                             </p>
+                                        </div>
+                                  @endforeach
+                              @endif
+                              {{-- <div class="testi_slider_item">
+                                   <div class="testi_img">
+                                        <img class="img-fluid" src="{{ asset('images/my1.jpg') }}" alt="">
+                                   </div>
+                                   <h3>Lorem Ipsum</h3>
+                                   <p>Web Designer</p>
+                                   <div class="rating">
+                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
+                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
+                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
+                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
+                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
+                                   </div>
+                                   <p class="tes_para">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis facere beatae
+                                        adipisci nisi ad aliquam sint ipsa qui fuga eius, non necessitatibus quidem,
+                                        doloribus eum.
+                                   </p>
+                              </div> --}}
+                              {{-- <div class="testi_slider_item">
 
                                    <div class="testi_img">
 
@@ -1419,9 +1446,6 @@
 
 
                               </div>
-
-
-
                               <div class="testi_slider_item">
 
                                    <div class="testi_img">
@@ -1462,106 +1486,11 @@
 
 
 
-                              </div>
-
-
-
-                              <div class="testi_slider_item">
-
-                                   <div class="testi_img">
-
-                                        <img class="img-fluid" src="{{ asset('images/my1.jpg') }}" alt="">
-
-                                   </div>
-
-                                   <h3>Lorem Ipsum</h3>
-
-                                   <p>Web Designer</p>
-
-                                   <div class="rating">
-
-                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-                                   </div>
-
-                                   <p class="tes_para">
-
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis facere beatae
-
-                                        adipisci nisi ad aliquam sint ipsa qui fuga eius, non necessitatibus quidem,
-
-                                        doloribus eum.
-
-                                   </p>
-
-
-
-
-
-                              </div>
-
-
-
-                              <div class="testi_slider_item">
-
-                                   <div class="testi_img">
-
-                                        <img class="img-fluid" src="{{ asset('images/my1.jpg') }}" alt="">
-
-                                   </div>
-
-                                   <h3>Lorem Ipsum</h3>
-
-                                   <p>Web Designer</p>
-
-                                   <div class="rating">
-
-                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-                                        <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-                                   </div>
-
-                                   <p class="tes_para">
-
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis facere beatae
-
-                                        adipisci nisi ad aliquam sint ipsa qui fuga eius, non necessitatibus quidem,
-
-                                        doloribus eum.
-
-                                   </p>
-
-
-
-
-
-                              </div>
-
-
-
+                              </div> --}}
                          </div>
-
                     </div>
-
                </div>
-
           </div>
-
      </section>
 
      <!--===================== testimonial sec end  ===================== -->
@@ -1589,38 +1518,27 @@
                </div>
 
                <div class="row justify-content-center">
-
                     <div class="col-sm-12 text-center">
-
                          <div class="blog_slider owl-carousel owl_navigation">
-
-                              <div class="holiday_pack_slide">
-
-                                   <a href="#">
-
-                                        <div class="holiday_pack_area">
-
-                                             <div class="pack_image">
-
-                                                  <img class="img-fluid" src="{{ asset('images/Walls2.jpg') }}" alt="">
-
-                                             </div>
-
-                                             <h3 class="title_blog">Lorem ipsum dolor sit amet.</h3>
-
-                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque
-
-                                                  neque quis quia et minus!</p>
-
+                              @if (!@empty($blog))
+                                   @foreach ($blog as $item)
+                                        <div class="holiday_pack_slide">
+                                             <a href="#">
+                                                  <div class="holiday_pack_area">
+                                                       <div class="pack_image">
+                                                            <img class="img-fluid" src="{{ asset('storage/'.$item->image) }}" alt="No images">
+                                                       </div>
+                                                       <h3 class="title_blog">{{@$item->title}}</h3>
+                                                       <p>{!! @$item->description !!}</p>
+                                                  </div>
+                                             </a>
                                         </div>
-
-                                   </a>
-
-                              </div>
+                                   @endforeach
+                              @endif
 
 
 
-                              <div class="holiday_pack_slide">
+                              {{-- <div class="holiday_pack_slide">
 
                                    <a href="#">
 
@@ -1643,9 +1561,6 @@
                                    </a>
 
                               </div>
-
-
-
                               <div class="holiday_pack_slide">
 
                                    <a href="#">
@@ -1669,9 +1584,6 @@
                                    </a>
 
                               </div>
-
-
-
                               <div class="holiday_pack_slide">
 
                                    <a href="#">
@@ -1695,9 +1607,6 @@
                                    </a>
 
                               </div>
-
-
-
                               <div class="holiday_pack_slide">
 
                                    <a href="#">
@@ -1720,9 +1629,7 @@
 
                                    </a>
 
-                              </div>
-
-
+                              </div> --}}
 
                          </div>
 
