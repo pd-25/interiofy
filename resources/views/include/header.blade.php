@@ -33,7 +33,7 @@
 <body>
      
      <div class="go_to_form_div_1">
-          <button class="go_to_form_btn_1">Contact us</button>
+          <a href="/contact-us"><button class="go_to_form_btn_1">Contact us</button></a>
       </div>
   
        <a href="#" class="scroll"><i class="fa-solid fa-angle-up"></i></a>
