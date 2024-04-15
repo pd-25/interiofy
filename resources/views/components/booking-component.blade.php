@@ -433,7 +433,7 @@
                                 </div>
 
                                 <div class="row justify-content-center">
-                                    <div class="col-sm-12" style="height: 680px; overflow-y:auto;">
+                                    <div class="col-sm-12" style="height: 500px; overflow-y:auto;">
                                         <div class="container">
                                             <div class="row">
                                                 <input type="hidden" name="expert_id" id="expert-id">
