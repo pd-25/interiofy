@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-6">
                             <input type="checkbox" disabled id="item_8" readonly
-                                name="renovation[]" value="bedroom" @if (!empty(@$bookings->renovation))
+                                name="renovation[]" value="bedroom"@if (!@empty(@$bookings->renovation))
                                 @foreach ( json_decode(@$bookings->renovation) as $item)
                                 {{ $item == 'bedroom' ? 'checked' : ''}} 
                                 @endforeach @endif >
