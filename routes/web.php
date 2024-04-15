@@ -221,8 +221,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-//testing
-Route::get('/testt', function () {
-    return view('testing');
-});
+
 
