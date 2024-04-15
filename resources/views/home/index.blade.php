@@ -332,9 +332,876 @@
 
      </div>
 
-</section>
 
-<!-- Services we offer end  -->
+     
+     <section class="sliders_sec">
+
+          <div class="container">
+
+               <div class="slider_area">
+
+                    <div class="slider_head">
+
+                         <!--<h3 class="slider_title">Design Consultation</h3>-->
+
+                    </div>
+
+                    <div class="row">
+                         <div class="col-12 text-center">
+                              <h1>Value Add Services</h1>
+                         </div>
+                         <div class="col-sm-12">
+
+                              <div class="our_tour_slider owl-carousel owl_navigation">
+                                   @if (!@empty($subBanner))
+                                        @foreach ($subBanner as $item)
+                                             <div class="holiday_pack_slide">
+                                                  <a href="#">
+                                                       <div class="holiday_pack_area">
+                                                            <div class="pack_image">
+                                                                 <img class="img-fluid" src="/storage/{{@$item->media}}" alt="No images" />
+                                                            </div>
+                                                       </div>
+                                                  </a>
+                                             </div>
+                                        @endforeach
+                                   @endif
+                                   {{-- <div class="holiday_pack_slide">
+
+                                        <a href="#">
+
+                                             <div class="holiday_pack_area">
+
+
+
+                                                  <div class="pack_image">
+
+                                                       <img class="img-fluid" src="{{ asset('images/Design2.jpg') }}" alt="" />
+
+                                                  </div>
+
+                                             </div>
+
+                                        </a>
+
+                                   </div>
+                                   <div class="holiday_pack_slide">
+
+                                        <a href="#">
+
+                                             <div class="holiday_pack_area">
+
+
+
+                                                  <div class="pack_image">
+
+                                                       <img class="img-fluid" src="{{ asset('images/Design3.jpg') }}" alt="" />
+
+                                                  </div>
+
+                                             </div>
+
+                                        </a>
+
+                                   </div>
+                                   <div class="holiday_pack_slide">
+
+                                        <a href="#">
+
+                                             <div class="holiday_pack_area">
+
+
+
+                                                  <div class="pack_image">
+
+                                                       <img class="img-fluid" src="{{ asset('images/Design4.jpg') }}" alt="" />
+
+                                                  </div>
+
+                                             </div>
+
+                                        </a>
+
+                                   </div>
+                                   <div class="holiday_pack_slide">
+
+                                        <a href="#">
+
+                                             <div class="holiday_pack_area">
+
+
+
+                                                  <div class="pack_image">
+
+                                                       <img class="img-fluid" src="{{ asset('images/Design5.jpg') }}" alt="" />
+
+                                                  </div>
+
+                                             </div>
+
+                                        </a>
+
+                                   </div> --}}
+
+                              </div>
+
+                              <!--<div class="see-all-btn">-->
+
+                              <!--     <a class="btn seeAllBtn" href="design-consultation.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
+
+                              <!--</div>-->
+
+                         </div>
+
+                    </div>
+
+               </div>
+
+            <!--   <div class="slider_area">-->
+
+            <!--        <div class="slider_head">-->
+
+            <!--             <h3 class="slider_title">Architecture</h3>-->
+
+            <!--        </div>-->
+
+            <!--        <div class="row">-->
+
+            <!--             <div class="col-sm-12">-->
+
+            <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/temple.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/terres.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Kids-room.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Bedroom.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/livingRoom.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                  </div>-->
+
+            <!--                  <div class="see-all-btn">-->
+
+            <!--                       <a class="btn seeAllBtn" href="architecture.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
+
+            <!--                  </div>-->
+
+            <!--             </div>-->
+
+            <!--        </div>-->
+
+            <!--   </div>-->
+
+
+
+            <!--   <div class="slider_area">-->
+
+            <!--        <div class="slider_head">-->
+
+            <!--             <h3 class="slider_title">HVAC consultation</h3>-->
+
+            <!--        </div>-->
+
+            <!--        <div class="row">-->
+
+            <!--             <div class="col-sm-12">-->
+
+            <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Flooring1.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Walls1.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/ceiling1.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Flooring2.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Walls2.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/ceiling2.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Walls3.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class=" holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Flooring3.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+
+
+            <!--                  </div>-->
+
+            <!--                  <div class="see-all-btn">-->
+
+            <!--                       <a class="btn seeAllBtn" href="hvac-consultation.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
+
+            <!--                  </div>-->
+
+            <!--             </div>-->
+
+            <!--        </div>-->
+
+            <!--   </div>-->
+
+            <!--   <div class="slider_area">-->
+
+            <!--        <div class="slider_head">-->
+
+            <!--             <h3 class="slider_title">Electrical Consultation</h3>-->
+
+            <!--        </div>-->
+
+            <!--        <div class="row">-->
+
+            <!--             <div class="col-sm-12">-->
+
+            <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/electrical1.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/plumber1.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/carpenter1.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/plumber2.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/electrical2.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/carpenter2.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+
+
+
+
+
+
+            <!--                  </div>-->
+
+            <!--                  <div class="see-all-btn">-->
+
+            <!--                       <a class="btn seeAllBtn" href="#">See All<i class="fa-solid fa-angles-right"></i></a>-->
+
+            <!--                  </div>-->
+
+            <!--             </div>-->
+
+            <!--        </div>-->
+
+            <!--   </div>-->
+
+            <!--     <div class="slider_area">-->
+
+            <!--        <div class="slider_head">-->
+
+            <!--             <h3 class="slider_title">Contractor</h3>-->
+
+            <!--        </div>-->
+
+            <!--        <div class="row">-->
+
+            <!--             <div class="col-sm-12">-->
+
+            <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/temple.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/terres.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Kids-room.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Bedroom.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/livingRoom.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                  </div>-->
+
+            <!--                  <div class="see-all-btn">-->
+
+            <!--                       <a class="btn seeAllBtn" href="architecture.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
+
+            <!--                  </div>-->
+
+            <!--             </div>-->
+
+            <!--        </div>-->
+
+            <!--   </div>-->
+
+            <!--<div class="slider_area">-->
+
+            <!--        <div class="slider_head">-->
+
+            <!--             <h3 class="slider_title">Structural Consultation</h3>-->
+
+            <!--        </div>-->
+
+            <!--        <div class="row">-->
+
+            <!--             <div class="col-sm-12">-->
+
+            <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Design1.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Design2.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Design3.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Design4.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                       <div class="holiday_pack_slide">-->
+
+            <!--                            <a href="#">-->
+
+            <!--                                 <div class="holiday_pack_area">-->
+
+
+
+            <!--                                      <div class="pack_image">-->
+
+            <!--                                           <img class="img-fluid" src="images/Design5.jpg" alt="" />-->
+
+            <!--                                      </div>-->
+
+            <!--                                 </div>-->
+
+            <!--                            </a>-->
+
+            <!--                       </div>-->
+
+            <!--                  </div>-->
+
+            <!--                  <div class="see-all-btn">-->
+
+            <!--                       <a class="btn seeAllBtn" href="design-consultation.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
+
+            <!--                  </div>-->
+
+            <!--             </div>-->
+
+            <!--        </div>-->
+
+            <!--   </div>-->
+
+
+
+          </div>
+
+     </section>
+
+     <!-- Services we offer end  -->
 
 
 <!-- sliders sec start  -->
