@@ -109,6 +109,13 @@
                                                 <img src="images/logo.png" alt="" class="logo_img">
 
                                            </div>
+                                           <div class="recident">
+                                             <ul class="res-ul">
+                                                  <li class="res-li">Corporate Address : Gurgaon, Haryana, India</li>
+                                                  <li class="res-li">Write to us : iinteriofy@gmail.com</li>
+                                                  <li class="res-li">Speak with us : +91 999999999</li>
+                                             </ul>
+                                           </div>
                                       </a>
                                  </div>
                             </div>
@@ -127,7 +134,13 @@
                                                 <a href="{{ route('about-us') }}">About Us</a>
                                            </li>
                                            <li>
-                                                <a href="#">Services</a>
+                                                <a href="#">Our Services</a>
+                                           </li>
+                                           <li>
+                                                <a href="/partner-with-us">Partner With Us</a>
+                                           </li>
+                                           <li>
+                                                <a href="/blogs">Blogs</a>
                                            </li>
                                            <li>
                                                 <a href="{{ route('contact-us') }}">Contact Us</a>
