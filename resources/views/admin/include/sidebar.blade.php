@@ -16,12 +16,12 @@
                             <li class="menu-title mt-2"></li>
 
                             <li>
-                                <a href="#Booking" data-bs-toggle="collapse">
+                                <a href="#Banner" data-bs-toggle="collapse">
                                     <i data-feather="video"></i>
                                     <span> Banner Settings</span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="Booking">
+                                <div class="collapse" id="Banner">
                                     <ul class="nav-second-level">
                                         <li><a href="{{ route('homebanner.index') }}">Home Banner</a></li>
                                         <li><a href="{{ route('subbanner.index') }}">Sub Banner</a></li>

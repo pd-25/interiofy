@@ -18,7 +18,8 @@ class DashboardController extends Controller
     }
 
     public function index(Request $request){
-        return view('dashboard.index');
+        $booking = Booking::with('partner_details')->where('user_id', auth()->user()->id)->orderBy('id', 'desc')->get();
+        return view('dashboard.index', compact('booking'));
      }
 
      public function partner_dashboard(Request $request)
@@ -40,7 +41,7 @@ class DashboardController extends Controller
 
     public function partner_renovation_pending()
     {
-        $bookings = Booking::with('user_details')->where('expert_id', auth()->user()->id)->where('status', 0)->paginate();
+        $bookings = Booking::with('user_details')->where('expert_id', auth()->user()->id)->where('status', 0)->orderBy('id', 'desc')->paginate(20);
         return view('partnerdashboard.pending_request', compact('bookings'));
     }
 
@@ -62,7 +63,7 @@ class DashboardController extends Controller
     
     public function partner_renovation_completed()
     {
-        $bookings = Booking::with('user_details')->where('expert_id', auth()->user()->id)->where('status','!=', 0)->paginate();
+        $bookings = Booking::with('user_details')->where('expert_id', auth()->user()->id)->where('status','!=', 0)->orderBy('id', 'desc')->paginate(20);
         return view('partnerdashboard.completed_request', compact('bookings'));
     }
 }

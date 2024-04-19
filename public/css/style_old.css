@@ -1530,27 +1530,11 @@ a#login_btn:hover span:nth-child(4) {
 
 .inner_banner {
 
-	background: url(../img/14.png) no-repeat;
+	background: url(../images/9.jpg) no-repeat;
 
 	background-size: cover;
 
-	background-position: 92% 74%;
-
-	position: relative;
-
-	padding: 50px 0px;
-
-	z-index: 0;
-	height: 320px;
-
-}
-
-.inner_bannerContact{
-	background: url(../img/17.png) no-repeat;
-
-	background-size: cover;
-
-	background-position: 92% 74%;
+	background-position: 92% 72%;
 
 	position: relative;
 
@@ -1558,25 +1542,8 @@ a#login_btn:hover span:nth-child(4) {
 
 	z-index: 0;
 
-	height: 320px;
 }
 
-
-.inner_bannerblog{
-	background: url(../img/16.png) no-repeat;
-
-	background-size: cover;
-
-	background-position: 92% 74%;
-
-	position: relative;
-
-	padding: 50px 0px;
-
-	z-index: 0;
-
-	height: 320px;
-}
 
 
 .inner_box {
@@ -1653,7 +1620,6 @@ a#login_btn:hover span:nth-child(4) {
 
 
 
-
 .inner_banner .breadcrumb {
 
 	background: transparent;
@@ -1667,8 +1633,6 @@ a#login_btn:hover span:nth-child(4) {
 	margin: 0;
 
 }
-
-
 
 
 
@@ -5237,7 +5201,7 @@ p.sb_para {
 .design_section_img_1 {
 	width: 270px;
 	height: 220px;
-	object-fit: fill;
+	object-fit: contain;
 }
 
 .mb-70 {

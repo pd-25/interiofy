@@ -59,6 +59,7 @@
                                     <div class="col-sm-12 text-center">
                                         <div class="heading">
                                             <h2>Give us your home requirements</h2>
+                                            <input type="hidden" id="formTypeII" value="HomeRegister">
                                         </div>
                                     </div>
                                 </div>
@@ -317,7 +318,7 @@
                                             </div>
                                             <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
-                                                    <input type="text" id="clintpincode" maxlength="6" pattern="\d{6}" class="form-control pincode" placeholder="Pin Code" required name="pincode" onkeypress="getPincodeloaction(value)" onblur="getPincodeloaction(value)">
+                                                    <input type="text" id="clintpincode" maxlength="6" pattern="\d{6}" class="form-control pincode" placeholder="Pin Code" required name="pincode" onkeyup="getPincodeloaction(value)" onblur="getPincodeloaction(value)">
                                                 </div>
                                             </div>
                                         </div>
@@ -435,9 +436,9 @@
                                 <div class="row justify-content-center">
                                     <div class="col-sm-12" style="height: 500px; overflow-y:auto;">
                                         <div class="container">
-                                            <div class="row">
+                                            <div class="row" id="partnerList">
                                                 <input type="hidden" name="expert_id" id="expert-id">
-                                                @foreach ($partners as $index => $partner)
+                                                {{-- @foreach ($partners as $index => $partner)
                                                 <div class="">
                                                     <div class="box new-box" id="partnerBox{{ $index + 1 }}">
                                                         <div class="row new-row">
@@ -466,34 +467,16 @@
                                                         </div>
 
                                                         <div class="testi new-testi">
-                                                            <div class="row">
-                                                                <div class="col-6">
-
-                                                                </div>
-                                                                <!-- <div class="col-6">
-
-                                                                    <h5 class="white-p">Rating: 4.0/5.0</h5>
-                                                                    <div class="rating">
-                                                                        <span class="text-warning">&#9733;</span>
-                                                                        <span class="text-warning">&#9733;</span>
-                                                                        <span class="text-warning">&#9733;</span>
-                                                                        <span class="text-warning">&#9733;</span>
-                                                                        <span class="text-warning">&#9733;</span>
-                                                                    </div>
-                                                                </div> -->
-                                                            </div>
                                                             <p class="white-p new-white-p">"Reference site about Lorem Ipsum,
                                                                 giving information on its
                                                                 origins, as well as a random Lipsum generator."</p>
-
                                                         </div>
 
                                                         <div class="col text-center selectPartner" data-index="{{ $index + 1 }}" data-id="{{$partner->id}}"> <button class="sert new-sert" type="button">Select Now</button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                @endforeach
-
+                                                @endforeach --}}
                                             </div>
                                         </div>
 
@@ -541,6 +524,7 @@
                 url: 'https://api.postalpincode.in/pincode/' + pincode,
                 dataType: 'json',
                 success: function(response) {
+                    //console.log(response)
                     $('.showhide').show();
                     var response = response[0].PostOffice;
                     $('#popularcity').find('.redio_item').remove();
@@ -548,6 +532,8 @@
                     for (i = 0; i < response.length; i++) {
                         var block = response[i]['Name'];
                         var city = response[i]['Region'];
+                        var district = response[i]['District'];
+
                         var image = "<img src='images/city-building.png' alt='No imges'>"
 
                         if (city == 'Calcutta') {
@@ -573,7 +559,7 @@
                             image = "<img src='images/mumbai.jpg' alt='No imges'>"
                         }
 
-                        selOpts += "<div class='redio_item'><input type='radio' id='" + block + "'name='city'value='" + block + '/' + city + "'/><label class='addcolor' for='" + block + "'>" + image + "" + block + '<br/>' + city + "</label></div>";
+                        selOpts += "<div class='redio_item'><input onClick='GetStateWisePartner(value)' type='radio' id='" + block + "'name='city'value='" +district+ '-' + city +'-'+block+ "'/><label class='addcolor' for='" + block + "'>" + image + "" + block + '<br/>' + city + "</label></div>";
                     }
                     $('#popularcity').append(selOpts);
 
@@ -588,6 +574,59 @@
             });
         }
         return false
+    }
+
+    function GetStateWisePartner(value){
+        $.ajax({
+            type: 'GET',
+            url: '/Get-Location-Wise-Partner/'+value,
+            dataType: 'json',
+            _token: "{{ csrf_token() }}",
+            success: function(response) {
+                var response = response;
+                //console.log(response)
+                $('#partnerList').find('.partner_list').remove();
+                var selOpts = "";
+                for (i = 0; i < response.length; i++) {
+                    var id = response[i]['user']['id'];
+                    var name = response[i]['user']['name'];
+                    selOpts += '<div class="partner_list"><div class="box new-box" id="partnerBox'+id+'">'
+                      selOpts += '<div class="row new-row">'
+                      selOpts += '<div class=" new-col-6" style="padding-bottom: 5px;">'
+                          selOpts += '<img class="imboxx" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg" alt="User 1" class="user-image">'
+                      selOpts += '</div>'
+                      selOpts += '<div class="new-sec" style="height: fit-content;">'
+                          selOpts += '<div class="col-6" style="padding: 26px 10px;">'
+                              selOpts += '<h3 style="font-weight: 800; font-size:2rem;">'+ name +'</h3>'
+                              selOpts += '<h5 style="font-size: 1.2rem;">About Us</h5>'
+                          selOpts += '</div>'
+                          selOpts += '<div class="col-6" style="margin-top: -5%; margin-left: -1.5%;">'
+                              selOpts += '<h5 class="white-p" style="font-size: 1.2rem; font-weight: 600; text-shadow: 0 0 5px black;">Rating: 4.0/5.0</h5>'
+                              selOpts += '<div class="rating">'
+                                  selOpts += '<span class="text-dark" style="font-size: 1.1rem; font-weight: 600;">&#9733;</span>'
+                                  selOpts += '<span class="text-dark" style="font-size: 1.1rem; font-weight: 600;">&#9733;</span>'
+                                  selOpts += '<span class="text-dark" style="font-size: 1.1rem; font-weight: 600;">&#9733;</span>'
+                                  selOpts += '<span class="text-dark" style="font-size: 1.1rem; font-weight: 600;">&#9733;</span>'
+                                  selOpts += '<span class="text-dark" style="font-size: 1.1rem; font-weight: 600;">&#9733;</span>'
+                              selOpts += '</div>'
+                          selOpts += '</div>'
+                      selOpts += '</div>'
+                  selOpts += '</div>'
+
+                  selOpts += '<div class="testi new-testi">'
+                      selOpts += '<p class="white-p new-white-p">"Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator."</p>'
+                  selOpts += '</div>'
+                      selOpts += '<div class="col text-center selectPartner" data-index="'+id+'" data-id="'+id+'"> <button class="sert new-sert" type="button">Select Now</button>'
+                      selOpts += '</div>'
+                  selOpts += '</div>'
+              selOpts += '</div>'
+                }
+                $('#partnerList').append(selOpts);
+            },
+            error: function() {
+                console.log(response);
+            }
+        });
     }
 </script>
 @endpush

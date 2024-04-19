@@ -30,4 +30,9 @@ class Booking extends Model
     {
         return $this->belongsTo('App\Models\User','user_id','id');
     }
+
+    public function partner_details()
+    {
+        return $this->belongsTo('App\Models\User','expert_id','id');
+    }
 }

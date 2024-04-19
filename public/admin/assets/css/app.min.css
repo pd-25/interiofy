@@ -4871,3 +4871,8 @@ span.flatpickr-weekday {
 }
 
 /*# sourceMappingURL=app.min.css.map */
+
+/* input[type=radio]:disabled {
+    accent-color: #FF0000 !important;
+    background-color:red !important;
+} */

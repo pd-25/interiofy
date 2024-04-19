@@ -67,8 +67,8 @@
 </style>
 
 <div class="container bootstrap snippets bootdey">
-    <div class="row">
-        <div class="profile-nav col-md-3">
+    <div class="row justify-content-center">
+        <div class="profile-nav col-md-6">
             <div class="panel">
                 <div class="user-heading round">
                     <a href="#">
@@ -79,9 +79,9 @@
                 </div>
             </div>
         </div>
-        <div class="profile-info col-md-9">
+        <div class="profile-info col-md-12">
             <div class="panel">
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="card s">
                         <div class="card-header s" id="headingOne">
                             <h5 class="mb-0">
@@ -159,31 +159,78 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">Time</th>
+                                        <th scope="col">ServiceId</th>
+                                        <th scope="col">Date / Time</th>
+                                        <th scope="col">Home Requirements</th>
+                                        <th scope="col">Renovation</th>
                                         <th scope="col">Service</th>
-                                        <th scope="col">Partner</th>
-                                        <th scope="col">Partner Mobile</th>
+                                        <th scope="col">Details</th>
+                                        <th scope="col">Partner Details</th>
                                         <th scope="col">Status</th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>05 Feb 2024</td>
-                                        <td>8:40 PM</td>
-                                        <td>Design, Plan & Architecture, Plumbing Work</td>
-                                        <td>Mark</td>
-                                        <td>8768624650</td>
-                                        <td style="color: red;">Pending</td>
-                                    </tr>
-                                    <tr>
+                                    @if (!@empty($booking))
+                                        @foreach ($booking as $item)
+                                            <tr>
+                                                <td>{{@$item->service_id}}</td>
+                                                <td>
+                                                    {{ date('d-M-Y', strtotime(@$item->date)) }} <br>
+                                                    {{ date('H:i:s', strtotime(@$item->time)) }}
+                                                </td>
+                                                <td>
+                                                    <table>
+                                                        @if (!@empty($item->renovation))
+                                                            @foreach ( json_decode($item->home_requirements) as $itemII)
+                                                                <tr>
+                                                                    <td>{{@$itemII}}</td>
+                                                                </tr>
+                                                            @endforeach
+                                                        @endif
+                                                    </table>
+                                                </td>
+                                                <td>
+                                                    <table>
+                                                        @if (!@empty($item->renovation))
+                                                            @foreach ( json_decode($item->renovation) as $itemIII)
+                                                                <tr>
+                                                                    <td>{{@$itemIII}}</td>
+                                                                </tr>
+                                                            @endforeach
+                                                        @endif
+                                                    </table>
+                                                </td>
+                                                <td>{{@$item->service}}</td>
+                                                <td>
+                                                    {{@$item->budget}} <br>
+                                                    {{@$item->pincode}} <br>
+                                                    {{@$item->block}} <br>
+                                                    {{@$item->city}} <br>
+                                                    {{@$item->district}}
+                                                </td>
+                                                <td>
+                                                    {{@$item->partner_details->name}} <br>
+                                                    {{@$item->partner_details->email}} <br>
+                                                    {{@$item->partner_details->mobile_no}}
+                                                </td>
+                                                @if (@$item->status == 0)
+                                                <td style="color: pink;">Inprogress</td>    
+                                                @elseif(@$item->status == 1)
+                                                <td style="color: green;">Complete</td>
+                                                @elseif(@$item->status == 2)
+                                                <td style="color: red;">Rejected</td>
+                                                @endif
+                                            </tr>
+                                        @endforeach
+                                    @endif
+                                    {{-- <tr>
                                         <td>04 Feb 2024</td>
                                         <td>8:00 AM</td>
                                         <td>Plumbing Work</td>
                                         <td>Rony</td>
                                         <td>8170915403</td>
-                                        <td style="color: pink;">Inprogress</td>
+                                        
                                     </tr>
                                     <tr>
                                         <td>03 Feb 2024</td>
@@ -191,8 +238,7 @@
                                         <td>Design, Plan & Architecture</td>
                                         <td>Mark</td>
                                         <td>8768624651</td>
-                                        <td style="color: green;">Complete</td>
-                                    </tr>
+                                    </tr> --}}
                                 </tbody>
                             </table>
                         </div>

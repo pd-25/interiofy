@@ -10,23 +10,26 @@
                     </div>
                 @endif
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <h6>Client Details</h6>
                     </div>
+                    <div class="col-6 text-end">
+                        <p> <span class="fw-bold">#ServiceId:</span> {{@$bookings->service_id}}</p>
+                    </div>
                     <div class="col-lg-4">
-                        <small class="m-0">NAME </small>
+                        <small class="m-0 fw-bold">NAME </small>
                         <p>{{ @$bookings->user_details->name}}</p>
                     </div>
                     <div class="col-lg-4">
-                        <small class="m-0">Email</small>
+                        <small class="m-0 fw-bold">Email</small>
                         <p>{{ @$bookings->user_details->email}}</p>
                     </div>
                     <div class="col-lg-2">
-                        <small class="m-0">MOBILE NUMBER</small>
+                        <small class="m-0 fw-bold">MOBILE NUMBER</small>
                         <p>{{ @$bookings->user_details->mobile_no}}</p>
                     </div>
                     <div class="col-lg-2">
-                        <small class="m-0">PIN CODE</small>
+                        <small class="m-0 fw-bold">PIN CODE</small>
                         <p>{{ @$bookings->user_details->pin}}</p>
                     </div>
                 </div>
@@ -223,14 +226,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-12">
                             <h4>Home</h4>
                         </div>
-                        <div class="col-12">
+                        <div class="col-6 mb-2">
                             <input type="checkbox" disabled id="item_1"
                                 name="home_requirements[]"
                                 value="complete_home_solution" 
@@ -245,7 +248,7 @@
                                 <small>Complete home solution</small>
                             </label>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mb-2">
                             <input type="checkbox" disabled id="item_2"
                                 name="home_requirements[]" value="living_room" @if (!empty(@$bookings->home_requirements))
                                 @foreach ( json_decode(@$bookings->home_requirements) as $item)
@@ -260,7 +263,7 @@
                                 <small>Living Room</small>
                             </label>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mb-2">
                             <input type="checkbox" disabled id="item_3"
                                 name="home_requirements[]" value="kitchen" @if (!empty(@$bookings->home_requirements))
                                 @foreach ( json_decode(@$bookings->home_requirements) as $item)
@@ -274,7 +277,7 @@
                                 <small>Kitchen</small>
                             </label>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mb-2">
                             <input type="checkbox" disabled id="item_4"
                                 name="home_requirements[]" value="terrace" @if (!empty(@$bookings->home_requirements))
                                 @foreach ( json_decode(@$bookings->home_requirements) as $item)
@@ -288,7 +291,7 @@
                                 <small>Terrace/Balcony</small>
                             </label>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mb-2">
                             <input type="checkbox" disabled id="item_5"
                                 name="home_requirements[]" value="dining_room"@if (!empty(@$bookings->home_requirements))
                                 @foreach ( json_decode(@$bookings->home_requirements) as $item)
@@ -303,7 +306,7 @@
                                 <small>Dining room</small>
                             </label>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mb-2">
                             <input type="checkbox" disabled id="item_6"
                                 name="home_requirements[]" value="kids_room" @if (!empty(@$bookings->home_requirements))
                                 @foreach ( json_decode(@$bookings->home_requirements) as $item)
@@ -317,7 +320,7 @@
                                 <small>Kids room</small>
                             </label>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 mb-2">
                             <input type="checkbox" disabled id="item_7"
                                 name="home_requirements[]" value="pooja_room" @if (!empty(@$bookings->home_requirements))
                                 @foreach ( json_decode(@$bookings->home_requirements) as $item)
@@ -335,24 +338,28 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <small class="m-0">BUDGET</small>
+                        <div class="col-lg-4">
+                            <small class="m-0 fw-bold">BUDGET</small>
                             <input type="number" class="form-control bg-light" disabled placeholder="Budget (in lakh)" name="budget" value="{{ @$bookings->budget}}">
                         </div>
-                        <div class="col-lg-6">
-                            <small class="m-0">BLOCK</small>
+                        <div class="col-lg-4">
+                            <small class="m-0 fw-bold">BLOCK</small>
                             <input type="text" class="form-control bg-light" disabled placeholder="Block" name="block" value="{{ @$bookings->block}}">
                         </div>
-                        <div class="col-lg-6">
-                            <small class="m-0">CITY</small>
+                        <div class="col-lg-4">
+                            <small class="m-0 fw-bold">CITY</small>
                             <input type="text" class="form-control bg-light" disabled placeholder="city" name="city" value="{{ @$bookings->city}}">
                         </div>
-                        <div class="col-lg-6">
-                            <small class="m-0">PINCODE</small>
+                        <div class="col-lg-4">
+                            <small class="m-0 fw-bold">DISTRICT</small>
+                            <input type="text" class="form-control bg-light" disabled placeholder="city" name="district" value="{{ @$bookings->district}}">
+                        </div>
+                        <div class="col-lg-4">
+                            <small class="m-0 fw-bold">PINCODE</small>
                             <input type="text" maxlength="6" disabled pattern="\d{6}" class="form-control pincode bg-light" placeholder="Pin Code" required name="pincode" onkeypress="getPincodeloaction(value)" onblur="getPincodeloaction(value)" value="{{@$bookings->pincode}}">
                         </div> 
                     </div>
@@ -386,15 +393,15 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-4">
-                            <small class="m-0">Date</small>
+                            <small class="m-0 fw-bold">Date</small>
                             <input type="Date" class="form-control bg-light" disabled name="date" value="{{ date('Y-m-d', strtotime(@$bookings->date))}}">
                         </div>
                         <div class="col-lg-4">
-                            <small class="m-0">Time</small>
+                            <small class="m-0 fw-bold">Time</small>
                             <input type="Time" class="form-control bg-light" disabled name="time" value="{{ @$bookings->time}}">
                         </div>
                         <div class="col-lg-4">
-                            <small class="m-0">Status</small>
+                            <small class="m-0 fw-bold">Status</small>
                             <select name="status" id="" class="form-control">
                                 <option value="0" {{@$bookings->status == 0? 'selected' : '' }}>Pending</option>
                                 <option value="1" {{@$bookings->status == 1? 'selected' : '' }}>Approved</option>

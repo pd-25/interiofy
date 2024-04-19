@@ -357,6 +357,7 @@ $('.rec_box').on("click", function () {
 function validatePartnerForm(currentStep) {
     
      if (currentStep == 1) {
+          var full_name = $("#full_name").val();
           var mobile_no = $("#mobile_no").val();
           var email = $("#email").val();
           var firm_name = $("#firm_name").val();
@@ -365,21 +366,41 @@ function validatePartnerForm(currentStep) {
           var firm_start_date = $("#firm_start_date").val();
           var city = $("#city").val();
 
-          if (firm_name == '') {
+          if (full_name == '') {
                Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Please enter your Firm Name!",
+                    text: "Please enter your Full Name!",
                     footer: ''
                });
                return false;
           }
 
-          if (firm_pan == '') {
+          if (email == '') {
                Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Please enter your Firm Pan!",
+                    text: "Please enter your email!",
+                    footer: ''
+               });
+               return false;
+          }
+
+          if (mobile_no == '') {
+               Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please enter your mobile no!",
+                    footer: ''
+               });
+               return false;
+          }
+
+          if (firm_name == '') {
+               Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please enter your Firm Name!",
                     footer: ''
                });
                return false;
@@ -394,31 +415,22 @@ function validatePartnerForm(currentStep) {
                });
                return false;
           }
-         
-          if (firm_start_date == '') {
+
+          if (firm_pan == '') {
                Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Please enter your Start Date!",
+                    text: "Please enter your Firm Pan!",
                     footer: ''
                });
                return false;
           }
          
-          if (email == '') {
+          if (official_company_address == '') {
                Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Please enter your email!",
-                    footer: ''
-               });
-               return false;
-          }
-          if (mobile_no == '') {
-               Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Please enter your mobile no!",
+                    text: "Please enter your Official Company Address!",
                     footer: ''
                });
                return false;
@@ -434,34 +446,30 @@ function validatePartnerForm(currentStep) {
                return false;
           }
 
-          return true;
+          if (how_many_years == '') {
+               Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please enter your How many years you have been  this line!",
+                    footer: ''
+               });
+               return false;
+          }
 
+          return true;
      }
 
      if (currentStep == 2) {
 
-          console.log(currentStep )
-
-          var firm_type = $('input[name="firm_type"]:checked').val();
-          var major_category = $('input[name="major_category"]:checked').val();
-
-          if(firm_type == undefined){
+          var major_category = $('input[name="major_category[]"]:checked').val();
+          if(major_category == undefined){
                Swal.fire({
-                   icon: "error",
-                   title: "Oops...",
-                   text: "Please choose your Firm Type!",
-                   footer: ''
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please choose your Line Of Work!",
+                    footer: ''
                });
                return false;
-          }
-          if(major_category == undefined){
-          Swal.fire({
-               icon: "error",
-               title: "Oops...",
-               text: "Please choose your Major Category!",
-               footer: ''
-          });
-          return false;
           }
           return true;
      }
@@ -480,15 +488,15 @@ function validatePartnerForm(currentStep) {
                return false;
            }
 
-           if(partnerportfolio == undefined){
-               Swal.fire({
-                   icon: "error",
-                   title: "Oops...",
-                   text: "Please choose your Project Image!",
-                   footer: ''
-               });
-               return false;
-           }
+          //  if(partnerportfolio == undefined){
+          //      Swal.fire({
+          //          icon: "error",
+          //          title: "Oops...",
+          //          text: "Please choose your Share link your website!",
+          //          footer: ''
+          //      });
+          //      return false;
+          //  }
 
            return true;
      }
@@ -511,7 +519,7 @@ function validateFormII(formTypeII, currentStep) {
 
 //Validate partner form
 function validatePartnerFormII(currentStep) {
-    
+    console.log(currentStep)
      if (currentStep == 1) {
           var firm_name = $("#firm_name").val();
           var mobile_no = $("#mobile_no").val();
@@ -631,7 +639,7 @@ function validatePartnerFormII(currentStep) {
           return true;
      }
 
-     if(currentStep == 5){
+     if(currentStep == 5 ){
           var date = $("#date").val();
           var time = $("#time").val();
 
@@ -657,7 +665,7 @@ function validatePartnerFormII(currentStep) {
           return true;
      }
 
-     if(currentStep == 5){
+     if(currentStep == 6){
           var expert_id = $("#expert_id").val();
           if(expert_id == ''){
                Swal.fire({

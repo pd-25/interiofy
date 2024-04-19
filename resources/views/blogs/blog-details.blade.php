@@ -26,11 +26,11 @@
             <div class="col-sm-12 text-center">
 
 
-                <div class="heading">
+                {{-- <div class="heading">
                     <h2>{{ $blogs->title }}</h2>
                     {{  $blogs->description }}
                 </div>
-                <img class="img-fluid" src="{{ asset('storage/'.$blogs->image) }}" alt="" />
+                <img class="img-fluid" src="{{ asset('storage/'.$blogs->image) }}" alt="" /> --}}
 
 
             </div>
