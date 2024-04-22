@@ -108,7 +108,10 @@
                                    </li>
                                    <li class="menu-item">
                                         <a href="{{ route('blogs') }}">Blogs</a>
-                                    </li>
+                                   </li>
+                                   <li class="menu-item">
+                                   <a href="#">FAQS</a>
+                                   </li>
                                    <li class="menu-item">
                                         <a href="{{ route('contact-us') }}">Contact Us</a>
                                    </li>

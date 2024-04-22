@@ -6,7 +6,7 @@
 
     <div class="interior-banner-slider owl-carousel owl-theme">
 
-        @if (!@empty($homeBanner))
+        {{-- @if (!@empty($homeBanner))
         @foreach ($homeBanner as $item)
         <div class="item banner-item">
             <a href="#"><img src="/storage/{{@$item->media}}" alt="No images"></a>
@@ -16,25 +16,20 @@
             </div>
         </div>
         @endforeach
-        @endif
+        @endif --}}
 
-        {{-- <div class="item banner-item">
-
-            <a href=""><img src="images/architectural-01.jpg" alt=""></a>
-
+       <div class="item banner-item">
+            <a href=""><img src="{{asset('images/11.png')}}" alt=""></a>
             <div class="banner-item-info">
+                {{-- <h1 style="color:white">Partner With Us</h1> --}}
 
-                <h1 style="color:white">Partner With Us</h1>
-
-                <p style="color:white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                {{-- <p style="color:white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                     Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                    a galley of type and scrambled it to make a type specimen book.</p>
-
+                    a galley of type and scrambled it to make a type specimen book.</p> --}}
             </div>
-
         </div>
 
-        <div class="item banner-item">
+         {{-- <div class="item banner-item">
 
             <a href=""><img src="images/architectural-02.jpg" alt=""></a>
 
@@ -81,7 +76,7 @@
                     </ul>
                 </div>
 
-                <p class="text_p_1 new-text-p-4" style="margin-top: 10%;">
+                {{-- <p class="text_p_1 new-text-p-4" style="margin-top: 10%;">
                     Explore our flexible subscription models tailored to fit your business needs and propel your success
 
                 <div class="desc-p text-left" style="margin-top: 5%; font-size: 16px; padding:3%;">
@@ -96,7 +91,7 @@
 
                     </ul>
                 </div>
-                </p>
+                </p> --}}
 
                 <p class="text_p_1 new-text-p-4" style="margin-top: 10%;">
                     Ready to join a thriving community and take your business to the next level?
@@ -124,7 +119,9 @@
             <div class="col-lg-4 mb-5">
                 <div class="partner-box">
                     <i class="fa fa-object-group"></i>
-                    <h4>Regular flow of high quality projects to work with</h4>
+                    <h4>
+                        Reach a wider audience: Showcase your portfolio and expertise to a diverse pool of clients seeking residential, retail, and commercial design solutions.
+                    </h4>
                 </div>
 
             </div>
@@ -132,21 +129,21 @@
             <div class="col-lg-4 mb-5">
                 <div class="partner-box">
                     <i class="fa fa-dot-circle-o"></i>
-                    <h4>360 Degree Support in with design, materials and technology</h4>
+                    <h4>Streamlined collaboration: Our user-friendly platform facilitates seamless communication, saving you valuable time and resources.</h4>
                 </div>
             </div>
 
             <div class="col-lg-4 mb-5">
                 <div class="partner-box">
                     <i class="fa fa-credit-card"></i>
-                    <h4>Regular flow of high quality projects to work with</h4>
+                    <h4>Increased visibility: Gain recognition within the design community and establish yourself as a leader in your field.</h4>
                 </div>
             </div>
 
             <div class="col-lg-4 mb-5">
                 <div class="partner-box">
                     <i class="fa fa-object-group"></i>
-                    <h4>Regular flow of high quality projects to work with</h4>
+                    <h4>Effortless lead generation: Let I InterioFY handle the matchmaking, connecting you with qualified clients actively seeking your services.</h4>
                 </div>
 
             </div>
@@ -157,7 +154,7 @@
 
                     <i class="fa fa-dot-circle-o"></i>
 
-                    <h4>360 Degree Support in with design, materials and technology</h4>
+                    <h4>Enhanced credibility: Build trust and establish your brand reputation by being on this platform</h4>
 
                 </div>
 
@@ -169,7 +166,7 @@
 
                     <i class="fa fa-credit-card"></i>
 
-                    <h4>Regular flow of high quality projects to work with</h4>
+                    <h4>Effortless lead generation: Let I InterioFY handle the matchmaking, connecting you with qualified clients actively seeking your services.</h4>
 
                 </div>
 

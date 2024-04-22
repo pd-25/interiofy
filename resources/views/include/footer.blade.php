@@ -107,16 +107,18 @@
                                       <a class="footer-logo-link" href="#">
                                            <div class="ftr_logomain">
                                                 <img src="images/logo.png" alt="" class="logo_img">
-
                                            </div>
                                            <div class="recident">
                                              <ul class="res-ul">
+                                                  <li class="res-li mb-0">Residential . Retail. Commercial</li>
+                                                  <li class="res-li">
+                                                       Navigate your space design from start to finish effortlessly with our tech-centric platform. Seamlessly connect instantly with India's foremost designers, skilled contractors, and trusted vendors for a space that reflects your vision and style.
+                                                  </li>
                                                   <li class="res-li">Corporate Address : Gurgaon, Haryana, India</li>
                                                   <li class="res-li">Write to us : iinteriofy@gmail.com</li>
                                                   <li class="res-li">Speak with us : +91 999999999</li>
-                                                  <li class="res-li">Place Residential . Retail. Commercial</li>
                                              </ul>
-                                             <h3 class="ftr_text">Navigate your space design from start to finish effortlessly with our tech-centric platform. Seamlessly connect instantly with India's foremost designers, skilled contractors, and trusted vendors for a space that reflects your vision and style.</h3>
+                                             {{-- <h3 class="ftr_text">Navigate your space design from start to finish effortlessly with our tech-centric platform. Seamlessly connect instantly with India's foremost designers, skilled contractors, and trusted vendors for a space that reflects your vision and style.</h3> --}}
                                            </div>
                                       </a>
                                  </div>
@@ -146,7 +148,10 @@
                                            </li>
                                            <li>
                                                 <a href="{{ route('contact-us') }}">Contact Us</a>
-                                           </li>
+                                             </li>
+                                             <li class="menu-item">
+                                                  <a href="#">FAQS</a>
+                                             </li>
                                       </ul>
                                  </div>
                             </div>

@@ -6152,7 +6152,7 @@ p.sb_para {
 
 	width: 100% !important;
 
-	height: 400px;
+	height: 435px;
 
 	object-fit: cover;
 
@@ -6625,7 +6625,7 @@ button.sert {
 	.res-ul .res-li {
 		font-size: 1.4rem !important;
 		font-weight: 500;
-		padding-bottom: 2%;
+		/* padding-bottom: 2%; */
 	}
 }
 

@@ -69,13 +69,14 @@
                                     <div class="col-lg-4 col-md-4 col-12 mb-5">
                                         <div class="blog_div_3">
                                             <div class="holiday_pack_slide">
-                                                <a href="#">
+                                                <a href="{{route('blog-details', encrypt($item->id))}}">
                                                     <div class="holiday_pack_area">
-                                                            <div class="pack_image">
-                                                                <img class="img-fluid" src="{{ asset('storage/'.$item->image) }}" alt="No Images">
-                                                            </div>
-                                                            <h3 class="title_blog">{{@$item->title}}</h3>
-                                                            <p>{!! @$item->description !!}</p>
+                                                        <div class="pack_image">
+                                                            <img class="img-fluid" src="{{ asset('storage/'.$item->image) }}" alt="No Images">
+                                                        </div>
+                                                        <h3 class="title_blog">{{@$item->title}}</h3>
+                                                        <p> {!! Str::words ($item->description, 30 ,' ...') !!}</p>
+                                                        {{-- <p>{!! @$item->description !!}</p> --}}
                                                     </div>
                                                 </a>
                                             </div>

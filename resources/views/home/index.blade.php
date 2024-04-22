@@ -544,13 +544,13 @@
                          @if (!@empty($blog))
                          @foreach ($blog as $item)
                          <div class="holiday_pack_slide">
-                              <a href="#">
+                              <a href="{{route('blog-details', encrypt($item->id))}}">
                                    <div class="holiday_pack_area">
                                         <div class="pack_image">
                                              <img class="img-fluid" src="{{ asset('storage/'.$item->image) }}" alt="No images">
                                         </div>
                                         <h3 class="title_blog">{{@$item->title}}</h3>
-                                        <p>{!! @$item->description !!}</p>
+                                        <p> {!! Str::words ($item->description, 30 ,' ...') !!}</p>
                                    </div>
                               </a>
                          </div>

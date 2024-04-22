@@ -60,6 +60,7 @@ class HomeController extends Controller
 
     public function blog_details(Request $request, $id)
     {
+        $id = decrypt($id);
         $blogs = Blog::where('id', $id)->first();
         return view('blogs.blog-details', compact('blogs'));
     }
@@ -178,15 +179,15 @@ class HomeController extends Controller
         $location = explode("-",$location);
         $district = $location[0];
         $city = $location[1];
-        $partners = Partner::with('user')->Where('city','like',"%{$district}%")->get();
+        $partners = Partner::with('user')->Where('city','like',"%{$district}%")->inRandomOrder()->limit(3)->get();
         if(sizeof($partners) > 0){
             return $partners;
         }else{
-            $partners = Partner::with('user')->Where('city','like',"%{$city}%")->get();
+            $partners = Partner::with('user')->Where('city','like',"%{$city}%")->inRandomOrder()->limit(3)->get();
             if(sizeof($partners) > 0){
                 return $partners;
             }else{
-                $partners = Partner::with('user')->inRandomOrder()->limit(5)->get();
+                $partners = Partner::with('user')->inRandomOrder()->limit(3)->get();
                 return $partners;
             }
         }
