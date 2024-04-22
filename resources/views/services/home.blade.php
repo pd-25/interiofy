@@ -408,29 +408,54 @@
           </div>
 
           <div class="row text-center">
-               <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk1.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">Share your details</p>
+               <div class="col-lg-1 col-md-2 col-12 coll first-coll">
+                    <img src="{{ asset('images/nk1.jpg') }}" class="design_section_img_1 img_flud">
+                    <p class="design_section_p_1 desc-p1">Share your details</p>
                </div>
-               <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk2.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">Share Your Requirement</p>
+
+               <div class="col-lg-1 col-md-2 col-12 coll arrow1">
+                    <img src="{{ asset('images/right-arrow.png') }}" class="design_section_img_2 img_flud">
                </div>
-               <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk3.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">We share 3 partners based on your requirement & location</p>
+
+               <div class="col-lg-1 col-md-2 col-12 coll">
+                    <img src="{{ asset('images/nk2.jpg') }}" class="design_section_img_1 img_flud">
+                    <p class="design_section_p_1 desc-p1">Share Your Requirement</p>
                </div>
-               <div class="col-lg-2 col-md-4 col-12">
+
+               <div class="col-lg-1 col-md-2 col-12 coll arrow1">
+                    <img src="{{ asset('images/right-arrow.png') }}" class="design_section_img_2 img_flud">
+               </div>
+
+               <div class="col-lg-1 col-md-2 col-12 coll">
+                    <img src="{{ asset('images/nk3.jpg') }}" class="design_section_img_1 img_flud">
+                    <p class="design_section_p_1 desc-p1">We share 3 partners based on your requirement & location</p>
+               </div>
+
+               <div class="col-lg-1 col-md-2 col-12 coll coll2 arrow1">
+                    <img src="{{ asset('images/right-arrow.png') }}" class="design_section_img_2 img_flud">
+               </div>
+
+               <div class="col-lg-1 col-md-2 col-12 coll ">
                     <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">You fix the free consultation call</p>
+                    <p class="design_section_p_1 desc-p1">You fix the free consultation call</p>
                </div>
-               <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">You finalize the partner of your choice</p>
+
+               <div class="col-lg-1 col-md-2 col-12 coll arrow1">
+                    <img src="{{ asset('images/right-arrow.png') }}" class="design_section_img_2 img_flud">
                </div>
-               <div class="col-lg-2 col-md-4 col-12">
+
+               <div class="col-lg-1 col-md-2 col-12 coll">
                     <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">The Partner will further coordinate with you to understand and quote for execution</p>
+                    <p class="design_section_p_1 desc-p1">You finalize the partner of your choice</p>
+               </div>
+
+               <div class="col-lg-1 col-md-2 col-12 coll arrow1">
+                    <img src="{{ asset('images/right-arrow.png') }}" class="design_section_img_2 img_flud">
+               </div>
+               
+               <div class="col-lg-1 col-md-2 col-12 coll">
+                    <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
+                    <p class="design_section_p_1 desc-p1">The Partner will further coordinate with you to understand and quote for execution</p>
                </div>
           </div>
 
