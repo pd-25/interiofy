@@ -71,10 +71,10 @@ class CategorieController extends Controller
         }
 
         // Clear the categories cache
-        $this->clearCategoriesCache();
+        // $this->clearCategoriesCache();
 
         //Setting up cache
-        $this->getCategories();
+        // $this->getCategories();
 
         // Additional logic or redirection after successful data storage
         return redirect()->back()->with('success', 'Services stored successfully!');

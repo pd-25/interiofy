@@ -19,31 +19,15 @@
 </div>
 
 
+
+
 <div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-
-                {{-- <div class="row">
-                    <div class="form-row">
-                        <div class="col-md-4 row">
-                            <div class="">
-                                <a href="{{ route('Serviceimageadd') }}" class="btn btn-danger">Add Services Images</a>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-
-            </div>
-            <!-- end card body-->
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session()->get('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <!-- end card -->
-    </div>
-    <!-- end col-->
-</div>
-<!-- end row-->
-
-<div class="row">
+    @endif
     <div class="col-12">
         <div class="card">
             <div class="card-body">
@@ -51,10 +35,9 @@
                     <thead>
                         <tr>
                             <th>Sno</th>
-                            <th>Mobile</th>
+                            <th>Patner Details</th>
                             <th>Firm Name</th>
                             <th>Firm GST</th>
-                            <th>Firm Type</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -67,11 +50,13 @@
                         ?>
                                     <tr>
                                         <td><?php echo $count; ?></td>
-
-                                        <td><?php echo $row->user->mobile_no; ?></td>
+                                        <td>
+                                            <?php echo $row->user->name; ?> <br>
+                                            <?php echo $row->user->email; ?> <br>
+                                            <?php echo $row->user->mobile_no; ?>
+                                        </td>
                                         <td><?php echo $row->firm_name; ?></td>
                                         <td><?php echo $row->firm_gst; ?></td>
-                                        <td><?php echo $row->firm_type; ?></td>
                                         {{-- <td>
                                             <div class="btn-group mt-2 me-1">
                                                 <button type="button" class="btn btn-secondary">Action</button>
@@ -100,7 +85,8 @@
                                                 </button>
                                                 <div class="dropdown-menu" style="">
                                                     <a class="dropdown-item" href="{{ route('partnerdetails',[$row->user->id]) }}"><i class="uil uil-edit me-1"></i>View</a>
-                                                    {{-- <a class="dropdown-item" href="javascript:void(0)" onclick="delete_contest_category('<?php echo $row->id; ?>')"><i class="uil uil-trash-alt me-1"></i>Delete</a> --}}
+
+                                                    <a class="dropdown-item DeleteEnquiry" href="{{route('partnerdelete', $row->user->id)}}"><i class="uil uil-trash-alt me-1"></i>Delete</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -133,10 +119,17 @@
 
 @push('scripts')
 <script>
-	function delete_contest_category(delete_id){
-		if(confirm('Are you sure you want to delete this item?')){
-
-		}
-	}
+    $(document).ready(function() {
+            $('.DeleteEnquiry').click(function() {
+                if (!confirm('Do you want to delete this user?')) {   
+                    return false;
+                }
+            })
+        });
+	// function delete_contest_category(delete_id){
+	// 	if(!confirm('Are you sure you want to delete this item?')){
+    //         return false;
+	// 	}
+	// }
 </script>
 @endpush

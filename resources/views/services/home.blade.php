@@ -480,7 +480,7 @@ $category = 'home';
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Redirect the user to the desired URL
-                            // location.reload();
+                            location.reload();
                         }
                     });
                 }, 2000);

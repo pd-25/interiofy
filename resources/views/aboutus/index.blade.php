@@ -81,7 +81,8 @@
         </div>
     </div>
 </section>
-<section class="mb-70">
+{{--//////////////////////////// (We will later add FAQS as well in future)/////////////// --}}
+{{-- <section class="mb-70">
     <div class="container faq">
         <div class="heading">
             <h2>FAQ</h2>
@@ -115,7 +116,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 
 @include('include.footer')

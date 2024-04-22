@@ -3,9 +3,7 @@
 <!-- banner sec -->
 
 <section class="banner_sec">
-
      <div class="main-banner-slider owl-carousel owl-theme">
-
           @if (!@empty($homeBanner))
           @foreach ($homeBanner as $item)
           <div class="item main-item">
@@ -16,36 +14,7 @@
           </div>
           @endforeach
           @endif
-
-
-          {{-- <div class="item main-item">
-
-                    <a href=""><img src="{{ asset('images/architectural-01.jpg') }}" alt=""></a>
-
-          <div class="banner_title">
-
-               <h1>INTERIOFY Anything and Everything </h1>
-
-          </div>
-
      </div>
-
-     <div class="item main-item">
-
-          <a href=""><img src="{{ asset('images/architectural-02.jpg') }}" alt=""></a>
-
-          <div class="banner_title">
-
-               <h1>INTERIOFY Anything and Everything </h1>
-
-          </div>
-
-     </div> --}}
-
-     </div>
-
-
-
 </section>
 
 <!-- banner sec end  -->
@@ -70,19 +39,12 @@
 <!-- step form sec start  -->
 
 <section class="step_form_sec">
-
      <div class="container">
-
           <div class="step_icon_row">
-
                <a href="{{ route('home-services') }}" class="step_icon_box">
-
                     <div class="step_icon">
-
                          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
-
                               <g>
-
                                    <path d="M471.982 417.008Q472 416.5 472 416a32.036 32.036 0 0 0-32-32V236l28.8-21.6a8 8 0 0 0-.08-12.859L400 151.322V64a8 8 0 0 0 8-8V24a8 8 0 0 0-8-8h-80a8 8 0 0 0-8 8v32a8 8 0 0 0 8 8v28.861l-59.28-43.32a8 8 0 0 0-9.44 0l-208 152a8 8 0 0 0-.08 12.859L72 236v148a32.036 32.036 0 0 0-32 32q0 .5.018 1.008A32 32 0 0 0 48 480h416a32 32 0 0 0 7.982-62.992ZM328 32h64v16h-64Zm8 72V64h48v75.63L335.243 104Zm-80-38.092 194.555 142.176-18.628 13.971L260.706 97.53a8 8 0 0 0-9.412 0L80.073 222.055l-18.628-13.971ZM32 448a16.019 16.019 0 0 1 15.76-16h.019c.409.057.818.106 1.235.133a8 8 0 0 0 8.023-10.716A15.727 15.727 0 0 1 56 416a16.019 16.019 0 0 1 16-16v64H48a16.019 16.019 0 0 1-16-16Zm344 16h-96V288h96Zm16 0V280a8 8 0 0 0-8-8H272a8 8 0 0 0-8 8v184H88V236.074l168-122.182 168 122.182V464Zm72 0h-24v-64a16.019 16.019 0 0 1 16 16 15.727 15.727 0 0 1-1.037 5.421 8 8 0 0 0 8.023 10.716c.417-.027.826-.076 1.235-.133h.019a16 16 0 0 1-.24 32Z" fill="#000000" opacity="1" data-original="#000000" class=""></path>
 
                                    <path d="M224 272h-96a8 8 0 0 0-8 8v112a8 8 0 0 0 8 8h96a8 8 0 0 0 8-8V280a8 8 0 0 0-8-8Zm-8 56h-32v-40h32Zm-48-40v40h-32v-40Zm-32 56h32v40h-32Zm48 40v-40h32v40Z" fill="#000000" opacity="1" data-original="#000000" class=""></path>
@@ -146,11 +108,6 @@
 </section>
 
 <!-- step form sec end  -->
-
-
-
-
-
 
 
 <!-- Services we offer start  -->
@@ -334,16 +291,14 @@
 
 
      
-     <section class="sliders_sec">
+     {{-- <section class="sliders_sec">
 
           <div class="container">
 
                <div class="slider_area">
 
                     <div class="slider_head">
-
                          <!--<h3 class="slider_title">Design Consultation</h3>-->
-
                     </div>
 
                     <div class="row">
@@ -351,7 +306,6 @@
                               <h1>Value Add Services</h1>
                          </div>
                          <div class="col-sm-12">
-
                               <div class="our_tour_slider owl-carousel owl_navigation">
                                    @if (!@empty($subBanner))
                                         @foreach ($subBanner as $item)
@@ -366,863 +320,28 @@
                                              </div>
                                         @endforeach
                                    @endif
-                                   {{-- <div class="holiday_pack_slide">
-
-                                        <a href="#">
-
-                                             <div class="holiday_pack_area">
-
-
-
-                                                  <div class="pack_image">
-
-                                                       <img class="img-fluid" src="{{ asset('images/Design2.jpg') }}" alt="" />
-
-                                                  </div>
-
-                                             </div>
-
-                                        </a>
-
-                                   </div>
-                                   <div class="holiday_pack_slide">
-
-                                        <a href="#">
-
-                                             <div class="holiday_pack_area">
-
-
-
-                                                  <div class="pack_image">
-
-                                                       <img class="img-fluid" src="{{ asset('images/Design3.jpg') }}" alt="" />
-
-                                                  </div>
-
-                                             </div>
-
-                                        </a>
-
-                                   </div>
-                                   <div class="holiday_pack_slide">
-
-                                        <a href="#">
-
-                                             <div class="holiday_pack_area">
-
-
-
-                                                  <div class="pack_image">
-
-                                                       <img class="img-fluid" src="{{ asset('images/Design4.jpg') }}" alt="" />
-
-                                                  </div>
-
-                                             </div>
-
-                                        </a>
-
-                                   </div>
-                                   <div class="holiday_pack_slide">
-
-                                        <a href="#">
-
-                                             <div class="holiday_pack_area">
-
-
-
-                                                  <div class="pack_image">
-
-                                                       <img class="img-fluid" src="{{ asset('images/Design5.jpg') }}" alt="" />
-
-                                                  </div>
-
-                                             </div>
-
-                                        </a>
-
-                                   </div> --}}
 
                               </div>
-
-                              <!--<div class="see-all-btn">-->
-
-                              <!--     <a class="btn seeAllBtn" href="design-consultation.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-                              <!--</div>-->
-
                          </div>
-
                     </div>
-
                </div>
-
-            <!--   <div class="slider_area">-->
-
-            <!--        <div class="slider_head">-->
-
-            <!--             <h3 class="slider_title">Architecture</h3>-->
-
-            <!--        </div>-->
-
-            <!--        <div class="row">-->
-
-            <!--             <div class="col-sm-12">-->
-
-            <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/temple.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/terres.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Kids-room.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Bedroom.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/livingRoom.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                  </div>-->
-
-            <!--                  <div class="see-all-btn">-->
-
-            <!--                       <a class="btn seeAllBtn" href="architecture.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-            <!--                  </div>-->
-
-            <!--             </div>-->
-
-            <!--        </div>-->
-
-            <!--   </div>-->
-
-
-
-            <!--   <div class="slider_area">-->
-
-            <!--        <div class="slider_head">-->
-
-            <!--             <h3 class="slider_title">HVAC consultation</h3>-->
-
-            <!--        </div>-->
-
-            <!--        <div class="row">-->
-
-            <!--             <div class="col-sm-12">-->
-
-            <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Flooring1.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Walls1.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/ceiling1.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Flooring2.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Walls2.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/ceiling2.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Walls3.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class=" holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Flooring3.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-
-
-            <!--                  </div>-->
-
-            <!--                  <div class="see-all-btn">-->
-
-            <!--                       <a class="btn seeAllBtn" href="hvac-consultation.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-            <!--                  </div>-->
-
-            <!--             </div>-->
-
-            <!--        </div>-->
-
-            <!--   </div>-->
-
-            <!--   <div class="slider_area">-->
-
-            <!--        <div class="slider_head">-->
-
-            <!--             <h3 class="slider_title">Electrical Consultation</h3>-->
-
-            <!--        </div>-->
-
-            <!--        <div class="row">-->
-
-            <!--             <div class="col-sm-12">-->
-
-            <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/electrical1.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/plumber1.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/carpenter1.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/plumber2.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/electrical2.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/carpenter2.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-
-
-
-
-
-
-            <!--                  </div>-->
-
-            <!--                  <div class="see-all-btn">-->
-
-            <!--                       <a class="btn seeAllBtn" href="#">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-            <!--                  </div>-->
-
-            <!--             </div>-->
-
-            <!--        </div>-->
-
-            <!--   </div>-->
-
-            <!--     <div class="slider_area">-->
-
-            <!--        <div class="slider_head">-->
-
-            <!--             <h3 class="slider_title">Contractor</h3>-->
-
-            <!--        </div>-->
-
-            <!--        <div class="row">-->
-
-            <!--             <div class="col-sm-12">-->
-
-            <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/temple.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/terres.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Kids-room.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Bedroom.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/livingRoom.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                  </div>-->
-
-            <!--                  <div class="see-all-btn">-->
-
-            <!--                       <a class="btn seeAllBtn" href="architecture.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-            <!--                  </div>-->
-
-            <!--             </div>-->
-
-            <!--        </div>-->
-
-            <!--   </div>-->
-
-            <!--<div class="slider_area">-->
-
-            <!--        <div class="slider_head">-->
-
-            <!--             <h3 class="slider_title">Structural Consultation</h3>-->
-
-            <!--        </div>-->
-
-            <!--        <div class="row">-->
-
-            <!--             <div class="col-sm-12">-->
-
-            <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Design1.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Design2.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Design3.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Design4.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                       <div class="holiday_pack_slide">-->
-
-            <!--                            <a href="#">-->
-
-            <!--                                 <div class="holiday_pack_area">-->
-
-
-
-            <!--                                      <div class="pack_image">-->
-
-            <!--                                           <img class="img-fluid" src="images/Design5.jpg" alt="" />-->
-
-            <!--                                      </div>-->
-
-            <!--                                 </div>-->
-
-            <!--                            </a>-->
-
-            <!--                       </div>-->
-
-            <!--                  </div>-->
-
-            <!--                  <div class="see-all-btn">-->
-
-            <!--                       <a class="btn seeAllBtn" href="design-consultation.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-            <!--                  </div>-->
-
-            <!--             </div>-->
-
-            <!--        </div>-->
-
-            <!--   </div>-->
-
-
-
           </div>
-
-     </section>
+     </section> --}}
 
      <!-- Services we offer end  -->
-
+</section>
 
 <!-- sliders sec start  -->
 
 <section class="sliders_sec">
-
-     <div class="container">
-
+     <div class="container ">
           <div class="slider_area">
                <div class="row justify-content-center">
-
                     <div class="col-sm-12 text-center">
-
                          <div class="heading mt-3">
-
                               <h2>Value Add Services</h2>
-
                          </div>
-
                     </div>
-
                </div>
 
                <div class="slider_head">
@@ -1230,9 +349,7 @@
                </div>
 
                <div class="row">
-
                     <div class="col-sm-12">
-
                          <div class="our_tour_slider owl-carousel owl_navigation">
                               @if (!@empty($subBanner))
                               @foreach ($subBanner as $item)
@@ -1247,839 +364,11 @@
                               </div>
                               @endforeach
                               @endif
-                              {{-- <div class="holiday_pack_slide">
-
-                              <a href="#">
-
-                                   <div class="holiday_pack_area">
-
-
-
-                                        <div class="pack_image">
-
-                                             <img class="img-fluid" src="{{ asset('images/Design2.jpg') }}" alt="" />
-
                          </div>
-
                     </div>
-
-                    </a>
-
                </div>
-               <div class="holiday_pack_slide">
-
-                    <a href="#">
-
-                         <div class="holiday_pack_area">
-
-
-
-                              <div class="pack_image">
-
-                                   <img class="img-fluid" src="{{ asset('images/Design3.jpg') }}" alt="" />
-
-                              </div>
-
-                         </div>
-
-                    </a>
-
-               </div>
-               <div class="holiday_pack_slide">
-
-                    <a href="#">
-
-                         <div class="holiday_pack_area">
-
-
-
-                              <div class="pack_image">
-
-                                   <img class="img-fluid" src="{{ asset('images/Design4.jpg') }}" alt="" />
-
-                              </div>
-
-                         </div>
-
-                    </a>
-
-               </div>
-               <div class="holiday_pack_slide">
-
-                    <a href="#">
-
-                         <div class="holiday_pack_area">
-
-
-
-                              <div class="pack_image">
-
-                                   <img class="img-fluid" src="{{ asset('images/Design5.jpg') }}" alt="" />
-
-                              </div>
-
-                         </div>
-
-                    </a>
-
-               </div> --}}
-
           </div>
-
-          <!--<div class="see-all-btn">-->
-
-          <!--     <a class="btn seeAllBtn" href="design-consultation.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-          <!--</div>-->
-
      </div>
-
-     </div>
-
-     </div>
-
-     <!--   <div class="slider_area">-->
-
-     <!--        <div class="slider_head">-->
-
-     <!--             <h3 class="slider_title">Architecture</h3>-->
-
-     <!--        </div>-->
-
-     <!--        <div class="row">-->
-
-     <!--             <div class="col-sm-12">-->
-
-     <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/temple.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/terres.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Kids-room.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Bedroom.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/livingRoom.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                  </div>-->
-
-     <!--                  <div class="see-all-btn">-->
-
-     <!--                       <a class="btn seeAllBtn" href="architecture.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-     <!--                  </div>-->
-
-     <!--             </div>-->
-
-     <!--        </div>-->
-
-     <!--   </div>-->
-
-
-
-     <!--   <div class="slider_area">-->
-
-     <!--        <div class="slider_head">-->
-
-     <!--             <h3 class="slider_title">HVAC consultation</h3>-->
-
-     <!--        </div>-->
-
-     <!--        <div class="row">-->
-
-     <!--             <div class="col-sm-12">-->
-
-     <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Flooring1.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Walls1.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/ceiling1.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Flooring2.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Walls2.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/ceiling2.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Walls3.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class=" holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Flooring3.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-
-
-     <!--                  </div>-->
-
-     <!--                  <div class="see-all-btn">-->
-
-     <!--                       <a class="btn seeAllBtn" href="hvac-consultation.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-     <!--                  </div>-->
-
-     <!--             </div>-->
-
-     <!--        </div>-->
-
-     <!--   </div>-->
-
-     <!--   <div class="slider_area">-->
-
-     <!--        <div class="slider_head">-->
-
-     <!--             <h3 class="slider_title">Electrical Consultation</h3>-->
-
-     <!--        </div>-->
-
-     <!--        <div class="row">-->
-
-     <!--             <div class="col-sm-12">-->
-
-     <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/electrical1.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/plumber1.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/carpenter1.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/plumber2.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/electrical2.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/carpenter2.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-
-
-
-
-
-
-     <!--                  </div>-->
-
-     <!--                  <div class="see-all-btn">-->
-
-     <!--                       <a class="btn seeAllBtn" href="#">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-     <!--                  </div>-->
-
-     <!--             </div>-->
-
-     <!--        </div>-->
-
-     <!--   </div>-->
-
-     <!--     <div class="slider_area">-->
-
-     <!--        <div class="slider_head">-->
-
-     <!--             <h3 class="slider_title">Contractor</h3>-->
-
-     <!--        </div>-->
-
-     <!--        <div class="row">-->
-
-     <!--             <div class="col-sm-12">-->
-
-     <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/temple.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/terres.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Kids-room.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Bedroom.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/livingRoom.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                  </div>-->
-
-     <!--                  <div class="see-all-btn">-->
-
-     <!--                       <a class="btn seeAllBtn" href="architecture.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-     <!--                  </div>-->
-
-     <!--             </div>-->
-
-     <!--        </div>-->
-
-     <!--   </div>-->
-
-     <!--<div class="slider_area">-->
-
-     <!--        <div class="slider_head">-->
-
-     <!--             <h3 class="slider_title">Structural Consultation</h3>-->
-
-     <!--        </div>-->
-
-     <!--        <div class="row">-->
-
-     <!--             <div class="col-sm-12">-->
-
-     <!--                  <div class="our_tour_slider owl-carousel owl_navigation">-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Design1.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Design2.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Design3.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Design4.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                       <div class="holiday_pack_slide">-->
-
-     <!--                            <a href="#">-->
-
-     <!--                                 <div class="holiday_pack_area">-->
-
-
-
-     <!--                                      <div class="pack_image">-->
-
-     <!--                                           <img class="img-fluid" src="images/Design5.jpg" alt="" />-->
-
-     <!--                                      </div>-->
-
-     <!--                                 </div>-->
-
-     <!--                            </a>-->
-
-     <!--                       </div>-->
-
-     <!--                  </div>-->
-
-     <!--                  <div class="see-all-btn">-->
-
-     <!--                       <a class="btn seeAllBtn" href="design-consultation.html">See All<i class="fa-solid fa-angles-right"></i></a>-->
-
-     <!--                  </div>-->
-
-     <!--             </div>-->
-
-     <!--        </div>-->
-
-     <!--   </div>-->
-
-
-
-     </div>
-
 </section>
 
 <!-- sliders sec end  -->
@@ -2089,97 +378,46 @@
 <!--===================== counter up sec  ===================== -->
 
 <section id="counter" class="counterUp_sec">
-
      <div class="container">
-
           <div class="row justify-content-center">
-
                <div class="col-sm-12 text-center">
-
                     <div class="heading">
-
                          <h2><img src={{ asset('images/new-logo.jpeg') }}" alt="" class="logo_img"></h2>
-
                     </div>
-
                </div>
-
           </div>
-
           <div class="wrapper">
-
                <div class="counterUP">
-
                     <div class="counter">
-
                          <span class="num count percent" data-count="31">000</span>
-
                          <span class="num">K</span><i class="fa-solid fa-plus"></i>
-
                     </div>
-
-
-
                     <p class="text">Completed Homes</p>
-
                </div>
-
-
-
                <div class="counterUP">
-
                     <div class="counter">
-
                          <span class="num count percent" data-count="600">000</span>
-
                          <i class="fa-solid fa-plus"></i>
-
                     </div>
-
-
-
                     <p class="text">In-house Designers</p>
-
                </div>
 
-
-
                <div class="counterUP">
-
                     <div class="counter">
-
                          <span class="num count percent" data-count="30">000</span>
-
                          <i class="fa-solid fa-plus"></i>
-
                     </div>
-
-
-
                     <p class="text">Projects Delivered Daily</p>
-
                </div>
-
-
 
                <div class="counterUP">
-
                     <div class="counter">
-
                          <span class="num count percent" data-count="20">000</span>
-
                          <i class="fa-solid fa-plus"></i>
-
                     </div>
-
                     <p class="text">Cities</p>
-
                </div>
-
           </div>
-
-
-
      </div>
 
 </section>
@@ -2206,15 +444,15 @@
 
           <div class="row text-center">
                <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk1.jpg') }}" class="design_section_img_1">
+                    <img src="{{ asset('images/nk1.jpg') }}" class="design_section_img_1 img_flud">
                     <p class="design_section_p_1">Share your details</p>
                </div>
                <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk2.jpg') }}" class="design_section_img_1">
+                    <img src="{{ asset('images/nk2.jpg') }}" class="design_section_img_1 img_flud">
                     <p class="design_section_p_1">Share Your Requirement</p>
                </div>
                <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk3.jpg') }}" class="design_section_img_1">
+                    <img src="{{ asset('images/nk3.jpg') }}" class="design_section_img_1 img_flud">
                     <p class="design_section_p_1">We share 3 partners based on your requirement & location</p>
                </div>
                <div class="col-lg-2 col-md-4 col-12">
@@ -2247,7 +485,7 @@
 
                     <div class="heading">
 
-                         <h2>OUR CUSTOMERS SPEAK FOR US</h2>
+                         <h2>Testimonials</h2>
 
                     </div>
 
@@ -2269,12 +507,7 @@
                               <div class="rating">
                                    @for ($i=0; $i < (int)$item->rating; $i++)
                                         <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-                                        @endfor
-                                        {{-- <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-                                                  <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-                                                  <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-                                                  <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-                                                  <span><i class="fa fa-star orange" aria-hidden="true"></i></span> --}}
+                                   @endfor
                               </div>
                               <p class="tes_para">
                                    {!! $item->description !!}
@@ -2282,110 +515,9 @@
                          </div>
                          @endforeach
                          @endif
-                         {{-- <div class="testi_slider_item">
-                                   <div class="testi_img">
-                                        <img class="img-fluid" src="{{ asset('images/my1.jpg') }}" alt="">
                     </div>
-                    <h3>Lorem Ipsum</h3>
-                    <p>Web Designer</p>
-                    <div class="rating">
-                         <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-                         <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-                         <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-                         <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-                         <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-                    </div>
-                    <p class="tes_para">
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis facere beatae
-                         adipisci nisi ad aliquam sint ipsa qui fuga eius, non necessitatibus quidem,
-                         doloribus eum.
-                    </p>
-               </div> --}}
-               {{-- <div class="testi_slider_item">
-
-                                   <div class="testi_img">
-
-                                        <img class="img-fluid" src="{{ asset('images/my1.jpg') }}" alt="">
-
+               </div>
           </div>
-
-          <h3>Lorem Ipsum</h3>
-
-          <p>Web Designer</p>
-
-          <div class="rating">
-
-               <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-               <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-               <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-               <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-               <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-          </div>
-
-          <p class="tes_para">
-
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis facere beatae
-
-               adipisci nisi ad aliquam sint ipsa qui fuga eius, non necessitatibus quidem,
-
-               doloribus eum.
-
-          </p>
-
-
-
-
-
-     </div>
-     <div class="testi_slider_item">
-
-          <div class="testi_img">
-
-               <img class="img-fluid" src="{{ asset('images/my1.jpg') }}" alt="">
-
-          </div>
-
-          <h3>Lorem Ipsum</h3>
-
-          <p>Web Designer</p>
-
-          <div class="rating">
-
-               <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-               <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-               <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-               <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-               <span><i class="fa fa-star orange" aria-hidden="true"></i></span>
-
-          </div>
-
-          <p class="tes_para">
-
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis facere beatae
-
-               adipisci nisi ad aliquam sint ipsa qui fuga eius, non necessitatibus quidem,
-
-               doloribus eum.
-
-          </p>
-
-
-
-
-
-     </div> --}}
-     </div>
-     </div>
-     </div>
      </div>
 </section>
 
@@ -2398,19 +530,12 @@
 <section class="blog_sec" id="blog">
 
      <div class="container">
-
           <div class="row justify-content-center">
-
                <div class="col-sm-12 text-center">
-
                     <div class="heading">
-
                          <h2>BLOGS</h2>
-
                     </div>
-
                </div>
-
           </div>
 
           <div class="row justify-content-center">
@@ -2419,122 +544,22 @@
                          @if (!@empty($blog))
                          @foreach ($blog as $item)
                          <div class="holiday_pack_slide">
-                              <a href="#">
+                              <a href="{{route('blog-details', encrypt($item->id))}}">
                                    <div class="holiday_pack_area">
                                         <div class="pack_image">
                                              <img class="img-fluid" src="{{ asset('storage/'.$item->image) }}" alt="No images">
                                         </div>
                                         <h3 class="title_blog">{{@$item->title}}</h3>
-                                        <p>{!! @$item->description !!}</p>
+                                        <p> {!! Str::words ($item->description, 30 ,' ...') !!}</p>
                                    </div>
                               </a>
                          </div>
                          @endforeach
                          @endif
-
-
-
-                         {{-- <div class="holiday_pack_slide">
-
-                                   <a href="#">
-
-                                        <div class="holiday_pack_area">
-
-                                             <div class="pack_image">
-
-                                                  <img class="img-fluid" src="{{ asset('images/electrical2.jpg') }}" alt="">
-
                     </div>
-
-                    <h3 class="title_blog">Lorem ipsum dolor sit amet.</h3>
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque
-
-                         neque quis quia et minus!</p>
-
                </div>
-
-               </a>
-
           </div>
-          <div class="holiday_pack_slide">
-
-               <a href="#">
-
-                    <div class="holiday_pack_area">
-
-                         <div class="pack_image">
-
-                              <img class="img-fluid" src="{{ asset('images/Bedroom.jpg') }}" alt="">
-
-                         </div>
-
-                         <h3 class="title_blog">Lorem ipsum dolor sit amet.</h3>
-
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque
-
-                              neque quis quia et minus!</p>
-
-                    </div>
-
-               </a>
-
-          </div>
-          <div class="holiday_pack_slide">
-
-               <a href="#">
-
-                    <div class="holiday_pack_area">
-
-                         <div class="pack_image">
-
-                              <img class="img-fluid" src="{{ asset('images/livingRoom.jpg') }}" alt="">
-
-                         </div>
-
-                         <h3 class="title_blog">Lorem ipsum dolor sit amet.</h3>
-
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque
-
-                              neque quis quia et minus!</p>
-
-                    </div>
-
-               </a>
-
-          </div>
-          <div class="holiday_pack_slide">
-
-               <a href="#">
-
-                    <div class="holiday_pack_area">
-
-                         <div class="pack_image">
-
-                              <img class="img-fluid" src="{{ asset('images/temple.jpg') }}" alt="">
-
-                         </div>
-
-                         <h3 class="title_blog">Lorem ipsum dolor sit amet.</h3>
-
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque
-
-                              neque quis quia et minus!</p>
-
-                    </div>
-
-               </a>
-
-          </div> --}}
-
      </div>
-
-     </div>
-
-     </div>
-
-     </div>
-
 </section>
 
 <!--===================== Articles & Blogs sec end  ===================== -->
@@ -2556,6 +581,17 @@
                               <div class="title_container">
 
                                    <h2>Book Your Free Consultation Call </h2>
+                                   @if(Session::has('success'))
+                                   <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                                        {{ Session::get('success') }}
+
+                                   </div>
+                                   @endif
+                                   @if(Session::has('error'))
+                                   <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                                        {{ Session::get('error') }}
+                                   </div>
+                                   @endif
 
                               </div>
 
@@ -2567,56 +603,68 @@
 
                                              <div class="form-inner">
 
-                                                  <form>
-
+                                                  <form  action="{{route('storeEnquries')}}" method="post">
+                                                       @csrf
+                                                       @method('POST')
                                                        <div class="form-group">
-
-                                                            <input type="text" class="form-control" placeholder="First Name" value="" />
-
+                                                            <input type="text" name="fullName" class="form-control" placeholder="First Name" value="" />
+                                                            <span class="text-danger">
+                                                                 @error('fullName')
+                                                                 <strong>{{ $message }}</strong>
+                                                                 @enderror
+                                                             </span>
                                                        </div>
 
                                                        <div class="form-group">
-
-                                                            <input type="text" class="form-control" placeholder="Email" name="name">
-
+                                                            <input type="text" class="form-control" placeholder="Email" name="email">
+                                                            <span class="text-danger">
+                                                                 @error('email')
+                                                                 <strong>{{ $message }}</strong>
+                                                                 @enderror
+                                                             </span>
                                                        </div>
 
                                                        <div class="form-group">
-
-                                                            <input type="text" id="mobile_code" class="form-control" placeholder="Phone Number" name="name">
-
+                                                            <input type="text" id="mobile_code" class="form-control" placeholder="Phone Number"  name="phoneNo" >
+                                                            <span class="text-danger">
+                                                                 @error('phoneNo')
+                                                                 <strong>{{ $message }}</strong>
+                                                                 @enderror
+                                                             </span>
                                                        </div>
 
-                                                       <div class="form-group tuggle toggle-switch">
-
+                                                       {{-- <div class="form-group tuggle toggle-switch">
                                                             <div class="tuggle_text">
-
                                                                  <p>You can reach me on WhatsApp</p>
-
                                                                  <p>
-
                                                                       <small>Uncheck to opt-out of upcoming meetings and offer alerts</small>
-
                                                                  </p>
-
                                                             </div>
-
                                                             <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
 
-                                                       </div>
+                                                       </div> --}}
 
                                                        <div class="form-group">
-
-                                                            <input type="text" class="form-control" placeholder="Enter your current residence pincode" value="" />
-
+                                                            <input type="text" class="form-control" placeholder="Enter your current residence address with pincode" name="address" />
+                                                            <span class="text-danger">
+                                                                 @error('address')
+                                                                 <strong>{{ $message }}</strong>
+                                                                 @enderror
+                                                             </span>
                                                        </div>
 
-                                                       <button id="bfc" class="btn my_newBtn" type="submit">
+                                                       {{-- <button id="bfc" class="btn my_newBtn" type="submit">
 
                                                             <span>Book</span>
 
                                                             <span>Design consultations</span>
 
+                                                            <span class="bfcForm_label__NW7wY"></span>
+
+                                                       </button> --}}
+
+                                                       <button id="bfc" class="btn my_newBtn" type="submit">
+                                                            Submit
                                                             <span class="bfcForm_label__NW7wY"></span>
 
                                                        </button>

@@ -12,6 +12,7 @@ use App\Models\PartnerPortfolio;
 use App\Models\Blog;
 use App\Models\Categorie;
 use App\Models\Enquries;
+use Illuminate\Support\Facades\DB;
 use Stevebauman\Location\Facades\Location;
 
 
@@ -59,6 +60,7 @@ class HomeController extends Controller
 
     public function blog_details(Request $request, $id)
     {
+        $id = decrypt($id);
         $blogs = Blog::where('id', $id)->first();
         return view('blogs.blog-details', compact('blogs'));
     }
@@ -79,51 +81,52 @@ class HomeController extends Controller
     public function partner_with_us_form_data(Request $request)
     {
         $request->validate([
+            'full_name' => 'required',
             'firm_name' => 'required',
             'mobile_no' => 'required|min:11|numeric',
             'email' => 'required|email|unique:users',
         ]);
-        if (User::where('mobile_no', $request->mobile_no)->exists()) {
-            return response()->json("userexist");
-        } else {
-            $user = new User();
-            $user->name = $request->firm_name;
-            $user->email = $request->email;
-            $user->mobile_no = $request->mobile_no;
-            $user->type = 'partner';
-            $user->save();
-            $userid = $user->id;
-            $partner_id = "Prtnr-" . $this->generateRandomUuid();
-            $partner = new Partner();
-            $partner->users_id = $userid;
-            $partner->partner_id = $partner_id;
-            $partner->firm_name = $request->firm_name;
-            $partner->firm_pan = $request->firm_pan;
-            $partner->firm_gst = $request->firm_gst;
-            $partner->firm_start_date = $request->firm_start_date;
-            $partner->city = $request->city;
-            $partner->firm_type = $request->firm_type;
-            $partner->major_category = $request->major_category;
-            $partner->minor_category = $request->minor_category;
-            $partner->save();
-            $partnerId = $partner->id;
-            if($request->file('partnerportfolio')){
-                foreach($request->file('partnerportfolio') as $file)
-                {
-                    $name       = $file->getClientOriginalName();
-                    $image_path = $file->store('partnerportfolio','public',$name);
-    
-                    $partnerportfolio = new PartnerPortfolio();
-                    $partnerportfolio->partner_id  = $partnerId;
-                    $partnerportfolio->image_path    = $image_path;
-                    $partnerportfolio->save();
-                }
+        DB::beginTransaction();
+        try {
+            if (User::where('mobile_no', $request->mobile_no)->exists()) {
+                return response()->json("userexist");
+            } else {
+                $user = new User();
+                $user->name = $request->full_name;
+                $user->email = $request->email;
+                $user->mobile_no = $request->mobile_no;
+                $user->type = 'partner';
+                $user->save();
+                
+                $userid = $user->id;
+                $partner_id = "Prtnr-" . $this->generateRandomUuid();
+                $partner = new Partner();
+                $partner->users_id = $userid;
+                $partner->partner_id = $partner_id;
+                $partner->firm_name = $request->firm_name;
+                $partner->firm_pan = $request->firm_pan;
+                $partner->firm_gst = $request->firm_gst;
+
+                $partner->Official_Company_Address = $request->official_company_address;
+                $partner->how_many_years = $request->how_many_years;
+
+                $partner->city = $request->city;
+                $partner->major_category = implode(',',$request->major_category);
+                $partner->minor_category = $request->minor_category;
+                $partner->partnerportfolio = $request->partnerportfolio;
+                $partner->save();
+                // $partner_id = $partner_id;
+                $response = [
+                    'status' => 'success',
+                    'partner_id' => $partner_id,
+                ];
             }
-            $response = [
-                'status' => 'success',
-                'partner_id' => $partner_id,
-            ];
+            DB::commit();
             return response()->json($response);
+        }catch (\Throwable $e) {
+            DB::rollback();
+            throw $e;
+            return back()->with('errorMessage', 'Something went wrong');
         }
     }
 
@@ -142,10 +145,10 @@ class HomeController extends Controller
     public function storeEnquries(Request $request)
     {
         $request->validate([
-            'fullName' => 'required',
+            'fullName' => 'required|string',
             'phoneNo' => 'required|min:11|numeric',
             'email' => 'required|email:rfc,dns',
-            'address' => 'required',
+            'address' => 'required|string',
         ]);
         $enquiry = new Enquries;
         $ip = request()->ip();
@@ -167,6 +170,26 @@ class HomeController extends Controller
             return redirect()->back()->with('success', 'Thank you we have received your enquiry. We will contact you asap.');
         }else{
             return redirect()->back()->with('error', 'We encountered an error! Please try again later. Thanks.');
+        }
+    }
+
+
+    public function GetLocationWisePartner($location)
+    {
+        $location = explode("-",$location);
+        $district = $location[0];
+        $city = $location[1];
+        $partners = Partner::with('user')->Where('city','like',"%{$district}%")->inRandomOrder()->limit(3)->get();
+        if(sizeof($partners) > 0){
+            return $partners;
+        }else{
+            $partners = Partner::with('user')->Where('city','like',"%{$city}%")->inRandomOrder()->limit(3)->get();
+            if(sizeof($partners) > 0){
+                return $partners;
+            }else{
+                $partners = Partner::with('user')->inRandomOrder()->limit(3)->get();
+                return $partners;
+            }
         }
     }
 
@@ -195,6 +218,16 @@ class HomeController extends Controller
 
     public function booking(Request $request)
     {
+        $request->validate([
+            "home_requirements"=> "required|array",
+            'services' => 'required',
+            'budget' => 'required|numeric',
+            'pincode' => 'required|numeric',
+            'date' => 'required',
+            'time' => 'required',
+            'expert_id' => 'required',
+        ]);
+        
         $timestampPart = substr(time(), -4);
         $randomPart = mt_rand(1000, 9999);
 
@@ -230,9 +263,10 @@ class HomeController extends Controller
         $booking->service = $request->services;
         $booking->pincode = $request->pincode;
         $booking->expert_id = $request->expert_id;
-        $city = explode("/",$request->city);
-        $booking->block = $city[0];
+        $city = explode("-",$request->city);
+        $booking->district = $city[0];
         $booking->city = $city[1];
+        $booking->block = $city[2];
         $booking->service_id = $timestampPart . $randomPart;
         $booking->user_id = $userId == null ? auth()->user()->id : $userId;
         $booking->save();

@@ -54,6 +54,9 @@ Route::get('/office-services', [HomeController::class, 'office_services'])->name
 Route::get('/retail-services', [HomeController::class, 'retail_services'])->name('retail-services');
 Route::post('/booking',[HomeController::class,'booking'])->name('booking');
 
+Route::get('/Get-Location-Wise-Partner/{location}',[HomeController::class,'GetLocationWisePartner'])->name('GetLocationWisePartner');
+
+
 // Route::get('/architecture', [HomeController::class, 'architecture'])->name('architecture');
 // Route::get('/hvac-consultation', [HomeController::class, 'hvac_consultation'])->name('hvac-consultation');
 // Route::get('/design-consultation', [HomeController::class, 'design_consultation'])->name('design-consultation');
@@ -155,6 +158,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::get('/customer-list', [UserController::class, 'customerlist'])->name('customerlist');
         Route::get('/partner-list', [UserController::class, 'partnerlist'])->name('partnerlist');
         Route::get('/view-user',[UserController::class,'viewCustomer'])->name('viewcustomer');
+
+        Route::get('/view-user-update/{id}',[UserController::class,'partnerupdate'])->name('partnerupdate');
+        Route::get('/partner-delete/{id}',[UserController::class,'partnerDelete'])->name('partnerdelete');
+
 
         Route::get('/partner-details/{id}',[UserController::class,'partnerdetails'])->name('partnerdetails');
 

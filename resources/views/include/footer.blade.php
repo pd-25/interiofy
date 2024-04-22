@@ -101,26 +101,30 @@
              </svg>
              <div class="footer-content">
                   <div class="row">
-                       <div class="col-lg-4">
+                       <div class="col-lg-6">
                             <div class="footer_cont">
                                  <div class="footer-logo">
                                       <a class="footer-logo-link" href="#">
                                            <div class="ftr_logomain">
                                                 <img src="images/logo.png" alt="" class="logo_img">
-
                                            </div>
                                            <div class="recident">
                                              <ul class="res-ul">
+                                                  <li class="res-li mb-0">Residential . Retail. Commercial</li>
+                                                  <li class="res-li">
+                                                       Navigate your space design from start to finish effortlessly with our tech-centric platform. Seamlessly connect instantly with India's foremost designers, skilled contractors, and trusted vendors for a space that reflects your vision and style.
+                                                  </li>
                                                   <li class="res-li">Corporate Address : Gurgaon, Haryana, India</li>
                                                   <li class="res-li">Write to us : iinteriofy@gmail.com</li>
                                                   <li class="res-li">Speak with us : +91 999999999</li>
                                              </ul>
+                                             {{-- <h3 class="ftr_text">Navigate your space design from start to finish effortlessly with our tech-centric platform. Seamlessly connect instantly with India's foremost designers, skilled contractors, and trusted vendors for a space that reflects your vision and style.</h3> --}}
                                            </div>
                                       </a>
                                  </div>
                             </div>
                        </div>
-                       <div class="col-lg-3">
+                       <div class="col-lg-6">
                             <div class="footer_cont">
                                  <div class="footer_links">
                                       <div class="ftr_heading">
@@ -133,9 +137,9 @@
                                            <li>
                                                 <a href="{{ route('about-us') }}">About Us</a>
                                            </li>
-                                           <li>
+                                           {{-- <li>
                                                 <a href="#">Our Services</a>
-                                           </li>
+                                           </li> --}}
                                            <li>
                                                 <a href="/partner-with-us">Partner With Us</a>
                                            </li>
@@ -144,22 +148,25 @@
                                            </li>
                                            <li>
                                                 <a href="{{ route('contact-us') }}">Contact Us</a>
-                                           </li>
+                                             </li>
+                                             <li class="menu-item">
+                                                  <a href="#">FAQS</a>
+                                             </li>
                                       </ul>
                                  </div>
                             </div>
                        </div>
-                       <div class="col-lg-5">
+                       {{-- <div class="col-lg-5">
                             <div class="footer_cont">
                                  <div class="footer_links">
                                       <div class="ftr_heading">
                                            <h3>Be a Partner</h3>
                                       </div>
-                                      <h3 class="ftr_text">Navigate your space design from start to finish effortlessly with our tech-centric platform. Seamlessly connect instantly with India's foremost designers, skilled contractors, and trusted vendors for a space that reflects your vision and style.</h3>
+                                      
 
                                  </div>
                             </div>
-                       </div>
+                       </div> --}}
                   </div>
                   <div class="footer-social-links"> <svg class="footer-social-amoeba-svg"
                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 54">

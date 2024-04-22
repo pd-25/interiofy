@@ -11,14 +11,14 @@ class BookingController extends Controller
 {
     public function homebookings()
     {
-        $data['bookings'] = Booking::with('user_details')->where('category', 'home')->paginate(20);
+        $data['bookings'] = Booking::with('user_details')->where('category', 'home')->orderBy('id','desc')->paginate(20);
         return view('admin.booking.home',$data);
     }
 
     public function bookingsUpdate($id)
     {
         $id = decrypt($id);
-        $data['bookings'] = Booking::with('user_details')->find($id);
+        $data['bookings'] = Booking::with('user_details', 'partner_details')->find($id);
         // $data['partners'] = User::where('type', '=', 'partner')->with('partner')->get();
         return view('admin.booking.update_bookings',$data);
     }

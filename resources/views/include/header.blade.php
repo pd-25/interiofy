@@ -33,7 +33,7 @@
 <body>
      
      <div class="go_to_form_div_1">
-          <a href="/contact-us"><button class="go_to_form_btn_1">Contact us</button></a>
+          <a href="/contact-us"><button class="go_to_form_btn_1" style="margin-bottom:40px">Contact us</button></a>
       </div>
   
        <a href="#" class="scroll"><i class="fa-solid fa-angle-up"></i></a>
@@ -89,12 +89,13 @@
                                    <li class="menu-item">
                                         <a href="{{ url('/') }}">Home</a>
                                    </li>
+                                   <li class="menu-item">
+                                        <a href="{{ route('about-us') }}">About Us</a>
+                                   </li>
                                    <li class="menu-item menu-item-has-children">
                                         <a href="#" data-toggle="sub-menu">Our Services <i class="plus"></i></a>
                                         <ul class="sub-menu">
-
                                              @foreach($categories as $category)
-
                                                   <li class="menu-item">
                                                        <a href="{{ route('serviceDetails',[$category->slug]) }}">{{$category->name}}</a>
                                                   </li>
@@ -103,14 +104,14 @@
                                         </ul>
                                    </li>
                                    <li class="menu-item">
-                                        <a href="{{ route('partnerwithus') }}">Partner with us</a>
-                                   </li>
-                                   <li class="menu-item">
-                                        <a href="{{ route('about-us') }}">About Us</a>
+                                        <a href="{{ route('partnerwithus') }}">Partner With Us</a>
                                    </li>
                                    <li class="menu-item">
                                         <a href="{{ route('blogs') }}">Blogs</a>
-                                    </li>
+                                   </li>
+                                   <li class="menu-item">
+                                   <a href="#">FAQS</a>
+                                   </li>
                                    <li class="menu-item">
                                         <a href="{{ route('contact-us') }}">Contact Us</a>
                                    </li>

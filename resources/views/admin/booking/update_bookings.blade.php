@@ -20,7 +20,7 @@
 </div>
 
 <div class="row">
-    <div class="col-12">
+    <div class="col-12 mb-2">
         <div class="card">
             <div class="card-body">
                 @if(session()->has('success'))
@@ -30,28 +30,71 @@
                     </div>
                 @endif
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h6>Client Details</h6>
+                    <div class="col-lg-6">
+                        <h5>Client Details</h5>
+                    </div>
+                    <div class="col-6 text-end">
+                        <p> <span class="fw-bold">#ServiceId:</span> {{@$bookings->service_id}}</p>
                     </div>
                     <div class="col-lg-4">
-                        <small class="m-0">NAME </small>
+                        <small class="m-0 fw-bold">NAME </small>
                         <p>{{ @$bookings->user_details->name}}</p>
                     </div>
                     <div class="col-lg-4">
-                        <small class="m-0">Email</small>
+                        <small class="m-0 fw-bold">Email</small>
                         <p>{{ @$bookings->user_details->email}}</p>
                     </div>
                     <div class="col-lg-2">
-                        <small class="m-0">MOBILE NUMBER</small>
+                        <small class="m-0 fw-bold">MOBILE NUMBER</small>
                         <p>{{ @$bookings->user_details->mobile_no}}</p>
                     </div>
                     <div class="col-lg-2">
-                        <small class="m-0">PIN CODE</small>
+                        <small class="m-0 fw-bold">PIN CODE</small>
                         <p>{{ @$bookings->user_details->pin}}</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h5>Partner Details</h5>
+                    </div>
+                    <div class="col-lg-4">
+                        <small class="m-0 fw-bold">PARTNER NAME </small>
+                        <p>{{ @$bookings->partner_details->name}}</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <small class="m-0 fw-bold">EMAIL</small>
+                        <p>{{ @$bookings->partner_details->email}}</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <small class="m-0 fw-bold">MOBILE NUMBER</small>
+                        <p>{{ @$bookings->partner_details->mobile_no}}</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <small class="m-0 fw-bold">PIN CODE</small>
+                        <p>{{ @$bookings->partner_details->pin}}</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <small class="m-0 fw-bold">COUNTRY</small>
+                        <p>{{ @$bookings->partner_details->country}}</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <small class="m-0 fw-bold">STATE</small>
+                        <p>{{ @$bookings->partner_details->state}}</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <small class="m-0 fw-bold">CITY</small>
+                        <p>{{ @$bookings->partner_details->city}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- {{@$bookings->partner_details}} --}}
     </div>
 </div>
 <div class="row justify-content-center">
@@ -379,7 +422,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-12">
+        {{-- <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -400,8 +443,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12">
+        </div> --}}
+        <div class="col-12 mb-2">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -425,6 +468,7 @@
                 </div>
             </div>
         </div>
+       
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Update</button>
             <a href="{{route('bookingsUpdate', encrypt(@$bookings->id))}}" class="btn btn-danger" >Cancel</a>
