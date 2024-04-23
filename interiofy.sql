@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2024 at 05:30 PM
--- Server version: 8.0.33
--- PHP Version: 8.2.16
+-- Generation Time: Apr 23, 2024 at 05:23 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,21 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `aboutuses` (
-  `id` bigint UNSIGNED NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title_one` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_one_description` text COLLATE utf8mb4_unicode_ci,
+  `title_one_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title_two` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_two_description` text COLLATE utf8mb4_unicode_ci,
+  `title_two_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title_three` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `title_three_description` text COLLATE utf8mb4_unicode_ci,
+  `title_three_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title_one_faq` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `faq_item_one_description` text COLLATE utf8mb4_unicode_ci,
+  `faq_item_one_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title_two_faq` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `faq_item_two_description` text COLLATE utf8mb4_unicode_ci,
+  `faq_item_two_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title_three_faq` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `faq_item_three_description` text COLLATE utf8mb4_unicode_ci,
+  `faq_item_three_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -52,7 +52,7 @@ CREATE TABLE `aboutuses` (
 --
 
 INSERT INTO `aboutuses` (`id`, `description`, `image`, `title_one`, `title_one_description`, `title_two`, `title_two_description`, `title_three`, `title_three_description`, `title_one_faq`, `faq_item_one_description`, `title_two_faq`, `faq_item_two_description`, `title_three_faq`, `faq_item_three_description`, `created_at`, `updated_at`) VALUES
-(1, '<h2>About Our <span>I INTERIOFY</span></h2>\r\n\r\n<p>Interior design is defined as the professional and comprehensive practice of creating an interior environment that addresses, protects, and responds to human need(s).</p>\r\n\r\n<p>Interior design is the art and science of enhancing the interior of a building to achieve a healthier and more aesthetically pleasing environment for the people using the space. An interior designer is someone who plans, researches, coordinates, and manages such enhancement projects.</p>\r\n\r\n<ul>\r\n	<li>Architectural and Plan</li>\r\n	<li>interior decoration</li>\r\n	<li>Design, Plan &amp; Architecture</li>\r\n	<li>Electrical and Lighting work</li>\r\n	<li>Plumbing Work</li>\r\n	<li>Flooring Work</li>\r\n</ul>', 'aboutus/4ZPjsgw6SzIAkj5fTfLW6RWIfrc8UdlR7rkAGpOJ.jpg', 'What we can do?', '<p>We put a strong focus on the needs of your business to figure out solutions that best fits your demand and nail it.</p>', 'Become our partners?', '<p>Our preventive and progressive approach will help you take the lead while addressing possible threats in managing data.</p>', 'Need a hand?', '<p>Our support team is available 24/7 a day, 7 days a week and can get ready for solving any of your situational rising problems.</p>', 'Item 1', '<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven,t heard of them accusamus labore sustainable VHS. </p>', 'Item 2', '<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven,t heard of them accusamus labore sustainable VHS. </p>', 'Item 3', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. samus labore sustainable VHS.', '2024-02-12 11:53:52', '2024-03-02 10:30:16');
+(1, '<h2>About Our <span>I INTERIOFY</span></h2>\r\n\r\n<p>Interior design is defined as the professional and comprehensive practice of creating an interior environment that addresses, protects, and responds to human need(s).</p>\r\n\r\n<p>Interior design is the art and science of enhancing the interior of a building to achieve a healthier and more aesthetically pleasing environment for the people using the space. An interior designer is someone who plans, researches, coordinates, and manages such enhancement projects.</p>\r\n\r\n<ul>\r\n	<li>Architectural and Plan</li>\r\n	<li>interior decoration</li>\r\n	<li>Design, Plan &amp; Architecture</li>\r\n	<li>Electrical and Lighting work</li>\r\n	<li>Plumbing Work</li>\r\n	<li>Flooring Work</li>\r\n</ul>', 'aboutus/Gke5UPnDHAoUaSWEC18m93V604T2moDrCXRKIKgm.jpg', 'What we can do?', '<p>We put a strong focus on the needs of your business to figure out solutions that best fits your demand and nail it.</p>', 'Become our partners?', '<p>Our preventive and progressive approach will help you take the lead while addressing possible threats in managing data.</p>', 'Need a hand?', '<p>Our support team is available 24/7 a day, 7 days a week and can get ready for solving any of your situational rising problems.</p>', 'Item 1', '<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven,t heard of them accusamus labore sustainable VHS. </p>', 'Item 2', '<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven,t heard of them accusamus labore sustainable VHS. </p>', 'Item 3', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. samus labore sustainable VHS.', '2024-02-12 11:53:52', '2024-04-17 10:28:59');
 
 -- --------------------------------------------------------
 
@@ -61,11 +61,11 @@ INSERT INTO `aboutuses` (`id`, `description`, `image`, `title_one`, `title_one_d
 --
 
 CREATE TABLE `admins` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_admin` tinyint NOT NULL DEFAULT '0',
+  `is_admin` tinyint(4) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -84,7 +84,7 @@ INSERT INTO `admins` (`id`, `name`, `email`, `password`, `is_admin`, `created_at
 --
 
 CREATE TABLE `blogs` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -99,7 +99,9 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `description`, `image`, `blog_post_date`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Blog 1 update', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.sss</p>', 'blog/9LZjpczIAjQl4iycpyvPPfgkdQ0sbHZjqV4qyNdW.webp', '2024-03-02', '1', '2024-02-27 00:05:25', '2024-03-02 15:04:24');
+(1, 'A Legacy of Heritage (Pre-Modern Era)', '<ul>\r\n	<li style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">The Courtyard Oasis:</span><span style=\"font-family:&quot;Aptos&quot;,sans-serif\"> Early Indian homes were not mere spaces; they were designed for the well-being and practical needs of large, multi-generational families. Homes were mostly designed around a central courtyard, a vital element for natural light, ventilation, and social interaction. This concept, seen in Mughal architecture and vernacular styles across the country, ensured a cool and comfortable living space, especially during the hot Indian summers.</span> <span style=\"font-family:&quot;Aptos&quot;,sans-serif\">Verandas provided additional living areas, blurring the lines between indoor and outdoor spaces.</span></span></span></span></li>\r\n	<li style=\"margin:0cm\"><span style=\"font-size:12pt\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">Celebrating Craftsmanship:</span><span style=\"font-family:&quot;Aptos&quot;,sans-serif\"> Mughal influence wasn&#39;t the only story. Across the vast Indian landscape, regional styles flourished, incorporating local materials and reflecting the unique craftsmanship of each area. In Kerala, homes were built using locally sourced wood and featured sloping roofs to manage heavy monsoon rains. Rajasthan boasted vibrant textiles and intricate mirror work, reflecting the region&#39;s rich cultural heritage. From the intricate stone carvings adorning South Indian temples to the hand-woven textiles and decorative metalwork found throughout the country, interiors showcased the skills passed down through generations of artisans.</span></span></span></span></li>\r\n	<li style=\"margin-bottom:18.0pt; margin:0cm\">\r\n	<p style=\"margin-left:36.0pt; margin:0cm\">&nbsp;</p>\r\n	</li>\r\n	<li style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">Symbolism Woven into Everyday Life:</span> <span style=\"font-family:&quot;Aptos&quot;,sans-serif\">Religion and spirituality have always been deeply ingrained in Indian culture, and this was and is still evident in traditional home design. Homes were adorned with auspicious colors like red and gold, believed to bring prosperity. Entranceways were often decorated with religious symbols to ward off evil spirits. Natural elements like water features and courtyards brought a sense of peace and tranquility to the living space. On the other hand, the symbols were incorporated into everything from wall murals to textiles, creating a sense of peace and harmony within the living space.</span>&nbsp;&nbsp; </span></span></span></li>\r\n</ul>', 'blog/K3Z3sv1kxBqIyTl2gKUHXoPvJSAEpmHZlQhe4aeO.jpg', '2024-04-21', '1', '2024-02-27 00:05:25', '2024-04-21 05:28:01'),
+(4, 'The Shift Towards Modernity (Mid-20th Century)', '<p style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">With India&#39;s independence came a newfound sense of identity and a yearning for a modern aesthetic. This era saw a significant shift in interior design:</span></span></span></p>\r\n\r\n<ul>\r\n	<li style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">Post-Independence Influences:</span><span style=\"font-family:&quot;Aptos&quot;,sans-serif\"> The winds of change blew in from the West. Clean lines, minimalist furniture, and open floor plans gained popularity, reflecting a desire for a more streamlined and functional living space. This move away from ornateness marked a distinct departure from traditional styles.</span></span></span></span></li>\r\n	<li style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">Material Innovations:</span><span style=\"font-family:&quot;Aptos&quot;,sans-serif\"> Technological advancements led to the introduction of new materials like plywood and laminates. These materials, previously unavailable, allowed for the creation of more modern and affordable furniture designs, catering to the growing urban middle class.</span></span></span></span></li>\r\n</ul>\r\n\r\n<ul>\r\n	<li style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">The Rise of the Professional:</span><span style=\"font-family:&quot;Aptos&quot;,sans-serif\"> Interior design emerged as a distinct profession. With a growing demand for skilled designers who could translate modern sensibilities into functional living spaces, the role of the professional interior designer gained prominence. This was also because India&#39;s urban middle class grew, and the demand for professional interior design expertise increased. This period saw the emergence of interior design as a distinct profession, catering to a clientele seeking modern and functional living spaces.</span></span></span></span></li>\r\n</ul>', 'blog/uZSloM6ZNw45lWEVcNyhxfRIjbyTctapmlxBOKSl.jpg', '2024-04-21', '1', '2024-04-07 01:32:48', '2024-04-21 05:28:40'),
+(5, 'A Blend of Tradition and Trends (Late 20th & Early 21st Century)', '<p style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">As India embraced globalization, its interior design scene witnessed a fascinating fusion:</span></span></span></p>\r\n\r\n<ul>\r\n	<li style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">Global Fusion:</span><span style=\"font-family:&quot;Aptos&quot;,sans-serif\"> Indian homes began to incorporate international styles while retaining their cultural essence. Ethnic motifs found their way onto contemporary furniture and decor, creating a unique blend of the old and the new. This fusion aesthetic reflected India&#39;s growing position on the world stage.</span></span></span></span></li>\r\n	<li style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">Luxury Redefined:</span><span style=\"font-family:&quot;Aptos&quot;,sans-serif\"> The concept of luxury shifted from ostentatious displays of wealth to a focus on comfort, functionality, and high-quality materials. Bespoke furniture and meticulously crafted pieces became a mark of sophistication, reflecting a more discerning taste. </span></span></span></span></li>\r\n	<li style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">Technological Integration:</span><span style=\"font-family:&quot;Aptos&quot;,sans-serif\"> Technology started playing a more prominent role in Indian homes. Smart home features like automated lighting and temperature control became increasingly popular, adding a layer of convenience and efficiency to living spaces.</span> <span style=\"font-family:&quot;Aptos&quot;,sans-serif\">Online platforms like I InterioFY connect designers with clients, fostering collaboration and a wider range of design solutions.</span></span></span></span></li>\r\n</ul>\r\n\r\n<p style=\"margin-bottom:18.0pt; margin:0cm\"><span style=\"font-size:12pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-family:&quot;Aptos&quot;,sans-serif\">The future of Indian interior design is likely to see a further emphasis on personalization, sustainability, and the seamless integration of technology. As the industry continues to evolve, one thing remains constant: the desire to create beautiful and functional spaces that reflect the unique stories of those who inhabit them.</span></span></span></p>', 'blog/sk2BW1EdRdl4tiCkREa9g1kavIrMwoUiTLwqGzFD.jpg', '2024-04-21', '1', '2024-04-07 01:33:03', '2024-04-21 05:29:17');
 
 -- --------------------------------------------------------
 
@@ -108,35 +110,42 @@ INSERT INTO `blogs` (`id`, `title`, `description`, `image`, `blog_post_date`, `s
 --
 
 CREATE TABLE `bookings` (
-  `id` int NOT NULL,
-  `user_id` int DEFAULT NULL,
-  `service_id` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `category` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `home_requirements` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
-  `renovation` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
-  `service` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `budget` decimal(10,0) DEFAULT NULL,
-  `pincode` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `city` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `time` time DEFAULT NULL,
-  `expert_id` int DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `service_id` int(11) NOT NULL,
+  `category` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `home_requirements` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `renovation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `service` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `budget` decimal(18,2) NOT NULL,
+  `pincode` int(11) DEFAULT NULL,
+  `block` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `district` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `time` time NOT NULL,
+  `expert_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '1=Complete, 0=pending',
+  `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`id`, `user_id`, `service_id`, `category`, `home_requirements`, `renovation`, `service`, `budget`, `pincode`, `city`, `date`, `time`, `expert_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, NULL, '46435292', NULL, NULL, '[\"bedroom\"]', NULL, NULL, NULL, 'Ghaziabad', '1970-01-01', NULL, NULL, NULL, '2024-03-25 11:07:23', '2024-03-25 11:07:23'),
-(2, NULL, '66307845', NULL, NULL, '[\"living_room\",\"kids_room\"]', NULL, 123456, '712401', NULL, '2024-03-29', '07:13:00', 16, NULL, '2024-03-28 20:13:51', '2024-03-28 20:13:51'),
-(3, NULL, '67876931', NULL, NULL, '[\"design_and_plan\",\"kids_room\",\"dining_room\"]', NULL, 123456, '712401', 'Thane', '2024-03-29', '07:16:00', 17, NULL, '2024-03-28 20:16:27', '2024-03-28 20:16:27'),
-(4, NULL, '71063044', NULL, '[\"living_room\",\"terrace\",\"dining_room\"]', 'null', '\"hvac_consultation\"', 123456, '712401', 'Bangalore', '2024-03-29', '07:20:00', 17, NULL, '2024-03-28 20:21:46', '2024-03-28 20:21:46'),
-(5, NULL, '76187683', NULL, '[\"living_room\",\"terrace\",\"dining_room\",\"kids_room\"]', 'null', '\"hvac_consultation\"', 123456, '712401', NULL, '2024-03-29', '07:30:00', 17, NULL, '2024-03-28 20:30:18', '2024-03-28 20:30:18'),
-(6, NULL, '93797540', 'retail', '[\"complete_home_solution\",\"living_room\"]', 'null', '\"architecture\"', 123456, '712401', 'Bangalore', '2024-03-29', '07:59:00', NULL, NULL, '2024-03-28 20:59:39', '2024-03-28 20:59:39');
+INSERT INTO `bookings` (`id`, `user_id`, `service_id`, `category`, `home_requirements`, `renovation`, `service`, `budget`, `pincode`, `block`, `city`, `district`, `date`, `time`, `expert_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 20, 6251286, 'home', '[\"living_room\",\"terrace\",\"dining_room\"]', '[\"bedroom\",\"living_room\"]', 'contractor', '21000.00', 700126, 'Nabapally', 'Kolkata', NULL, '2024-04-06 18:30:00', '21:53:00', 18, 1, '2024-04-06 10:53:45', '2024-04-08 12:22:06'),
+(2, 20, 63411152, 'office', '[\"complete_home_solution\",\"living_room\"]', '[\"bedroom\",\"living_room\"]', 'contractor', '231312.00', 700126, 'Bodai', 'Kolkata', NULL, '2024-04-06 18:30:00', '10:36:00', 18, 1, '2024-04-06 23:35:41', '2024-04-08 12:46:17'),
+(3, 0, 67591258, 'office', '[\"complete_home_solution\",\"dining_room\"]', '[\"bedroom\",\"living_room\"]', 'electrical_consultation', '3121.00', 500032, 'Gachibowli', 'Hyderabad', NULL, '2024-04-06 18:30:00', '10:42:00', 18, 0, '2024-04-06 23:42:39', '2024-04-06 23:42:39'),
+(4, 36, 85378327, 'home', '[\"living_room\"]', '[\"bedroom\",\"living_room\"]', 'architecture', '12313.00', 700126, 'Malikapur', 'Kolkata', NULL, '2024-04-12 17:13:36', '11:14:00', 17, 2, '2024-04-07 00:12:17', '2024-04-08 12:39:02'),
+(6, 36, 61731033, 'office', '[\"living_room\"]', '[\"living_room\"]', 'hvac_consultation', '13212.00', 700122, 'Anandapuri', 'Kolkata', NULL, '2024-04-12 19:24:04', '13:18:00', 36, 1, '2024-04-07 02:19:33', '2024-04-12 13:54:04'),
+(7, 24, 64926241, 'retail', '[\"complete_home_solution\",\"living_room\",\"kitchen\",\"kids_room\"]', '[\"bathroom\",\"kids_room\"]', 'contractor', '312312.00', 700123, 'Barrackpore RS', 'Kolkata', NULL, '2024-04-12 19:31:12', '13:24:00', 36, 2, '2024-04-07 02:24:52', '2024-04-12 14:01:12'),
+(8, 36, 1443370, 'retail', '[\"terrace\",\"dining_room\"]', 'null', 'electrical_consultation', '312123.00', 700126, 'Jagannathpur', 'Kolkata', NULL, '2024-04-12 17:13:24', '14:25:00', 36, 0, '2024-04-07 03:25:44', '2024-04-07 03:25:44'),
+(9, 20, 52308073, 'home', '[\"complete_home_solution\",\"living_room\"]', '[\"bedroom\",\"living_room\"]', 'hvac_consultation', '23123.00', 700002, 'Paikapara', 'Kolkata', NULL, '2024-04-11 18:30:00', '23:37:00', 36, 0, '2024-04-12 12:37:10', '2024-04-12 12:37:10'),
+(10, 20, 53212266, 'home', '[\"complete_home_solution\",\"living_room\"]', NULL, 'hvac_consultation', '23123.00', 700002, 'Paikapara', 'Kolkata', NULL, '2024-04-16 16:08:46', '23:37:00', 36, 1, '2024-04-12 12:38:41', '2024-04-16 10:38:46'),
+(11, 20, 13515064, 'home', '[\"complete_home_solution\",\"living_room\"]', '[\"bedroom\",\"living_room\"]', 'hvac_consultation', '2312312.00', 700126, 'Bodai', 'Kolkata', NULL, '2024-04-13 18:30:00', '21:46:00', 16, 0, '2024-04-14 10:45:51', '2024-04-14 10:45:51'),
+(12, 20, 10192601, 'home', '[\"dining_room\",\"kids_room\"]', NULL, 'contractor', '13213.00', 500032, 'Gachibowli', 'Hyderabad', 'K.V.Rangareddy', '2024-04-18 18:30:00', '21:11:00', 36, 0, '2024-04-19 10:06:59', '2024-04-19 10:06:59');
 
 -- --------------------------------------------------------
 
@@ -145,12 +154,12 @@ INSERT INTO `bookings` (`id`, `user_id`, `service_id`, `category`, `home_require
 --
 
 CREATE TABLE `categories` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci,
-  `show_child_images` int NOT NULL DEFAULT '1',
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `show_child_images` int(11) NOT NULL DEFAULT 1,
   `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -162,11 +171,13 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `icon`, `description`, `show_child_images`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Architect', 'architect', 'services/NWS2lr3VaxzU0xtpd9tXiRTxOQdvWT3qV55olfGT.png', '<section>\r\n<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>\r\n</section>', 1, '1', '2024-02-13 02:36:50', '2024-03-05 23:53:04'),
-(2, 'HVAC consultation', 'hvac-consultation', 'services/34an3pXWBIwVKFLJBz34E0NcbVnGEo0T7NGdXzTR.jpg', '<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>', 1, '1', '2024-02-13 02:37:28', '2024-03-05 23:53:33'),
-(6, 'Design Consultation', 'design-consultation', 'services/YNtSjZbeJlLfvJsrTwknofjDAGPLDZSYaQhYTvhS.jpg', '<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>', 1, '1', '2024-03-04 23:42:10', '2024-03-05 16:17:55'),
-(7, 'Electrical Consultation', 'electrical-consultation', 'services/LVcZS1nuFf99X10BghsLm3ChSfnY2lbYVQwD9ldg.webp', '<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>', 1, '1', '2024-03-04 23:42:40', '2024-03-05 16:18:11'),
-(8, 'Contractor', 'contractor', 'services/tx2zseGh56Z85Sph2J5nXLMSp4IVz2ZwB7froI7H.avif', '<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>', 1, '1', '2024-03-04 23:43:07', '2024-03-05 16:18:30'),
-(9, 'Structural Consultation', 'structural-consultation', 'services/A3EnisoS8UUuKStB4MP6A52RiEGjRLx0bvTLfSvL.jpg', '<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>', 0, '1', '2024-03-04 23:43:32', '2024-03-05 16:23:31');
+(2, 'HVAC', 'hvac', 'services/34an3pXWBIwVKFLJBz34E0NcbVnGEo0T7NGdXzTR.jpg', '<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>', 1, '1', '2024-02-13 02:37:28', '2024-04-16 07:06:08'),
+(6, 'Design', 'design-consultation', 'services/YNtSjZbeJlLfvJsrTwknofjDAGPLDZSYaQhYTvhS.jpg', '<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>', 1, '1', '2024-03-04 23:42:10', '2024-03-05 16:17:55'),
+(7, 'Electrical', 'electrical-consultation', 'services/LVcZS1nuFf99X10BghsLm3ChSfnY2lbYVQwD9ldg.webp', '<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>', 1, '1', '2024-03-04 23:42:40', '2024-03-05 16:18:11'),
+(8, 'Contracting ', 'contractor', 'services/tx2zseGh56Z85Sph2J5nXLMSp4IVz2ZwB7froI7H.avif', '<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>', 1, '1', '2024-03-04 23:43:07', '2024-03-05 16:18:30'),
+(9, 'Civil & Structure', 'structural-consultation', 'services/A3EnisoS8UUuKStB4MP6A52RiEGjRLx0bvTLfSvL.jpg', '<p>Looking for inspiration? Right this way for design ideas from top designers for every room of the house. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>', 0, '1', '2024-03-04 23:43:32', '2024-03-05 16:23:31'),
+(11, 'Painting', 'painting', 'services/mx3CPW121fE224GmXlyLkAOIxJEBqhXcdLC7o7EE.png', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', 1, '1', '2024-04-16 07:04:50', '2024-04-16 07:04:50'),
+(12, 'Plumbing', 'plumbing', 'services/yq4egX49VJns5r0pH3s2z0PESgHYaq5AV8CeUapI.jpg', '<p style=\"margin-bottom:18.0pt; margin:0cm\">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available</p>', 1, '1', '2024-04-16 09:57:55', '2024-04-16 09:57:55');
 
 -- --------------------------------------------------------
 
@@ -175,13 +186,13 @@ INSERT INTO `categories` (`id`, `name`, `slug`, `icon`, `description`, `show_chi
 --
 
 CREATE TABLE `contactuses` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `location_map` text COLLATE utf8mb4_unicode_ci,
+  `location_map` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -196,18 +207,75 @@ INSERT INTO `contactuses` (`id`, `location`, `email1`, `email2`, `phone1`, `phon
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `enquries`
+--
+
+CREATE TABLE `enquries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `ip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fullName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phoneNo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `latitude` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `longitude` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `enquries`
+--
+
+INSERT INTO `enquries` (`id`, `ip`, `fullName`, `email`, `phoneNo`, `address`, `city`, `state`, `latitude`, `longitude`, `status`, `created_at`, `updated_at`) VALUES
+(1, '127.0.0.1', 'Emon Debnath', 'emon.nath71@gmail.com', '8697599971', 'Nabapally,', NULL, NULL, NULL, NULL, 1, '2024-04-13 07:13:51', '2024-04-13 07:56:43'),
+(3, '127.0.0.1', 'sumon nath', 'vijet96119@alvisani.com', '2312312312', 'Nabapally, Barasat 1231231', NULL, NULL, NULL, NULL, 0, '2024-04-16 12:13:15', '2024-04-16 12:13:15');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_banners`
+--
+
+CREATE TABLE `home_banners` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `media` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1=Active 0=Inactive',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `home_banners`
+--
+
+INSERT INTO `home_banners` (`id`, `media`, `short_description`, `status`, `created_at`, `updated_at`) VALUES
+(6, 'banner/2024-04-17-17_11_27_13.png', NULL, 1, '2024-04-17 11:41:27', '2024-04-17 11:41:27'),
+(7, 'banner/2024-04-21-04_21_01_6.png', NULL, 1, '2024-04-20 22:51:01', '2024-04-20 22:51:01'),
+(8, 'banner/2024-04-21-04_21_29_8.png', NULL, 1, '2024-04-20 22:51:29', '2024-04-20 22:51:29'),
+(9, 'banner/2024-04-21-10_02_33_10.png', NULL, 1, '2024-04-21 04:32:34', '2024-04-21 04:32:34'),
+(10, 'banner/2024-04-21-10_06_10_4.png', NULL, 1, '2024-04-21 04:36:10', '2024-04-21 04:36:10'),
+(11, 'banner/2024-04-21-10_06_18_11.png', NULL, 1, '2024-04-21 04:36:19', '2024-04-21 04:36:19');
 
 -- --------------------------------------------------------
 
@@ -216,20 +284,20 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `leads` (
-  `id` bigint UNSIGNED NOT NULL,
-  `users_id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `users_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type` enum('home','home_renovation','new_office','office_renovation','retail_new_showroom','retail_rennovation') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `home_requirents` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `renovation_requirements` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `home_requirents` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `renovation_requirements` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `services_required` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `budget` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pincode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `bookingdate` date DEFAULT NULL,
   `booking_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `partner_id` bigint UNSIGNED NOT NULL,
+  `partner_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -241,9 +309,9 @@ CREATE TABLE `leads` (
 --
 
 CREATE TABLE `migrations` (
-  `id` int UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int NOT NULL
+  `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -265,7 +333,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (12, '2024_01_27_064324_create_testimonials_table', 1),
 (13, '2024_01_27_132656_create_contactuses_table', 1),
 (14, '2024_01_28_121609_create_aboutuses_table', 1),
-(15, '2024_02_05_130121_create_leads_table', 1);
+(15, '2024_02_05_130121_create_leads_table', 1),
+(16, '2024_04_06_154058_create_bookings_table', 2),
+(17, '2024_04_13_054420_create_home_banners_table', 3),
+(18, '2024_04_13_054505_create_sub_banners_table', 3),
+(19, '2024_04_13_122845_create_enquries_table', 4);
 
 -- --------------------------------------------------------
 
@@ -274,18 +346,18 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `partners` (
-  `id` bigint UNSIGNED NOT NULL,
-  `users_id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `users_id` bigint(20) UNSIGNED NOT NULL,
   `firm_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `partner_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `firm_pan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `firm_gst` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `firm_start_date` date NOT NULL,
   `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `firm_type` enum('Public','Private','Individual') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `major_category` enum('Interior','Painting','Electrical Lighting','Architectural','Plumbing','Carpentry & Masonry','Flooring','Structural') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `minor_category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `project_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Official_Company_Address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `how_many_years` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `major_category` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `minor_category` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `partnerportfolio` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -294,11 +366,13 @@ CREATE TABLE `partners` (
 -- Dumping data for table `partners`
 --
 
-INSERT INTO `partners` (`id`, `users_id`, `firm_name`, `partner_id`, `firm_pan`, `firm_gst`, `firm_start_date`, `city`, `firm_type`, `major_category`, `minor_category`, `project_image`, `created_at`, `updated_at`) VALUES
-(9, 16, 'Quinlan Landry', 'Prtnr-293ce613', 'Dicta accusamus sint', 'Quod quisquam minim', '2006-03-09', 'Faridabad', 'Individual', 'Structural', '', 'public/partner//pgSu19fadIflN5dxQnnIpYj9HzWkc4LZ2zHvqRug.jpg', '2024-03-07 19:10:32', '2024-03-07 19:10:32'),
-(10, 17, 'Madaline Huffman', 'Prtnr-64cba19e', 'Qui in adipisci eaqu', 'Eiusmod fuga Volupt', '2005-01-10', 'Mumbai', 'Individual', 'Electrical Lighting', '', 'public/partner//FrhSE8z2ZuE2YM08HWuKprEIKvM17iZGGPeUrJvF.jpg', '2024-03-07 19:11:38', '2024-03-07 19:11:38'),
-(11, 18, 'Armando Hodge', 'Prtnr-0e912eb3', 'Dolor cillum ducimus', 'Sed dolorum hic non', '2004-06-30', 'Gaziabad', 'Private', 'Structural', '', 'public/partner//s6Ryjrjaqh6qxwWyMSOCi1kqLXnD9DJnp4BZBLZX.jpg', '2024-03-07 19:11:55', '2024-03-07 19:11:55'),
-(14, 25, 'Demetria Forbes', 'Prtnr-657e9caa', 'Minima laboriosam d', 'Beatae consectetur', '1985-04-10', 'Thane', 'Individual', 'Flooring', 'Plumbing', NULL, '2024-03-25 10:57:28', '2024-03-25 10:57:28');
+INSERT INTO `partners` (`id`, `users_id`, `firm_name`, `partner_id`, `firm_pan`, `firm_gst`, `city`, `Official_Company_Address`, `how_many_years`, `major_category`, `minor_category`, `partnerportfolio`, `created_at`, `updated_at`) VALUES
+(9, 16, 'Quinlan Landry', 'Prtnr-293ce613', 'Dicta accusamus sint', 'Quod quisquam minim', 'Faridabad', NULL, NULL, 'Structural', NULL, 'public/partner//pgSu19fadIflN5dxQnnIpYj9HzWkc4LZ2zHvqRug.jpg', '2024-03-07 19:10:32', '2024-03-07 19:10:32'),
+(10, 17, 'Madaline Huffman', 'Prtnr-64cba19e', 'Qui in adipisci eaqu', 'Eiusmod fuga Volupt', 'Mumbai', NULL, NULL, 'Electrical Lighting', NULL, 'public/partner//FrhSE8z2ZuE2YM08HWuKprEIKvM17iZGGPeUrJvF.jpg', '2024-03-07 19:11:38', '2024-03-07 19:11:38'),
+(11, 18, 'Armando Hodge', 'Prtnr-0e912eb3', 'Dolor cillum ducimus', 'Sed dolorum hic non', 'Gaziabad', NULL, NULL, 'Structural', NULL, 'public/partner//s6Ryjrjaqh6qxwWyMSOCi1kqLXnD9DJnp4BZBLZX.jpg', '2024-03-07 19:11:55', '2024-03-07 19:11:55'),
+(14, 36, 'Emon Debnath', 'Prtnr-fede0eff', 'FV21873862', '12312312', 'Hyderabad', NULL, NULL, 'Flooring', 'Painting', NULL, '2024-04-12 11:03:46', '2024-04-12 11:03:46'),
+(16, 39, 'Emon Debnath', 'Prtnr-d42548fd', 'FV21873862', '12312312', 'Delhi', 'undefined', 'asdasd', 'undefined', 'Small Firm ( Upto 5 employees)', 'null', '2024-04-18 02:39:43', '2024-04-18 02:39:43'),
+(23, 47, 'Emon Debnath', 'Prtnr-8d4abf85', 'FV21873862', '12312312', 'Delhi', 'Nabapally, Barasat', 'sadas', 'Architect,Interior Designer,Civil & Structure,HVAC', 'Employee', 'weqwe', '2024-04-18 05:51:53', '2024-04-18 05:51:53');
 
 -- --------------------------------------------------------
 
@@ -307,22 +381,20 @@ INSERT INTO `partners` (`id`, `users_id`, `firm_name`, `partner_id`, `firm_pan`,
 --
 
 CREATE TABLE `partner_portfolios` (
-  `id` int NOT NULL,
-  `partner_id` bigint NOT NULL,
-  `image_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `created_at` timestamp NOT NULL,
-  `updated_at` timestamp NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int(11) NOT NULL,
+  `partner_id` int(11) DEFAULT NULL,
+  `image_path` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `partner_portfolios`
 --
 
 INSERT INTO `partner_portfolios` (`id`, `partner_id`, `image_path`, `created_at`, `updated_at`) VALUES
-(1, 14, 'partnerportfolio/3WpiqmcSb09Y4ss5LDBkvaKHpMN7yJdDS6gzmFQL.png', '2024-03-25 10:57:28', '2024-03-25 10:57:28'),
-(2, 14, 'partnerportfolio/UHwfMQsr5mRaPBYIWLviXXeZsIXTIUpWTGfTjQtI.png', '2024-03-25 10:57:28', '2024-03-25 10:57:28'),
-(3, 14, 'partnerportfolio/gsEmD2HjQUgMI1WlOCmTITGoEAsly5FGyXEvdoYM.png', '2024-03-25 10:57:28', '2024-03-25 10:57:28'),
-(4, 14, 'partnerportfolio/D1HWtj8RrAgqmY8RSK25wrvP5LJ7AlLoJeBv25bA.png', '2024-03-25 10:57:28', '2024-03-25 10:57:28');
+(1, 14, 'partnerportfolio/v1TtbCdXSTrIuMoM4jc5qRadCGBTg34Z0ng8TjLs.jpg', '2024-04-12 11:03:46', '2024-04-12 11:03:46'),
+(2, 14, 'partnerportfolio/OgYf93CKKzWyKB6YtRIsR5qKqMFUnBlac4GSgdoM.jpg', '2024-04-12 11:03:46', '2024-04-12 11:03:46');
 
 -- --------------------------------------------------------
 
@@ -355,12 +427,12 @@ CREATE TABLE `password_reset_tokens` (
 --
 
 CREATE TABLE `personal_access_tokens` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tokenable_id` bigint UNSIGNED NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -374,12 +446,12 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `pincodes` (
-  `PostOfficeName` varchar(100) DEFAULT NULL,
+  `PostOfficeName` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Pincode` double DEFAULT NULL,
-  `City` varchar(100) DEFAULT NULL,
-  `District` varchar(100) DEFAULT NULL,
-  `State` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `City` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `District` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `State` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `pincodes`
@@ -40174,11 +40246,11 @@ INSERT INTO `pincodes` (`PostOfficeName`, `Pincode`, `City`, `District`, `State`
 --
 
 CREATE TABLE `servicesimages` (
-  `id` bigint UNSIGNED NOT NULL,
-  `categorie_id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `categorie_id` bigint(20) UNSIGNED NOT NULL,
   `services_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image_path` longtext COLLATE utf8mb4_unicode_ci,
+  `image_path` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -40203,12 +40275,12 @@ INSERT INTO `servicesimages` (`id`, `categorie_id`, `services_name`, `slug`, `im
 --
 
 CREATE TABLE `services_category` (
-  `id` bigint UNSIGNED NOT NULL,
-  `categorie_id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `icon` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `status` enum('0','1') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `categorie_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -40240,12 +40312,12 @@ INSERT INTO `services_category` (`id`, `categorie_id`, `name`, `slug`, `icon`, `
 --
 
 CREATE TABLE `services_category_images` (
-  `id` bigint UNSIGNED NOT NULL,
-  `categorie_id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image_path` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `status` enum('0','1') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `categorie_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image_path` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -40340,13 +40412,13 @@ INSERT INTO `services_category_images` (`id`, `categorie_id`, `name`, `slug`, `i
 --
 
 CREATE TABLE `service_banners` (
-  `id` bigint UNSIGNED NOT NULL,
-  `categorie_id` bigint UNSIGNED NOT NULL,
-  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `image_path` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `categorie_id` bigint(20) UNSIGNED NOT NULL,
+  `heading` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_path` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` enum('0','1') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -40365,14 +40437,41 @@ INSERT INTO `service_banners` (`id`, `categorie_id`, `heading`, `description`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sub_banners`
+--
+
+CREATE TABLE `sub_banners` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `media` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1=Active 0=Inactive',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sub_banners`
+--
+
+INSERT INTO `sub_banners` (`id`, `media`, `short_description`, `status`, `created_at`, `updated_at`) VALUES
+(3, 'banner/2024-04-13-07_02_29_Design4.jpg', 'asdasd', 1, '2024-04-13 01:32:29', '2024-04-13 01:32:29'),
+(4, 'banner/2024-04-13-07_02_49_Design5.jpg', 'asdasd', 1, '2024-04-13 01:32:49', '2024-04-13 01:32:49'),
+(6, 'banner/2024-04-13-07_04_11_Design1.jpg', 'asdas', 1, '2024-04-13 01:34:11', '2024-04-13 01:34:11'),
+(7, 'banner/2024-04-21-04_17_32_1.png', 'Test', 1, '2024-04-20 22:47:32', '2024-04-20 22:47:32'),
+(8, 'banner/2024-04-21-04_17_46_2.png', 'Test', 1, '2024-04-20 22:47:46', '2024-04-20 22:47:46'),
+(9, 'banner/2024-04-21-04_19_04_5.png', 'Test', 1, '2024-04-20 22:49:05', '2024-04-20 22:49:05');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `testimonials`
 --
 
 CREATE TABLE `testimonials` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `designation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `rating` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -40385,7 +40484,8 @@ CREATE TABLE `testimonials` (
 --
 
 INSERT INTO `testimonials` (`id`, `name`, `designation`, `description`, `user_image`, `rating`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'testtimonial', 'Employee', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', 'testimonial/nBgGkPJXYpv69iO3ijjZhAT4plYY6Dx0Y7g0ygS6.jpg', '4', '1', '2024-02-27 00:06:45', '2024-02-27 00:06:45');
+(1, 'testtimonial', 'Employee', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', 'testimonial/PMTwV98g2plL58T2617IOaVfdZsBOYKRGWWeRweN.jpg', '4', '1', '2024-02-27 00:06:45', '2024-04-07 01:07:59'),
+(2, 'Emon Debnath', 'Software developer', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', 'testimonial/sRPczWqugYdlb03jbqffZdLjypumYVDat9rzP5k1.jpg', '5', '1', '2024-04-07 01:03:21', '2024-04-07 01:03:21');
 
 -- --------------------------------------------------------
 
@@ -40394,7 +40494,7 @@ INSERT INTO `testimonials` (`id`, `name`, `designation`, `description`, `user_im
 --
 
 CREATE TABLE `users` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mobile_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -40409,7 +40509,6 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `otp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type` enum('user','partner') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` int NOT NULL DEFAULT '1',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -40419,13 +40518,17 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `mobile_no`, `country`, `state`, `city`, `pin`, `dob`, `occupation`, `partner_id`, `email_verified_at`, `password`, `otp`, `type`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'test test', 'neel.bandyopadhyay@codeclouds.co.in', '8617304367', 'India', NULL, 'Beaumont', NULL, NULL, NULL, NULL, NULL, '$2y$12$ZwYBoBYd/.rBGTO9Uqbx9eV7azXv11DFDzFbK4GrgvbFpEi9V0LqO', '453516', 'user', 0, NULL, '2024-02-12 11:57:44', '2024-03-31 09:37:45'),
-(16, 'Quinlan Landry', 'haquhewi@mailinator.com', 'Eaque non enim lorem', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'partner', 1, NULL, '2024-03-07 19:10:32', '2024-03-07 19:10:32'),
-(17, 'Madaline Huffman', 'cuhibyboc@mailinator.com', 'Cillum earum in nemo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'partner', 1, NULL, '2024-03-07 19:11:38', '2024-03-07 19:11:38'),
-(18, 'Armando Hodge', 'hidevytifo@mailinator.com', 'Neque perferendis re', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$12$XQWnpkqyttN9fJz9jAMS4evP.v7Sl4QTturk/7n6xqUXOuWqn/pkO', NULL, 'partner', 1, NULL, '2024-03-07 19:11:55', '2024-03-07 19:11:55'),
-(25, 'test test', 'neel.bandyopadhyay@domain.co.in', '8617304379', 'India', NULL, 'Beaumont', NULL, NULL, 'Web Developer', NULL, NULL, '$2y$12$NmxVUYtDsK2pST6KQ3UW2uWzo24rLpbxq/vPxBteNitq/KD/4RXI.', '868973', 'partner', 1, NULL, '2024-03-25 10:57:28', '2024-03-26 08:00:24'),
-(33, 'test test', 'neel.bandyopadhyay@test.co.in', '8617304377', 'India', NULL, 'Delhi', '123456', NULL, 'Web Developer', NULL, NULL, '$2y$12$.ftUtBdhAe8.dom6H59qzOUTOn0OAbjMNVSOtGsCgBxRLK0.hLHn2', '371824', 'user', 1, NULL, '2024-03-26 21:14:49', '2024-03-27 00:31:34');
+INSERT INTO `users` (`id`, `name`, `email`, `mobile_no`, `country`, `state`, `city`, `pin`, `dob`, `occupation`, `partner_id`, `email_verified_at`, `password`, `otp`, `type`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'test test', 'neel.bandyopadhyay@codeclouds.co.in', '8617304367', 'India', NULL, 'Beaumont', NULL, NULL, NULL, NULL, NULL, '$2y$12$RqOKKyU7VLs2KsvmDMFc0O/IngVl6yrhOCsBVcPMw70z78iQZmaj6', '126069', 'user', NULL, '2024-02-12 11:57:44', '2024-04-05 23:08:55'),
+(16, 'Quinlan Landry', 'haquhewi@mailinator.com', '6291648982', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'partner', NULL, '2024-03-07 19:10:32', '2024-03-07 19:10:32'),
+(17, 'Madaline Huffman', 'cuhibyboc@mailinator.com', 'Cillum earum in nemo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'partner', NULL, '2024-03-07 19:11:38', '2024-03-07 19:11:38'),
+(18, 'Armando Hodge', 'hidevytifo@mailinator.com', 'Neque perferendis re', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$12$XQWnpkqyttN9fJz9jAMS4evP.v7Sl4QTturk/7n6xqUXOuWqn/pkO', NULL, 'partner', NULL, '2024-03-07 19:11:55', '2024-03-07 19:11:55'),
+(20, 'Niloy Debnath', 'emon.nath71@gmail.com', '8697599971', NULL, NULL, NULL, '1234567', NULL, NULL, NULL, NULL, '$2y$12$9GRPDQEWBX4aD28QPD1a0eU5z58Xj8Et1SuuQ0mgJm0IXUg9pjfn2', '252665', 'user', NULL, '2024-04-07 00:12:17', '2024-04-23 08:46:53'),
+(22, 'Nirudip Bhowmik', 'vijet96119@alvisani.com', '1234567890', NULL, NULL, NULL, '123123', NULL, NULL, NULL, NULL, NULL, NULL, 'user', NULL, '2024-04-07 02:19:33', '2024-04-07 02:19:33'),
+(27, 'Emon Debnath', 'emon.nath712@gmail.com', '1232131231', NULL, NULL, NULL, '231231', NULL, NULL, NULL, NULL, NULL, NULL, 'user', NULL, '2024-04-07 03:25:44', '2024-04-07 03:25:44'),
+(36, 'Emon Debnath', 'teso@mail.com', '8167876355', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$12$x4vosZXeq5YDFAlC.05GdeBa21Buku.oV166aj7tzYExGz9Wrxrm2', '453249', 'partner', NULL, '2024-04-12 11:03:46', '2024-04-19 11:08:08'),
+(39, 'sdas', 'admin@rbcomputer.com', '1231267890', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'partner', NULL, '2024-04-18 02:39:43', '2024-04-18 02:39:43'),
+(47, 'asd', 'sadsd@gw23a.com', '4567821290', 'India', 'WEST BENGAL', 'Delhi', '700126', '2024-04-18', 'Developer', NULL, NULL, NULL, NULL, 'partner', NULL, '2024-04-18 05:51:53', '2024-04-18 06:20:02');
 
 -- --------------------------------------------------------
 
@@ -40434,8 +40537,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `mobile_no`, `country`, `state`, `ci
 --
 
 CREATE TABLE `verification_codes` (
-  `id` bigint UNSIGNED NOT NULL,
-  `user_id` bigint NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) NOT NULL,
   `otp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `expire_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -40484,11 +40587,23 @@ ALTER TABLE `contactuses`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `enquries`
+--
+ALTER TABLE `enquries`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `home_banners`
+--
+ALTER TABLE `home_banners`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `leads`
@@ -40562,6 +40677,12 @@ ALTER TABLE `service_banners`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sub_banners`
+--
+ALTER TABLE `sub_banners`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `testimonials`
 --
 ALTER TABLE `testimonials`
@@ -40590,115 +40711,133 @@ ALTER TABLE `verification_codes`
 -- AUTO_INCREMENT for table `aboutuses`
 --
 ALTER TABLE `aboutuses`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `contactuses`
 --
 ALTER TABLE `contactuses`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `enquries`
+--
+ALTER TABLE `enquries`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `home_banners`
+--
+ALTER TABLE `home_banners`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `leads`
 --
 ALTER TABLE `leads`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `partners`
 --
 ALTER TABLE `partners`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `partner_portfolios`
 --
 ALTER TABLE `partner_portfolios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `servicesimages`
 --
 ALTER TABLE `servicesimages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `services_category`
 --
 ALTER TABLE `services_category`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `services_category_images`
 --
 ALTER TABLE `services_category_images`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `service_banners`
 --
 ALTER TABLE `service_banners`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `sub_banners`
+--
+ALTER TABLE `sub_banners`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `verification_codes`
 --
 ALTER TABLE `verification_codes`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
