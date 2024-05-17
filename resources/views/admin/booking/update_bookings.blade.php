@@ -99,7 +99,7 @@
 </div>
 <div class="row justify-content-center">
     <div class="col-sm-12 text-center">
-        <div class="heading">
+        <div class="heading mb-3">
             <h2 style="text-transform: uppercase">{{@$bookings->category}} REQUIREMENTS</h2>
         </div>
     </div>
@@ -112,10 +112,122 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <h4>Renovation</h4>
+                        <div class="col-lg-12  mb-2">
+                            <h4 style="text-transform: uppercase">{{@$bookings->category}}</h4>
                         </div>
-                        <div class="col-6">
+                        <div class="col-12 mb-2">
+                            <input type="checkbox" id="item_1"
+                                name="home_requirements[]"
+                                value="complete_home_solution" 
+                                @if (!empty(@$bookings->home_requirements))
+                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
+                                {{ $item == 'complete_home_solution' ? 'checked' : ''}} @endforeach @endif>
+                            <label class=""
+                                for="item_1">
+                                <div class="icon">
+                                    {{-- <img class="img-fluid" src="images/smarthome.png" alt="">--}}
+                                </div>
+                                <small>Complete home solution</small>
+                            </label>
+                        </div>
+                        <div class="col-6  mb-2">
+                            <input type="checkbox" id="item_2"
+                                name="home_requirements[]" value="living_room" @if (!empty(@$bookings->home_requirements))
+                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
+                                {{ $item == 'living_room' ? 'checked' : ''}} @endforeach @endif>
+                            <label class=""
+                                for="item_2">
+                                <div class="icon">
+                                    {{-- <img class="img-fluid" 
+                                        src="images/living-room.png"
+                                        alt="">--}}
+                                </div>
+                                <small>Living Room</small>
+                            </label>
+                        </div>
+                        <div class="col-6  mb-2">
+                            <input type="checkbox" id="item_3"
+                                name="home_requirements[]" value="kitchen" @if (!empty(@$bookings->home_requirements))
+                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
+                                {{ $item == 'kitchen' ? 'checked' : ''}} @endforeach @endif>
+                            <label class=""
+                                for="item_3">
+                                <div class="icon">
+                                    {{-- <img class="img-fluid"
+                                        src="images/kitchen.png" alt=""> --}}
+                                </div>
+                                <small>Kitchen</small>
+                            </label>
+                        </div>
+                        <div class="col-6  mb-2">
+                            <input type="checkbox" id="item_4"
+                                name="home_requirements[]" value="terrace" @if (!empty(@$bookings->home_requirements))
+                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
+                                {{ $item == 'terrace' ? 'checked' : ''}} @endforeach @endif>
+                            <label class=""
+                                for="item_4">
+                                <div class="icon">
+                                    {{-- <img class="img-fluid" 
+                                        src="images/balcony.png" alt="">--}}
+                                </div>
+                                <small>Terrace/Balcony</small>
+                            </label>
+                        </div>
+                        <div class="col-6  mb-2">
+                            <input type="checkbox" id="item_5"
+                                name="home_requirements[]" value="dining_room"@if (!empty(@$bookings->home_requirements))
+                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
+                                {{ $item == 'dining_room' ? 'checked' : ''}} @endforeach @endif>
+                            <label class=""
+                                for="item_5">
+                                <div class="icon">
+                                    {{-- <img class="img-fluid" 
+                                        src="images/dining-table.png"
+                                        alt="">--}}
+                                </div>
+                                <small>Dining room</small>
+                            </label>
+                        </div>
+                        <div class="col-6  mb-2">
+                            <input type="checkbox" id="item_6"
+                                name="home_requirements[]" value="kids_room" @if (!empty(@$bookings->home_requirements))
+                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
+                                {{ $item == 'kids_room' ? 'checked' : ''}} @endforeach @endif>
+                            <label class=""
+                                for="item_6">
+                                <div class="icon">
+                                    {{-- <img class="img-fluid" src="images/play.png" 
+                                        alt="">--}}
+                                </div>
+                                <small>Kids room</small>
+                            </label>
+                        </div>
+                        <div class="col-6  mb-2">
+                            <input type="checkbox" id="item_7"
+                                name="home_requirements[]" value="pooja_room" @if (!empty(@$bookings->home_requirements))
+                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
+                                {{ $item == 'pooja_room' ? 'checked' : ''}} @endforeach @endif>
+                            <label class=""
+                                for="item_7">
+                                <div class="icon">
+                                    {{-- <img class="img-fluid" src="images/temple.png" 
+                                        alt="">--}}
+                                </div>
+                                <small>Pooja Room</small>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12  mb-2">
+                            <h4 style="text-transform: uppercase">Renovation</h4>
+                        </div>
+                        <div class="col-6  mb-2">
                             <input type="checkbox" id="item_8"
                                 name="renovation[]" value="bedroom" @if (!empty(@$bookings->renovation))
                                 @foreach ( json_decode(@$bookings->renovation) as $item)
@@ -133,7 +245,7 @@
                         @php
                            $renovation = json_decode($bookings->renovation);
                         @endphp
-                        <div class="col-6">
+                        <div class="col-6  mb-2">
                             <input type="checkbox" id="item_9"
                                 name="renovation[]" value="living_room" @if (!empty(@$bookings->renovation))
                                 @foreach ( json_decode(@$bookings->renovation) as $item)
@@ -149,7 +261,7 @@
                                 <small>Living Room</small>
                             </label>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6  mb-2">
                             <input type="checkbox" id="item_10"
                                 name="renovation[]" value="bathroom"@if (!empty(@$bookings->renovation))
                                 @foreach ( json_decode(@$bookings->renovation) as $item)
@@ -163,7 +275,7 @@
                                 <small>bathroom</small>
                             </label>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6  mb-2">
                             <input type="checkbox" id="item_11"
                                 name="renovation[]" value="design_and_plan"  @if (!empty(@$bookings->renovation))
                                 @foreach ( json_decode(@$bookings->renovation) as $item)
@@ -177,7 +289,7 @@
                                 <small> design and plan</small>
                             </label>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6  mb-2">
                             <input type="checkbox" id="item_12"
                                 name="renovation[]" value="kids_room" @if (!empty(@$bookings->renovation))
                                 @foreach ( json_decode(@$bookings->renovation) as $item)
@@ -191,7 +303,7 @@
                                 <small>Kids room</small>
                             </label>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6  mb-2">
                             <input type="checkbox" id="item_13"
                                 name="renovation[]" value="dining_room" @if (!empty(@$bookings->renovation))
                                 @foreach ( json_decode(@$bookings->renovation) as $item)
@@ -214,20 +326,20 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <h4>Services Required {{@$bookings->service}}</h4>
+                        <div class="col-lg-12  mb-2">
+                            <h4 style="text-transform: uppercase">Services Required {{@$bookings->service}}</h4>
                         </div>
-                            <div class="col-6">
+                            <div class="col-6  mb-2">
                                 <input type="radio" id="item_14" name="services"
                                     value="architecture" {{@$bookings->service =='architecture' ? 'checked':''}}>
                                 <label class="" for="item_14">
                                     <div class="icon">
                                         {{-- <img class="img-fluid" src="images/plan.png" alt=""> --}}
                                     </div>
-                                    <small>architecture</small>
+                                    <small>Architecture</small>
                                 </label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6  mb-2">
                                 <input type="radio" id="item_15" name="services"
                                     value="hvac_consultation" {{@$bookings->service=='hvac_consultation' ? 'checked':''}}>
                                 <label class="" for="item_15">
@@ -235,10 +347,10 @@
                                         {{-- <img class="img-fluid" src="images/workspace.png" 
                                             alt="">--}}
                                     </div>
-                                    <small>HVAC consultation</small>
+                                    <small>HVAC</small>
                                 </label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6  mb-2">
                                 <input type="radio" id="item_16" name="services"
                                     value="design_consultation" {{@$bookings->service=='design_consultation' ? 'checked':''}}>
                                 <label class="" for="item_16" >
@@ -246,10 +358,10 @@
                                         {{-- <img class="img-fluid" src="images/lighting.png"
                                             alt=""> --}}
                                     </div>
-                                    <small>design consultation</small>
+                                    <small>Design</small>
                                 </label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6  mb-2">
                                 <input type="radio" id="item_17" name="services"
                                     value="electrical_consultation" {{@$bookings->service=='electrical_consultation' ? 'checked':''}}>
                                 <label class="" for="item_17" >
@@ -257,10 +369,10 @@
                                         {{-- <img class="img-fluid" src="images/plumbing.png" 
                                             alt="">--}}
                                     </div>
-                                    <small>electrical consultation</small>
+                                    <small>Electrical</small>
                                 </label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-6  mb-2">
                                 <input type="radio" id="item_18" name="services"
                                     value="contractor" {{@$bookings->service=='contractor' ? 'checked':''}}>
                                 <label class="" for="item_18">
@@ -268,18 +380,48 @@
                                         {{-- <img class="img-fluid" src="images/sketch.png" 
                                             alt="">--}}
                                     </div>
-                                    <small>contractor</small>
+                                    <small>Contractor</small>
                                 </label>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-6  mb-2">
                                 <input type="radio" id="item_19" name="services"
                                     value="structural_consultation" {{@$bookings->service=='structural_consultation' ? 'checked':''}}>
                                 <label class="" for="item_19">
                                     <div class="icon">
                                         {{-- <img class="img-fluid" src="{{asset('')}} " alt=""> --}}
                                     </div>
-                                    <small>structural consultation</small>
+                                    <small>Civil & Structural</small>
+                                </label>
+                            </div>
+
+                            <div class="col-6  mb-2">
+                                <input type="radio" {{@$bookings->service=='painting' ? 'checked':''}} id="item_20" name="services" value="painting">
+                                <label class="" for="item_20">
+                                    <div class="icon">
+                                        {{-- <img class="img-fluid" src="images/painting33.png" alt=""> --}}
+                                    </div>
+                                    <small>Painting</small>
+                                </label>
+                            </div>
+
+                            <div class="col-6  mb-2">
+                                <input type="radio" {{@$bookings->service=='plumbing' ? 'checked':''}} id="item_21" name="services" value="plumbing">
+                                <label class="" for="item_21">
+                                    <div class="icon">
+                                        {{-- <img class="img-fluid" src="images/plumbing.png" alt=""> --}}
+                                    </div>
+                                    <small>Plumbing</small>
+                                </label>
+                            </div>
+
+                            <div class="col-6  mb-2">
+                                <input type="radio" {{@$bookings->service=='furniture_pictures' ? 'checked':''}} id="item_22" name="services" value="furniture_pictures">
+                                <label class="" for="item_22">
+                                    <div class="icon">
+                                        {{-- <img class="img-fluid" src="images/furniture.png" alt=""> --}}
+                                    </div>
+                                    <small>Furniture & Pictures</small>
                                 </label>
                             </div>
                     </div>
@@ -290,118 +432,25 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
+                        @if (@$bookings->category== 'office')
+                        <div class="col-lg-4">
+                            <small style="text-transform: uppercase" class="m-0">Number of Cabins</small>
+                            <input type="number" class="form-control" placeholder="Number of Cabins" name="number_of_cabins" value="{{ @$bookings->number_of_cabins}}">
+                        </div>
+                        <div class="col-lg-4">
+                            <small style="text-transform: uppercase" class="m-0">Number Of Worksations</small>
+                            <input type="number" class="form-control" placeholder="Number Of Worksations" name="number_of_worksations" value="{{ @$bookings->number_of_worksations}}">
+                        </div>
+                        <div class="col-lg-4">
+                            <small style="text-transform: uppercase" class="m-0">Total Carpet Area</small>
+                            <input type="number" class="form-control" placeholder="Total Carpet Area" name="total_carpet_area" value="{{ @$bookings->total_carpet_area}}">
+                        </div>
+                        @elseif(@$bookings->category== 'retail')
                         <div class="col-lg-12">
-                            <h4>Home</h4>
+                            <small style="text-transform: uppercase" class="m-0">Total Area</small>
+                            <input type="number" class="form-control" placeholder="Total Area" name="total_carpet_area" value="{{ @$bookings->total_carpet_area}}">
                         </div>
-                        <div class="col-12">
-                            <input type="checkbox" id="item_1"
-                                name="home_requirements[]"
-                                value="complete_home_solution" 
-                                @if (!empty(@$bookings->home_requirements))
-                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
-                                {{ $item == 'complete_home_solution' ? 'checked' : ''}} @endforeach @endif>
-                            <label class=""
-                                for="item_1">
-                                <div class="icon">
-                                    {{-- <img class="img-fluid" src="images/smarthome.png" alt="">--}}
-                                </div>
-                                <small>Complete home solution</small>
-                            </label>
-                        </div>
-                        <div class="col-6">
-                            <input type="checkbox" id="item_2"
-                                name="home_requirements[]" value="living_room" @if (!empty(@$bookings->home_requirements))
-                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
-                                {{ $item == 'living_room' ? 'checked' : ''}} @endforeach @endif>
-                            <label class=""
-                                for="item_2">
-                                <div class="icon">
-                                    {{-- <img class="img-fluid" 
-                                        src="images/living-room.png"
-                                        alt="">--}}
-                                </div>
-                                <small>Living Room</small>
-                            </label>
-                        </div>
-                        <div class="col-6">
-                            <input type="checkbox" id="item_3"
-                                name="home_requirements[]" value="kitchen" @if (!empty(@$bookings->home_requirements))
-                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
-                                {{ $item == 'kitchen' ? 'checked' : ''}} @endforeach @endif>
-                            <label class=""
-                                for="item_3">
-                                <div class="icon">
-                                    {{-- <img class="img-fluid"
-                                        src="images/kitchen.png" alt=""> --}}
-                                </div>
-                                <small>Kitchen</small>
-                            </label>
-                        </div>
-                        <div class="col-6">
-                            <input type="checkbox" id="item_4"
-                                name="home_requirements[]" value="terrace" @if (!empty(@$bookings->home_requirements))
-                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
-                                {{ $item == 'terrace' ? 'checked' : ''}} @endforeach @endif>
-                            <label class=""
-                                for="item_4">
-                                <div class="icon">
-                                    {{-- <img class="img-fluid" 
-                                        src="images/balcony.png" alt="">--}}
-                                </div>
-                                <small>Terrace/Balcony</small>
-                            </label>
-                        </div>
-                        <div class="col-6">
-                            <input type="checkbox" id="item_5"
-                                name="home_requirements[]" value="dining_room"@if (!empty(@$bookings->home_requirements))
-                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
-                                {{ $item == 'dining_room' ? 'checked' : ''}} @endforeach @endif>
-                            <label class=""
-                                for="item_5">
-                                <div class="icon">
-                                    {{-- <img class="img-fluid" 
-                                        src="images/dining-table.png"
-                                        alt="">--}}
-                                </div>
-                                <small>Dining room</small>
-                            </label>
-                        </div>
-                        <div class="col-6">
-                            <input type="checkbox" id="item_6"
-                                name="home_requirements[]" value="kids_room" @if (!empty(@$bookings->home_requirements))
-                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
-                                {{ $item == 'kids_room' ? 'checked' : ''}} @endforeach @endif>
-                            <label class=""
-                                for="item_6">
-                                <div class="icon">
-                                    {{-- <img class="img-fluid" src="images/play.png" 
-                                        alt="">--}}
-                                </div>
-                                <small>Kids room</small>
-                            </label>
-                        </div>
-                        <div class="col-6">
-                            <input type="checkbox" id="item_7"
-                                name="home_requirements[]" value="pooja_room" @if (!empty(@$bookings->home_requirements))
-                                @foreach ( json_decode(@$bookings->home_requirements) as $item)
-                                {{ $item == 'pooja_room' ? 'checked' : ''}} @endforeach @endif>
-                            <label class=""
-                                for="item_7">
-                                <div class="icon">
-                                    {{-- <img class="img-fluid" src="images/temple.png" 
-                                        alt="">--}}
-                                </div>
-                                <small>Pooja Room</small>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
+                        @endif
                         <div class="col-lg-6">
                             <small class="m-0">BUDGET</small>
                             <input type="number" class="form-control" placeholder="Budget (in lakh)" name="budget" value="{{ @$bookings->budget}}">

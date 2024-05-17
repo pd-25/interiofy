@@ -69,7 +69,15 @@
                                             <div class="main_tab">
                                                 <div class="tab-wrapper">
                                                     <ul class="tabs">
-                                                        <li class="tab-link active new_tab" data-tab="1">Home</li>
+                                                        <li class="tab-link active new_tab" data-tab="1">
+                                                            @if ($category== 'home')
+                                                                Home
+                                                            @elseif($category== 'office')
+                                                                Office
+                                                            @elseif($category== 'retail')
+                                                                Retail
+                                                            @endif
+                                                        </li>
                                                         <li class="tab-link" data-tab="2">Renovation</li>
                                                     </ul>
                                                 </div>
@@ -219,7 +227,6 @@
                         </div>
                         {{-------- PART 2-------}}
                         <div class="step well">
-
                             <fieldset>
                                 <div class="row justify-content-center">
                                     <div class="col-sm-12 text-center">
@@ -248,7 +255,7 @@
                                                     <div class="icon">
                                                         <img class="img-fluid" src="images/workspace.png" alt="">
                                                     </div>
-                                                    <h3>HVAC consultation</h3>
+                                                    <h3>HVAC</h3>
                                                 </label>
                                             </div>
 
@@ -258,7 +265,7 @@
                                                     <div class="icon">
                                                         <img class="img-fluid" src="images/lighting.png" alt="">
                                                     </div>
-                                                    <h3>design consultation</h3>
+                                                    <h3>design</h3>
                                                 </label>
                                             </div>
 
@@ -268,7 +275,7 @@
                                                     <div class="icon">
                                                         <img class="img-fluid" src="images/plumbing.png" alt="">
                                                     </div>
-                                                    <h3>electrical consultation</h3>
+                                                    <h3>electrical</h3>
                                                 </label>
                                             </div>
                                             <div class="select">
@@ -287,10 +294,39 @@
                                                     <div class="icon">
                                                         <img class="img-fluid" src="images/mop.png" alt="">
                                                     </div>
-                                                    <h3>structural consultation</h3>
+                                                    <h3>cilive & structural</h3>
                                                 </label>
                                             </div>
 
+                                            <div class="select">
+                                                <input type="radio" id="item_20" name="services" value="painting">
+                                                <label class="btn btn-warning button_select" for="item_20">
+                                                    <div class="icon">
+                                                        <img class="img-fluid" src="images/painting33.png" alt="">
+                                                    </div>
+                                                    <h3>painting</h3>
+                                                </label>
+                                            </div>
+
+                                            <div class="select">
+                                                <input type="radio" id="item_21" name="services" value="plumbing">
+                                                <label class="btn btn-warning button_select" for="item_21">
+                                                    <div class="icon">
+                                                        <img class="img-fluid" src="images/plumbing.png" alt="">
+                                                    </div>
+                                                    <h3>plumbing</h3>
+                                                </label>
+                                            </div>
+
+                                            <div class="select">
+                                                <input type="radio" id="item_22" name="services" value="furniture_pictures">
+                                                <label class="btn btn-warning button_select" for="item_22">
+                                                    <div class="icon">
+                                                        <img class="img-fluid" src="images/furniture.png" alt="">
+                                                    </div>
+                                                    <h3>furniture & Pictures</h3>
+                                                </label>
+                                            </div>
                                         </ul>
                                     </div>
 
@@ -311,6 +347,29 @@
                                     <div class="">
                                         {{-- <form class="gaping" action="#" method="post"> --}}
                                         <div class="row mb-2">
+                                            @if ($category== 'office')
+                                            <div class="col-lg-4 mb-2">
+                                                <div class="form-group">
+                                                    <input type="number" min="1" id="number_of_cabins" class="form-control" placeholder="Number of Cabins"  name="number_of_cabins">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 mb-2">
+                                                <div class="form-group">
+                                                    <input type="number" min="1"  id="number_of_worksations" class="form-control" placeholder="Number of Worksations"  name="number_of_worksations">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 mb-2">
+                                                <div class="form-group">
+                                                    <input type="number" min="1"  id="total_carpet_area" class="form-control" placeholder="Total Carpet Area"  name="total_carpet_area">
+                                                </div>
+                                            </div>
+                                            @elseif($category== 'retail')
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="form-group">
+                                                    <input type="number" id="total_carpet_area" class="form-control" placeholder="Total Area"  name="total_carpet_area">
+                                                </div>
+                                            </div>
+                                            @endif
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <input type="number" id="budget" class="form-control" placeholder="Budget (in lakh)" required name="budget">
@@ -651,7 +710,7 @@
             _token: "{{ csrf_token() }}",
             success: function(response) {
                 var response = response;
-                //console.log(response)
+                console.log(response)
                 $('#partnerList').find('.partner_list').remove();
                 var selOpts = "";
                 for (i = 0; i < response.length; i++) {

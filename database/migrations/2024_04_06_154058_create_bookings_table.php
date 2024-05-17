@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('home_requirements');
             $table->string('renovation');
             $table->string('service');
+            $table->integer('number_of_cabins')->nullable();
+            $table->integer('number_of_worksations')->nullable();
+            $table->integer('total_carpet_area')->nullable();
             $table->decimal('budget', 18,2);
             $table->integer('pincode')->nullable();
             $table->string('block')->nullable();

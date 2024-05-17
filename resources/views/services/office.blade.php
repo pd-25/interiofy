@@ -232,7 +232,7 @@
         <div class="row">
             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
                 <div class="circle_div_1 step_icon_row row_1">
-                    <a href="architecture.html" class="step_icon_box_1 color_1 circle_1">
+                    <a href="{{url('/services/architect')}}" class="step_icon_box_1 color_1 circle_1">
                         <div class="step_icon">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
                                 <g>
@@ -251,7 +251,7 @@
             <div class="col-lg-2 col-md-3 col-sm-12 p-0"></div>
             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
                 <div class="circle_div_1 step_icon_row row_1">
-                    <a href="hvac-consultation.html" class="step_icon_box_1 color_2 circle_2">
+                    <a href="{{url('/services/hvac')}}" class="step_icon_box_1 color_2 circle_2">
                         <div class="step_icon">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 16.933 16.933" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
                                 <g>
@@ -263,7 +263,7 @@
 
                         </div>
 
-                        <h3 class="step_name">HVAC Consultation</h3>
+                        <h3 class="step_name">HVAC</h3>
 
                     </a>
                 </div>
@@ -271,7 +271,7 @@
             <div class="col-lg-2 col-md-3 col-sm-12 p-0"></div>
             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
                 <div class="circle_div_1 step_icon_row row_1">
-                    <a href="design-consultation.html" class="step_icon_box_1 color_3 circle_3">
+                    <a href="{{url('/services/design-consultation')}}" class="step_icon_box_1 color_3 circle_3">
 
                         <div class="step_icon">
 
@@ -287,7 +287,7 @@
 
                         </div>
 
-                        <h3 class="step_name">Design Consultation</h3>
+                        <h3 class="step_name">Design</h3>
 
                     </a>
                 </div>
@@ -298,7 +298,7 @@
             <div class="col-lg-2 col-md-3 col-sm-12 p-0"></div>
             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
                 <div class="circle_div_1 step_icon_row row_1">
-                    <a href="electrical-consultation.html" class="step_icon_box_1 color_4 circle_4">
+                    <a href="{{url('/services/electrical-consultation')}}" class="step_icon_box_1 color_4 circle_4">
 
                         <div class="step_icon">
 
@@ -319,7 +319,7 @@
 
                         </div>
 
-                        <h3 class="step_name">Electrical Consultation</h3>
+                        <h3 class="step_name">Electrical</h3>
 
                     </a>
                 </div>
@@ -327,7 +327,7 @@
             <div class="col-lg-2 col-md-3 col-sm-12 p-0"></div>
             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
                 <div class="circle_div_1 step_icon_row row_1">
-                    <a href="contractor.html" class="step_icon_box_1 color_5 circle_5">
+                    <a href="{{url('/services/contractor')}}" class="step_icon_box_1 color_5 circle_5">
 
                         <div class="step_icon">
 
@@ -351,7 +351,7 @@
             <div class="col-lg-2 col-md-3 col-sm-12 p-0"></div>
             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
                 <div class="circle_div_1 step_icon_row row_1">
-                    <a href="structural-consultation.html" class="step_icon_box_1 color_6 circle_6">
+                    <a href="{{url('/services/structural-consultation')}}" class="step_icon_box_1 color_6 circle_6">
 
                         <div class="step_icon">
 
@@ -367,7 +367,7 @@
 
                         </div>
 
-                        <h3 class="step_name">Structural Consultation</h3>
+                        <h3 class="step_name">Civil & Structure</h3>
 
                     </a>
                 </div>
@@ -375,6 +375,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- step form sec end  -->
 

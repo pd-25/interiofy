@@ -99,7 +99,7 @@
 
                 <ul class="join-btns">
                     <li><a href="#" class="btn seeAllBtn">Sign up as a Designer</a></li>
-                    <li><a href="#" class="btn seeAllBtn">Become a Partner Contractor</a></li>
+                    <li><a href="#" class="btn seeAllBtn">Become our Partner</a></li>
                     <li><a href="#" class="btn seeAllBtn">Join our Vendor Network</a></li>
                 </ul>
                 </p>
@@ -296,6 +296,46 @@
 
 </section>
 
+
+<section style="padding-bottom: 50px;">
+    <div class="container-fluid">
+         <div class="row justify-content-center">
+              <div class="col-sm-12 text-center">
+                   <div class="heading">
+                        <h2>Journey to Be Partner With Us</h2>
+                   </div>
+              </div>
+         </div>
+
+         <div class="row text-center">
+              <div class="col-lg-2 col-md-4 col-12">
+                   <img src="{{ asset('images/nk1.jpg') }}" class="design_section_img_1">
+                   <p class="design_section_p_1">Fill the form and submit</p>
+              </div>
+              <div class="col-lg-2 col-md-4 col-12">
+                   <img src="{{ asset('images/nk2.jpg') }}" class="design_section_img_1">
+                   <p class="design_section_p_1">Receive a verification call</p>
+              </div>
+              <div class="col-lg-2 col-md-4 col-12">
+                   <img src="{{ asset('images/nk3.jpg') }}" class="design_section_img_1">
+                   <p class="design_section_p_1">Go through the verification process</p>
+              </div>
+              <div class="col-lg-2 col-md-4 col-12">
+                   <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
+                   <p class="design_section_p_1">Get Onboarded</p>
+              </div>
+              <div class="col-lg-2 col-md-4 col-12">
+                   <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
+                   <p class="design_section_p_1">Complete the orientation & training</p>
+              </div>
+              <div class="col-lg-2 col-md-4 col-12">
+                   <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
+                   <p class="design_section_p_1">Start getting noticed by customers</p>
+              </div>
+         </div>
+
+    </div>
+</section>
 
 <section class="stepform_Sec partner-bg">
 
@@ -584,54 +624,7 @@
 </section>
 
 
-<section style="padding-bottom: 70px;">
 
-     <div class="container-fluid">
-
-          <div class="row justify-content-center">
-
-               <div class="col-sm-12 text-center">
-
-                    <div class="heading">
-
-                         <h2>Journey to Be Partner With Us</h2>
-
-                    </div>
-
-               </div>
-
-          </div>
-
-          <div class="row text-center">
-               <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk1.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">Fill the form and submit</p>
-               </div>
-               <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk2.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">Receive a verification call</p>
-               </div>
-               <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk3.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">Go through the verification process</p>
-               </div>
-               <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">Get Onboarded</p>
-               </div>
-               <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">Complete the orientation & training</p>
-               </div>
-               <div class="col-lg-2 col-md-4 col-12">
-                    <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
-                    <p class="design_section_p_1">Start getting noticed by customers</p>
-               </div>
-          </div>
-
-     </div>
-
-</section>
 
 
 @push('scripts')

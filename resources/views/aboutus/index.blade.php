@@ -2,19 +2,19 @@
 
 
 <section class="inner_banner">
-    <div class="container">
+    {{-- <div class="container">
         <div class="inner_box">
             <div class="inner_banner_caption">
-                <h1>About Us</h1>
+                <h1>About Interiofy</h1>
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                    <li class="breadcrumb-item active" aria-current="page">About Interiofy</li>
                 </ol>
             </nav>
         </div>
-    </div>
+    </div> --}}
 </section>
 <section>
     <div class="container">
@@ -27,7 +27,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="about-interiofy-pic">
-                    <img src="{{ asset('storage/'.@$aboutus->image) }}" alt="" />
+                    <img src="{{ asset('storage/'.@$aboutus->image) }}" class="img_fluid" style="object-fit: cover; height: -webkit-fill-available;" />
                 </div>
             </div>
         </div>

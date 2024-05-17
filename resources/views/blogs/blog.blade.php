@@ -3,7 +3,7 @@
     
     <!--===================== Office Interior Banner  ===================== -->
     <section class="inner_banner inner_bannerblog">
-        <div class="container">
+        {{-- <div class="container">
             <div class="inner_box">
                 <div class="inner_banner_caption">
                     <h1>Blogs</h1>
@@ -15,7 +15,7 @@
                     </ol>
                 </nav>
             </div>
-        </div>
+        </div> --}}
     </section>
     {{-- <div class="interior-banner">
         <div class="interior-banner-slider owl-carousel owl-theme">
@@ -72,9 +72,9 @@
                                                 <a href="{{route('blog-details', encrypt($item->id))}}">
                                                     <div class="holiday_pack_area">
                                                         <div class="pack_image">
-                                                            <img class="img-fluid" src="{{ asset('storage/'.$item->image) }}" alt="No Images">
+                                                            <img class="img-fluid" src="{{ asset('storage/'.$item->image) }}" style="object-fit: cover; height: -webkit-fill-available;" alt="No Images">
                                                         </div>
-                                                        <h3 class="title_blog">{{@$item->title}}</h3>
+                                                        <h3 class="title_blog"> {!!Str::words (@$item->title, 8 ,' ...') !!}</h3>
                                                         <p> {!! Str::words ($item->description, 30 ,' ...') !!}</p>
                                                         {{-- <p>{!! @$item->description !!}</p> --}}
                                                     </div>

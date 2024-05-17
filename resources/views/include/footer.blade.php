@@ -149,9 +149,9 @@
                                            <li>
                                                 <a href="{{ route('contact-us') }}">Contact Us</a>
                                              </li>
-                                             <li class="menu-item">
+                                             {{-- <li class="menu-item">
                                                   <a href="#">FAQS</a>
-                                             </li>
+                                             </li> --}}
                                       </ul>
                                  </div>
                             </div>

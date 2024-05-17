@@ -1,19 +1,11 @@
 @include('include.header')
 
 <section class="inner_banner inner_bannerContact">
-    <div class="container">
+    {{-- <div class="container">
         <div class="inner_box">
             <div class="inner_banner_caption">
                 <h1>Contact Us</h1>
             </div>
-            {{-- <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                        Contact Us
-                    </li>
-                </ol>
-            </nav> --}}
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
@@ -21,8 +13,7 @@
                 </ol>
             </nav>
         </div>
-
-    </div>
+    </div> --}}
 </section>
 
 <section>

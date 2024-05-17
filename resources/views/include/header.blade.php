@@ -33,7 +33,30 @@
 <body>
      
      <div class="go_to_form_div_1">
-          <a href="/contact-us"><button class="go_to_form_btn_1" style="margin-bottom:40px">Contact us</button></a>
+          <div class="fab-wrapper">
+               <input id="fabCheckbox" type="checkbox" class="fab-checkbox" />
+               <label class="fab" for="fabCheckbox">
+                   <span class="fab-dots fab-dots-1"></span>
+                   <span class="fab-dots fab-dots-2"></span>
+                   <span class="fab-dots fab-dots-3"></span>
+               </label>
+               <div class="fab-wheel">
+                   <a href="{{ route('home-services') }}" target="_blank"
+                       class="fab-action fab-action-1">
+                       <i class="fas fa-home"></i>
+                   </a>
+                   <a href="{{ route('office-services') }}" target="_blank" class="fab-action fab-action-2">
+                         <i class="fas fa-laptop"></i>
+                   </a>
+                   <a href="{{ route('retail-services') }}" target="_blank" class="fab-action fab-action-3">
+                         <i class="fas fa-laptop-house"></i>
+                   </a>
+                   {{-- <a href="mailto:kishloy.official@gmail.com" class="fab-action fab-action-4">
+                       <i class='bx bx-envelope'></i>
+                   </a> --}}
+               </div>
+           </div>
+          {{-- <a href="/contact-us"><button class="go_to_form_btn_1" style="margin-bottom:40px">Book your partner</button></a> --}}
       </div>
   
        <a href="#" class="scroll"><i class="fa-solid fa-angle-up"></i></a>
@@ -90,10 +113,10 @@
                                         <a href="{{ url('/') }}">Home</a>
                                    </li>
                                    <li class="menu-item">
-                                        <a href="{{ route('about-us') }}">About Us</a>
+                                        <a href="{{ route('about-us') }}">About InterioFy</a>
                                    </li>
                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#" data-toggle="sub-menu">Our Services <i class="plus"></i></a>
+                                        <a href="#" data-toggle="sub-menu">Our Services </a>
                                         <ul class="sub-menu">
                                              @foreach($categories as $category)
                                                   <li class="menu-item">
@@ -109,9 +132,9 @@
                                    <li class="menu-item">
                                         <a href="{{ route('blogs') }}">Blogs</a>
                                    </li>
-                                   <li class="menu-item">
+                                   {{-- <li class="menu-item">
                                    <a href="#">FAQS</a>
-                                   </li>
+                                   </li> --}}
                                    <li class="menu-item">
                                         <a href="{{ route('contact-us') }}">Contact Us</a>
                                    </li>

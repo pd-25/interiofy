@@ -1,7 +1,7 @@
 @include('include.header')
 <!-- inner banner sec -->
 <section class="inner_banner inner_bannerblog">
-    <div class="container">
+    {{-- <div class="container">
         <div class="inner_box">
             <div class="inner_banner_caption">
                 <h1>Blogs</h1>
@@ -13,7 +13,7 @@
                 </ol>
             </nav>
         </div>
-    </div>
+    </div> --}}
 </section>
 <!-- inner banner sec end  -->
 
@@ -27,7 +27,7 @@
                     <h2>{{ $blogs->title }}</h2>
                     <p> {!! $blogs->description !!}</p>
                 </div>
-                <img class="img-fluid" src="{{ asset('storage/'.$blogs->image) }}" alt="" />
+                <img src="{{ asset('storage/'.$blogs->image) }}" class="img_fluid" style="object-fit: cover; height: 500px" alt="" />
             </div>
         </div>
 

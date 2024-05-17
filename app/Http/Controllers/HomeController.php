@@ -262,6 +262,11 @@ class HomeController extends Controller
         }
         $booking->service = $request->services;
         $booking->pincode = $request->pincode;
+        
+        $booking->number_of_worksations = $request->number_of_worksations;
+        $booking->total_carpet_area = $request->total_carpet_area;
+        $booking->total_carpet_area = $request->total_carpet_area;
+
         $booking->expert_id = $request->expert_id;
         $city = explode("-",$request->city);
         $booking->district = $city[0];
