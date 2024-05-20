@@ -45,13 +45,13 @@ class BookingController extends Controller
 
     public function officebookings()
     {
-        $data['bookings'] = Booking::with('user_details')->where('category', 'office')->paginate(20);
+        $data['bookings'] = Booking::with('user_details')->where('category', 'office')->orderBy('id','desc')->paginate(20);
         return view('admin.booking.home',$data);
     }
     
     public function retailbookings()
     {
-        $data['bookings'] = Booking::with('user_details')->where('category', 'retail')->paginate(20);
+        $data['bookings'] = Booking::with('user_details')->where('category', 'retail')->orderBy('id','desc')->paginate(20);
         return view('admin.booking.home',$data);
     }
 

@@ -1546,18 +1546,12 @@ a#login_btn:hover span:nth-child(4) {
 }
 
 .inner_bannerContact{
-	background: url(../img/17.png) no-repeat;
-
+	background: url(../images/17.png) no-repeat;
 	background-size: cover;
-
 	background-position: 92% 74%;
-
 	position: relative;
-
 	padding: 50px 0px;
-
 	z-index: 0;
-
 	height: 320px;
 }
 
@@ -6152,7 +6146,7 @@ p.sb_para {
 
 	width: 100% !important;
 
-	height: 435px;
+	/* height: 435px; */
 
 	object-fit: cover;
 
@@ -6778,8 +6772,8 @@ button.sert {
     position: absolute;
     bottom: -1rem;
     right: -1rem;
-    width: 4rem;
-    height: 4rem;
+    width: 8rem;
+    height: 8rem;
     background: blue;
     border-radius: 50%;
     background: #126ee2;
@@ -6802,7 +6796,7 @@ button.sert {
 }
 
 .fab-checkbox:checked~.fab:before {
-    width: 90%;
+    width: 100%;
     height: 90%;
     left: 5%;
     top: 5%;
@@ -6893,8 +6887,8 @@ button.sert {
 .fab-action {
     position: absolute;
     background: #0f1941;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -6915,21 +6909,27 @@ button.sert {
 }
 
 .fab-wheel .fab-action-1 {
-    right: -1rem;
-    top: 2rem;
+	right: -2rem;
+    top: -2rem;
 }
 
 .fab-wheel .fab-action-2 {
-    right: 2.8rem;
-    top: 3.2rem;
+	right: 5.8rem;
+    top: -0.8rem;
 }
 
 .fab-wheel .fab-action-3 {
-    left: 2.5rem;
-    bottom: -5px;
+    left: -2.5rem;
+    bottom: -2px;
 }
 
 .fab-wheel .fab-action-4 {
     left: 2rem;
     bottom: -1.1rem;
+}
+
+.banner-item a img {
+	background-position: 92% 74%;
+	position: relative;
+	object-fit: cover;
 }

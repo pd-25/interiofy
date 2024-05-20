@@ -58,7 +58,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-sm-12 text-center">
                                         <div class="heading">
-                                            <h2>Give us your home requirements</h2>
+                                            <h2>Give us your {{@$category}} requirements</h2>
                                             <input type="hidden" id="formTypeII" value="HomeRegister">
                                         </div>
                                     </div>
@@ -83,140 +83,188 @@
                                                 </div>
                                                 <div class="content-wrapper">
                                                     <div id="tab-1" class="tab-content active">
-                                                        <ul class="select_buttons">
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_1" name="home_requirements[]" value="complete_home_solution">
-                                                                <label class="btn btn-warning button_select" for="item_1">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/smarthome.png" alt="">
-                                                                    </div>
-                                                                    <h3>Complete home solution</h3>
-                                                                </label>
+                                                        @if ($category== 'office')
+                                                            <div class="col-lg-12 mb-2">
+                                                                <div class="form-group">
+                                                                    <input type="number" min="1" id="number_of_cabins" class="form-control" placeholder="Number of Cabins"  name="number_of_cabins">
+                                                                </div>
                                                             </div>
+                                                            <div class="col-lg-12 mb-2">
+                                                                <div class="form-group">
+                                                                    <input type="number" min="1"  id="number_of_worksations" class="form-control" placeholder="Number of Worksations"  name="number_of_worksations">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12 mb-2">
+                                                                <div class="form-group">
+                                                                    <input type="number" min="1"  id="total_carpet_area" class="form-control" placeholder="Total Carpet Area"  name="total_carpet_area">
+                                                                </div>
+                                                            </div>
+                                                        @elseif($category== 'retail')
+                                                            <div class="col-lg-12 mb-2">
+                                                                <div class="form-group">
+                                                                    <input type="number" id="total_area" class="form-control" placeholder="Total Area"  name="total_area">
+                                                                </div>
+                                                            </div>
+                                                        @else
+                                                            <ul class="select_buttons">
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_1" name="home_requirements[]" value="complete_home_solution">
+                                                                    <label class="btn btn-warning button_select" for="item_1">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/smarthome.png" alt="">
+                                                                        </div>
+                                                                        <h3>Complete home solution</h3>
+                                                                    </label>
+                                                                </div>
 
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_2" name="home_requirements[]" value="living_room">
-                                                                <label class="btn btn-warning button_select" for="item_2">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/living-room.png" alt="">
-                                                                    </div>
-                                                                    <h3>Living Room</h3>
-                                                                </label>
-                                                            </div>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_2" name="home_requirements[]" value="living_room">
+                                                                    <label class="btn btn-warning button_select" for="item_2">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/living-room.png" alt="">
+                                                                        </div>
+                                                                        <h3>Living Room</h3>
+                                                                    </label>
+                                                                </div>
 
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_3" name="home_requirements[]" value="kitchen">
-                                                                <label class="btn btn-warning button_select" for="item_3">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/kitchen.png" alt="">
-                                                                    </div>
-                                                                    <h3>Kitchen</h3>
-                                                                </label>
-                                                            </div>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_3" name="home_requirements[]" value="kitchen">
+                                                                    <label class="btn btn-warning button_select" for="item_3">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/kitchen.png" alt="">
+                                                                        </div>
+                                                                        <h3>Kitchen</h3>
+                                                                    </label>
+                                                                </div>
 
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_4" name="home_requirements[]" value="terrace">
-                                                                <label class="btn btn-warning button_select" for="item_4">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/balcony.png" alt="">
-                                                                    </div>
-                                                                    <h3>Terrace/Balcony</h3>
-                                                                </label>
-                                                            </div>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_4" name="home_requirements[]" value="terrace">
+                                                                    <label class="btn btn-warning button_select" for="item_4">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/balcony.png" alt="">
+                                                                        </div>
+                                                                        <h3>Terrace/Balcony</h3>
+                                                                    </label>
+                                                                </div>
 
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_5" name="home_requirements[]" value="dining_room">
-                                                                <label class="btn btn-warning button_select" for="item_5">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/dining-table.png" alt="">
-                                                                    </div>
-                                                                    <h3>Dining room</h3>
-                                                                </label>
-                                                            </div>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_5" name="home_requirements[]" value="dining_room">
+                                                                    <label class="btn btn-warning button_select" for="item_5">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/dining-table.png" alt="">
+                                                                        </div>
+                                                                        <h3>Dining room</h3>
+                                                                    </label>
+                                                                </div>
 
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_6" name="home_requirements[]" value="kids_room">
-                                                                <label class="btn btn-warning button_select" for="item_6">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/play.png" alt="">
-                                                                    </div>
-                                                                    <h3>Kids room</h3>
-                                                                </label>
-                                                            </div>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_6" name="home_requirements[]" value="kids_room">
+                                                                    <label class="btn btn-warning button_select" for="item_6">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/play.png" alt="">
+                                                                        </div>
+                                                                        <h3>Kids room</h3>
+                                                                    </label>
+                                                                </div>
 
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_7" name="home_requirements[]" value="pooja_room">
-                                                                <label class="btn btn-warning button_select" for="item_7">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/temple.png" alt="">
-                                                                    </div>
-                                                                    <h3>Pooja Room</h3>
-                                                                </label>
-                                                            </div>
-                                                        </ul>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_7" name="home_requirements[]" value="pooja_room">
+                                                                    <label class="btn btn-warning button_select" for="item_7">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/temple.png" alt="">
+                                                                        </div>
+                                                                        <h3>Pooja Room</h3>
+                                                                    </label>
+                                                                </div>
+                                                            </ul>
+                                                        @endif
                                                     </div>
 
                                                     <div id="tab-2" class="tab-content">
-                                                        <ul class="select_buttons">
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_8" name="renovation[]" value="bedroom">
-                                                                <label class="btn btn-warning button_select" for="item_8">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/bedroom.png" alt="">
-                                                                    </div>
-                                                                    <h3>Bedroom</h3>
-                                                                </label>
+                                                        @if ($category== 'office')
+                                                            <div class="col-lg-12 mb-2">
+                                                                <div class="form-group">
+                                                                    <input type="number" min="1" id="number_of_cabins_renovation" class="form-control" placeholder="Number of Cabins"  name="number_of_cabins_renovation">
+                                                                </div>
                                                             </div>
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_9" name="renovation[]" value="living_room">
-                                                                <label class="btn btn-warning button_select" for="item_9">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/living-room.png" alt="">
-                                                                    </div>
-                                                                    <h3>Living Room dasdasd</h3>
-                                                                </label>
+                                                            <div class="col-lg-12 mb-2">
+                                                                <div class="form-group">
+                                                                    <input type="number" min="1"  id="number_of_worksations_renovation" class="form-control" placeholder="Number of Worksations"  name="number_of_worksations_renovation">
+                                                                </div>
                                                             </div>
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_10" name="renovation[]" value="bathroom">
-                                                                <label class="btn btn-warning button_select" for="item_10">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/bathroom.png" alt="">
-                                                                    </div>
-                                                                    <h3>bathroom</h3>
-                                                                </label>
+                                                            <div class="col-lg-12 mb-2">
+                                                                <div class="form-group">
+                                                                    <input type="number" min="1"  id="total_carpet_area_renovation" class="form-control" placeholder="Total Carpet Area"  name="total_carpet_area_renovation">
+                                                                </div>
                                                             </div>
+                                                        @elseif($category== 'retail')
+                                                            <div class="col-lg-12 mb-2">
+                                                                <div class="form-group">
+                                                                    <input type="number" id="total_carpet_area" class="form-control" placeholder="Total Area"  name="total_area_renovation">
+                                                                </div>
+                                                            </div>
+                                                        @else
+                                                            <ul class="select_buttons">
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_8" name="renovation[]" value="bedroom">
+                                                                    <label class="btn btn-warning button_select" for="item_8">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/bedroom.png" alt="">
+                                                                        </div>
+                                                                        <h3>Bedroom</h3>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_9" name="renovation[]" value="living_room">
+                                                                    <label class="btn btn-warning button_select" for="item_9">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/living-room.png" alt="">
+                                                                        </div>
+                                                                        <h3>Living Room dasdasd</h3>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_10" name="renovation[]" value="bathroom">
+                                                                    <label class="btn btn-warning button_select" for="item_10">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/bathroom.png" alt="">
+                                                                        </div>
+                                                                        <h3>bathroom</h3>
+                                                                    </label>
+                                                                </div>
 
 
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_11" name="renovation[]" value="design_and_plan">
-                                                                <label class="btn btn-warning button_select" for="item_11">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/model.png" alt="">
-                                                                    </div>
-                                                                    <h3> design and plan</h3>
-                                                                </label>
-                                                            </div>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_11" name="renovation[]" value="design_and_plan">
+                                                                    <label class="btn btn-warning button_select" for="item_11">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/model.png" alt="">
+                                                                        </div>
+                                                                        <h3> design and plan</h3>
+                                                                    </label>
+                                                                </div>
 
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_12" name="renovation[]" value="kids_room">
-                                                                <label class="btn btn-warning button_select" for="item_12">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/play.png" alt="">
-                                                                    </div>
-                                                                    <h3>Kids room</h3>
-                                                                </label>
-                                                            </div>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_12" name="renovation[]" value="kids_room">
+                                                                    <label class="btn btn-warning button_select" for="item_12">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/play.png" alt="">
+                                                                        </div>
+                                                                        <h3>Kids room</h3>
+                                                                    </label>
+                                                                </div>
 
-                                                            <div class="select">
-                                                                <input type="checkbox" id="item_13" name="renovation[]" value="dining_room">
-                                                                <label class="btn btn-warning button_select" for="item_13">
-                                                                    <div class="icon">
-                                                                        <img class="img-fluid" src="images/dining-table.png" alt="">
-                                                                    </div>
-                                                                    <h3>Dining room</h3>
-                                                                </label>
-                                                            </div>
-                                                        </ul>
+                                                                <div class="select">
+                                                                    <input type="checkbox" id="item_13" name="renovation[]" value="dining_room">
+                                                                    <label class="btn btn-warning button_select" for="item_13">
+                                                                        <div class="icon">
+                                                                            <img class="img-fluid" src="images/dining-table.png" alt="">
+                                                                        </div>
+                                                                        <h3>Dining room</h3>
+                                                                    </label>
+                                                                </div>
+                                                            </ul>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -347,29 +395,6 @@
                                     <div class="">
                                         {{-- <form class="gaping" action="#" method="post"> --}}
                                         <div class="row mb-2">
-                                            @if ($category== 'office')
-                                            <div class="col-lg-4 mb-2">
-                                                <div class="form-group">
-                                                    <input type="number" min="1" id="number_of_cabins" class="form-control" placeholder="Number of Cabins"  name="number_of_cabins">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 mb-2">
-                                                <div class="form-group">
-                                                    <input type="number" min="1"  id="number_of_worksations" class="form-control" placeholder="Number of Worksations"  name="number_of_worksations">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 mb-2">
-                                                <div class="form-group">
-                                                    <input type="number" min="1"  id="total_carpet_area" class="form-control" placeholder="Total Carpet Area"  name="total_carpet_area">
-                                                </div>
-                                            </div>
-                                            @elseif($category== 'retail')
-                                            <div class="col-lg-6 mb-2">
-                                                <div class="form-group">
-                                                    <input type="number" id="total_carpet_area" class="form-control" placeholder="Total Area"  name="total_carpet_area">
-                                                </div>
-                                            </div>
-                                            @endif
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <input type="number" id="budget" class="form-control" placeholder="Budget (in lakh)" required name="budget">
@@ -647,10 +672,11 @@
         if (pincode.length == 6) {
             $.ajax({
                 type: 'GET',
+                "_token": "{{ csrf_token() }}",
                 url: 'https://api.postalpincode.in/pincode/' + pincode,
                 dataType: 'json',
                 success: function(response) {
-                    //console.log(response)
+                    console.log(response)
                     $('.showhide').show();
                     var response = response[0].PostOffice;
                     $('#popularcity').find('.redio_item').remove();

@@ -36,20 +36,25 @@
           <div class="fab-wrapper">
                <input id="fabCheckbox" type="checkbox" class="fab-checkbox" />
                <label class="fab" for="fabCheckbox">
-                   <span class="fab-dots fab-dots-1"></span>
+                    <div style="position: absolute; text-align:center; top:50%; left:50%; transform: translate(-50%, -50%); color:white; font-weight: bold;
+                    line-height: 15px;">
+                         Book a <br> call
+                    </div>
+                    {{-- <span class="fab-dots fab-dots-1"></span> --}}
+                   {{-- <span class="fab-dots fab-dots-1"></span>
                    <span class="fab-dots fab-dots-2"></span>
-                   <span class="fab-dots fab-dots-3"></span>
+                   <span class="fab-dots fab-dots-3"></span> --}}
                </label>
                <div class="fab-wheel">
                    <a href="{{ route('home-services') }}" target="_blank"
                        class="fab-action fab-action-1">
-                       <i class="fas fa-home"></i>
+                       Home
                    </a>
                    <a href="{{ route('office-services') }}" target="_blank" class="fab-action fab-action-2">
-                         <i class="fas fa-laptop"></i>
+                         Office
                    </a>
                    <a href="{{ route('retail-services') }}" target="_blank" class="fab-action fab-action-3">
-                         <i class="fas fa-laptop-house"></i>
+                         Retail
                    </a>
                    {{-- <a href="mailto:kishloy.official@gmail.com" class="fab-action fab-action-4">
                        <i class='bx bx-envelope'></i>

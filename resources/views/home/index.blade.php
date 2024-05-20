@@ -1,7 +1,3 @@
-
-
-
-
 @include('include.header')
 
 <!-- banner sec -->
@@ -29,11 +25,19 @@
           <div class="container">
                <div class="text_div_2 text-center">
                     <p class="text_p_1">
-                         INTERIOFY Anything and Everything
+                         InterioFy Anything and Everything <br>
+                         <span class="font-weight-bolder" style="font-size:16px">Ever dreamt of your perfect space, but stressed about finding the right team to bring it to life?</span>
                     </p>
-                    <p class="text_p_2">
+                    <p class="mb-4">
+                         Say goodbye to those worries! Introducing “I InterioFy”, India's ground-breaking tech platform that connects you with the elite squad of interior designers, contractors, and vendors you need – all under one convenient roof.
+                    </p>
+
+                    <p>
+                         We're more than just a marketplace. I InterioFY is a <u class="font-weight-bolder"> one stop for any or all interior  solutions. We ensure that </u> creativity meets convenience. <u class="font-weight-bolder"> where our verified and onboarded, partners like </u> designers,<u class="font-weight-bolder">  architects, contractrs </u> and industry partners seamlessly connect to bring your vision to life, whether it's a serene residential haven, a thriving commercial space, or a stunning retail environment.
+                    </p>
+                    {{-- <p class="text_p_2">
                          Say goodbye to the stress of finding the perfect team for your dream space. Introducing I InterioFy, India's groundbreaking tech platform that connects you with the elite squad of interior designers, contractors, and vendors you need – all under one roof. We're more than just a marketplace. I InterioFy is a collaborative hub where creativity meets convenience. Here, designers and industry partners seamlessly connect to bring your vision to life, whether it's a residential haven, a thriving commercial space, or a stunning retail environment.
-                    </p>
+                    </p> --}}
                </div>
           </div>
      </div>
@@ -123,7 +127,7 @@
 
           <div class="service_row">
 
-               <a href="https://sweetdevelopers.com/html/iinteriofy/design-plan%20&%20architecture.html">
+               <a href="{{url('/services/architect')}}">
 
                     <div class="services_box"  style="background: white;">
 
@@ -139,7 +143,7 @@
 
                </a>
 
-               <a href="https://sweetdevelopers.com/html/iinteriofy/interior-decoration.html">
+               <a href="{{url('/services/hvac')}}">
 
                     <div class="services_box"  style="background: white;">
 
@@ -155,7 +159,7 @@
 
                </a>
 
-               <a href="https://sweetdevelopers.com/html/iinteriofy/electrical-lighting.html">
+               <a href="{{url('/services/design-consultation')}}">
 
                     <div class="services_box" style="background: white;">
 
@@ -170,7 +174,7 @@
                     </div>
                </a>
 
-               <a href="https://sweetdevelopers.com/html/iinteriofy/electrical-lighting.html">
+               <a href="{{url('/services/structural-consultation')}}">
 
                     <div class="services_box" style="background: white;">
 
@@ -186,7 +190,7 @@
                </a>
 
 
-               <a href="https://sweetdevelopers.com/html/iinteriofy/structural.html">
+               <a href="{{url('/services/contractor')}}">
 
 
 
@@ -203,7 +207,7 @@
                     </div>
                </a>
 
-               <a href="https://sweetdevelopers.com/html/iinteriofy/plumbing.html">
+               <a href="{{url('/services/electrical-consultation')}}">
 
                     <div class="services_box" style="background: white;">
 
@@ -218,7 +222,7 @@
                     </div>
                </a>
 
-               <a href="https://sweetdevelopers.com/html/iinteriofy/flooring.html">
+               <a href="{{url('/services/painting')}}">
 
                     <div class="services_box" style="background: white;">
 
@@ -233,7 +237,7 @@
                     </div>
                </a>
 
-               <a href="https://sweetdevelopers.com/html/iinteriofy/flooring.html">
+               <a href="{{url('/services/plumbing')}}">
 
                     <div class="services_box" style="background: white;">
 
@@ -248,7 +252,7 @@
                     </div>
                </a>
 
-               <a href="https://sweetdevelopers.com/html/iinteriofy/flooring.html">
+               <a href="{{url('/services/furniture-fixtures')}}">
 
                     <div class="services_box" style="background: white;">
 
@@ -258,7 +262,7 @@
 
                          </div>
 
-                         <h3 class="serviceTitle">Furniture & Pictures</h3>
+                         <h3 class="serviceTitle">Furniture & Fixtures</h3>
 
                     </div>
                </a>
@@ -388,7 +392,10 @@
           <div class="row justify-content-center">
                <div class="col-sm-12 text-center">
                     <div class="heading">
-                         <h2><img src={{ asset('images/new-logo.jpeg') }}" alt="" class="logo_img"></h2>
+                         <h2>
+                              Our Endeavour
+                              {{-- <img src="{{ asset('images/new-logo.jpeg') }}" alt="" class="logo_img"> --}}
+                         </h2>
                     </div>
                </div>
           </div>
@@ -554,7 +561,6 @@
                      </a>
                  </div>
              </div>
-             <div class="col-lg-1 col-md-3 col-sm-12 p-0"></div>
              <div class="col-lg-1 col-md-2 col-12 coll arrow1">
              <img src="{{ asset('images/right-arrow.png') }}" class="design_section_img_2 img_flud">
              </div>
@@ -567,7 +573,7 @@
                          <div class="step_icon">
                               <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
                          </div>
-                         <p class="step_name">Fix the free consultation</p>
+                         <p class="step_name">Fix consultation call with your selected person</p>
                      </a>
                  </div>
              </div>
@@ -677,8 +683,8 @@
                                         <div class="pack_image">
                                              <img class="img-fluid" src="{{ asset('storage/'.$item->image) }}" alt="No images">
                                         </div>
-                                        <h3 class="title_blog"> {!!Str::words (@$item->title, 8 ,' ...') !!}</h3>
-                                        <p> {!! Str::words (@$item->description, 27 ,' ...') !!}</p>
+                                        <h3 class="title_blog"> {!!Str::words (@$item->title, 5 ,' ...') !!}</h3>
+                                        <p>{!! Str::words (@$item->description, 20 ,' ...') !!}</p>
                                    </div>
                               </a>
                          </div>

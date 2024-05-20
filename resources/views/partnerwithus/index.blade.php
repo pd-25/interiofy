@@ -58,21 +58,19 @@
         <div class="container">
             <div class="text_div_2 text-center">
                 <p class="text_p_1">
-                    Partner with I InterioFY: Craft New Heights For Your Business
+                    Craft New Heights For Your Business
                 </p>
                 <p class="text_p_2">
                     Expand your reach, showcase your expertise, and connect with a network of passionate design seekers - all on I InterioFY!
                     <br>
-                    We're a revolutionary tech platform that bridges the gap between talented designers, contractors, vendors, and clients looking to transform their residential, retail, or commercial spaces. Here, you have the opportunity to:
+                    We're a revolutionary tech platform that bridges the gap between talented designers, contractors, vendors, and clients looking to transform their residential, retail, or commercial spaces. Here, you have the opportunity to partner with us to,
                 </p>
 
                 <div class="desc-p text-left new-text-p-3" style="font-size: 16px; padding:3%;">
-                    ARE YOU A...
-
                     <ul class="txt-ul text-left" style="margin-top: 2%;">
-                        <li class="txt-li pb-3" style="font-size: 16px;"><b>• Designer:</b> Showcase your portfolio to a vast pool of potential clients. Collaborate on projects seamlessly and manage them efficiently through our user-friendly platform.</li>
-                        <li class="txt-li pb-3" style="font-size: 16px;"><b>• Contractor:</b> Expand your client base by connecting with those seeking top-quality construction expertise. Partner with designers to offer a complete design-build solution.</li>
-                        <li class="txt-li pb-3" style="font-size: 16px;"><b>• Vendor:</b> Reach architects, interior designers, and project managers looking for the perfect furnishings, materials, or finishing touches.</li>
+                        <li class="txt-li pb-3" style="font-size: 16px;"><b>• </b> Showcase your portfolio to a vast pool of potential clients. Collaborate on projects seamlessly and manage them efficiently through our user-friendly platform.</li>
+                        <li class="txt-li pb-3" style="font-size: 16px;"><b>• </b> Expand your client base by connecting with those seeking top-quality execution construction expertise. Partner with designers to offer a complete design-build solution.</li>
+                        <li class="txt-li pb-3" style="font-size: 16px;"><b>• </b> Reach architects, interior designers, and project managers looking for the perfect furnishings, materials, or finishing touches.</li>
                     </ul>
                 </div>
 
@@ -112,7 +110,8 @@
 <section>
     <div class="container mb-5">
         <div class="partner-heading">
-            <h2>Get unlimited <strong>perks <br> with I Interiofy</strong></h2>
+            {{-- <h2>Get unlimited <strong>perks <br> with I Interiofy</strong></h2> --}}
+            <h2>BENEFITS TO OUR PARTNERS </h2>
         </div>
 
         <div class="row">
@@ -120,7 +119,7 @@
                 <div class="partner-box">
                     <i class="fa fa-object-group"></i>
                     <h4>
-                        Reach a wider audience: Showcase your portfolio and expertise to a diverse pool of clients seeking residential, retail, and commercial design solutions.
+                        <b>Reach a wider audience: </b> Showcase your portfolio and expertise to a diverse pool of clients seeking residential, retail, and commercial design solutions.
                     </h4>
                 </div>
 
@@ -129,21 +128,23 @@
             <div class="col-lg-4 mb-5">
                 <div class="partner-box">
                     <i class="fa fa-dot-circle-o"></i>
-                    <h4>Streamlined collaboration: Our user-friendly platform facilitates seamless communication, saving you valuable time and resources.</h4>
+                    <h4> <b>collaborationConfirmed business: </b> Our user-friendly platform facilitates genuine leads with seamless communication, saving your valuable time and resources for the business growth.</h4>
                 </div>
             </div>
 
             <div class="col-lg-4 mb-5">
                 <div class="partner-box">
                     <i class="fa fa-credit-card"></i>
-                    <h4>Increased visibility: Gain recognition within the design community and establish yourself as a leader in your field.</h4>
+                    <h4>
+                        <b>Increased visibility: </b> Gain recognition within the design community and establish yourself as a leader in your field.</h4>
                 </div>
             </div>
 
             <div class="col-lg-4 mb-5">
                 <div class="partner-box">
                     <i class="fa fa-object-group"></i>
-                    <h4>Effortless lead generation: Let I InterioFY handle the matchmaking, connecting you with qualified clients actively seeking your services.</h4>
+                    <h4>
+                        <b>Effortless lead generation: </b> Let I InterioFY handle the matchmaking, connecting you with qualified clients actively seeking your services.</h4>
                 </div>
 
             </div>
@@ -154,7 +155,8 @@
 
                     <i class="fa fa-dot-circle-o"></i>
 
-                    <h4>Enhanced credibility: Build trust and establish your brand reputation by being on this platform</h4>
+                    <h4>
+                        <b>Enhanced credibility: </b>Build trust and establish your brand reputation by being on this platform</h4>
 
                 </div>
 
@@ -166,7 +168,7 @@
 
                     <i class="fa fa-credit-card"></i>
 
-                    <h4>Effortless lead generation: Let I InterioFY handle the matchmaking, connecting you with qualified clients actively seeking your services.</h4>
+                    <h4><b>Effortless lead generation: </b> Let I InterioFY handle the matchmaking, connecting you with qualified clients actively seeking your services.</h4>
 
                 </div>
 
@@ -307,26 +309,26 @@
               </div>
          </div>
 
-         <div class="row text-center">
+         <div class="row text-center justify-content-center">
               <div class="col-lg-2 col-md-4 col-12">
                    <img src="{{ asset('images/nk1.jpg') }}" class="design_section_img_1">
                    <p class="design_section_p_1">Fill the form and submit</p>
               </div>
               <div class="col-lg-2 col-md-4 col-12">
                    <img src="{{ asset('images/nk2.jpg') }}" class="design_section_img_1">
-                   <p class="design_section_p_1">Receive a verification call</p>
+                   <p class="design_section_p_1">Confirmation On Becoming Our Partner</p>
               </div>
-              <div class="col-lg-2 col-md-4 col-12">
+              {{-- <div class="col-lg-2 col-md-4 col-12">
                    <img src="{{ asset('images/nk3.jpg') }}" class="design_section_img_1">
                    <p class="design_section_p_1">Go through the verification process</p>
-              </div>
+              </div> --}}
               <div class="col-lg-2 col-md-4 col-12">
                    <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
                    <p class="design_section_p_1">Get Onboarded</p>
               </div>
               <div class="col-lg-2 col-md-4 col-12">
                    <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">
-                   <p class="design_section_p_1">Complete the orientation & training</p>
+                   <p class="design_section_p_1">Orientation & Training</p>
               </div>
               <div class="col-lg-2 col-md-4 col-12">
                    <img src="{{ asset('images/nk4.jpg') }}" class="design_section_img_1">

@@ -35,7 +35,16 @@ use App\Models\Blog;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+    return 'link create successfully !';
+});
+Route::get('/clear', function () {
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    Artisan::call('view:clear');
+    return 'Routes cache has clear successfully !';
+});
 // Route::get('/', function () {
 //     return view('welcome');
 // });

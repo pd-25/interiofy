@@ -575,18 +575,18 @@ function validatePartnerFormII(currentStep) {
      }
 
      if (currentStep == 2) {
-          var home_requirements = $('input[name="home_requirements[]"]:checked').val();
-          var renovation = $('input[name="renovation[]"]:checked').val();
+          // var home_requirements = $('input[name="home_requirements[]"]:checked').val();
+          // var renovation = $('input[name="renovation[]"]:checked').val();
 
-          if(home_requirements == undefined){
-               Swal.fire({
-                   icon: "error",
-                   title: "Oops...",
-                   text: "Please choose your Home Requirements!",
-                   footer: ''
-               });
-               return false;
-          }
+          // if(home_requirements == undefined){
+          //      Swal.fire({
+          //          icon: "error",
+          //          title: "Oops...",
+          //          text: "Please choose your Home Requirements!",
+          //          footer: ''
+          //      });
+          //      return false;
+          // }
           // else if(renovation == undefined){
           //      Swal.fire({
           //                icon: "error",

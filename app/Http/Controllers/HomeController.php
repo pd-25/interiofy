@@ -219,7 +219,6 @@ class HomeController extends Controller
     public function booking(Request $request)
     {
         $request->validate([
-            "home_requirements"=> "required|array",
             'services' => 'required',
             'budget' => 'required|numeric',
             'pincode' => 'required|numeric',
@@ -263,9 +262,16 @@ class HomeController extends Controller
         $booking->service = $request->services;
         $booking->pincode = $request->pincode;
         
+        $booking->number_of_cabins = $request->number_of_cabins;
         $booking->number_of_worksations = $request->number_of_worksations;
         $booking->total_carpet_area = $request->total_carpet_area;
-        $booking->total_carpet_area = $request->total_carpet_area;
+
+        $booking->number_of_cabins_renovation = $request->number_of_cabins_renovation;
+        $booking->number_of_worksations_renovation = $request->number_of_worksations_renovation;
+        $booking->total_carpet_area_renovation = $request->total_carpet_area_renovation;
+
+        $booking->total_area = $request->total_area;
+        $booking->total_area_renovation = $request->total_area_renovation;
 
         $booking->expert_id = $request->expert_id;
         $city = explode("-",$request->city);
